@@ -1,138 +1,131 @@
 import React from 'react';
 import Image from 'next/image';
+import { ArrowRight, Check } from 'lucide-react';
 
-/**
- * Milestones Section Component
- * Cloned based on "Uproas Milestone Clubs" instructions and design system.
- * Features a tiered display of trophies (Blue, Gold, Silver) and call-to-actions.
- */
 const Milestones = () => {
-  // Asset mapping based on provided list
-  const assets = {
-    silverTrophy: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/685e94525a939364d8cb2e44_image_2016-27.avif",
-    goldTrophy: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/685e94528a35ba3b6699b54f_image_2018-28.avif",
-    blueTrophy: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/685e9452dd023585e06c6e3b_image_2017-30.avif",
-    leaderboardBg: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/685e94529d5e31fe6e88ed0a_image_2015-29.avif",
-  };
-
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-[#0a0612]">
-      <div className="container relative z-10 px-5 md:px-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
-          
-          {/* Left Column: Content */}
-          <div className="w-full lg:w-1/2 max-w-xl">
-            <div className="inline-block px-3 py-1 mb-6 text-sm font-semibold tracking-wide uppercase transition-all duration-300 border rounded-full bg-accent text-accent-foreground border-accent whitespace-nowrap">
-              Uproas Milestone Clubs
-            </div>
+    <section className="relative w-full bg-[#020412] text-white py-[80px] lg:py-[120px] overflow-hidden">
+      <div className="container mx-auto max-w-[1280px] px-6 lg:px-8">
+        {/* Background Card Container */}
+        <div className="relative w-full rounded-[24px] border border-[rgba(255,255,255,0.1)] bg-[#080B1E] p-8 lg:p-16 overflow-hidden">
+          {/* Content Wrapper */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
             
-            <h2 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-5xl text-white">
-              Get Rewarded for Your Ad Spend
-            </h2>
-            
-            <p className="mb-8 text-lg leading-relaxed text-white/70">
-              Join our Milestone Program and earn exclusive trophies, curated mystery gifts, and leaderboard status as you scale your monthly ad spend.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="/milestones" 
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 rounded-lg bg-gradient-primary hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-1"
-              >
-                Learn More About Milestones
-              </a>
-              <a 
-                href="#pricing" 
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 bg-transparent border border-white/10 rounded-lg hover:bg-white/5"
-              >
-                View Packages
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column: Visual Tiered Display */}
-          <div className="w-full lg:w-1/2 flex justify-center items-end relative min-h-[400px]">
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-
-            {/* Trophies Grid */}
-            <div className="relative grid grid-cols-3 items-end gap-2 md:gap-4 w-full max-w-lg">
+            {/* Left Header Content */}
+            <div className="w-full lg:w-1/2">
+              <span className="text-[#2B7FFF] font-semibold text-[14px] uppercase tracking-wider mb-4 block">
+                Uproas Milestone Clubs
+              </span>
+              <h2 className="text-[36px] lg:text-[48px] font-bold leading-[1.1] mb-6">
+                Get Rewarded for Your Ad Spend
+              </h2>
+              <p className="text-[18px] text-[rgba(255,255,255,0.6)] leading-[1.6] mb-10 max-w-[500px]">
+                Join our Milestone Program and earn exclusive trophies, curated mystery gifts, and leaderboard status as you scale your monthly ad spend.
+              </p>
               
-              {/* Blue Milestone (Left) */}
-              <div className="flex flex-col items-center group transition-all duration-500 hover:scale-105">
-                <div className="glass-panel w-full pt-12 pb-6 px-2 rounded-t-2xl border-b-0 flex flex-col items-center justify-center bg-gradient-to-t from-primary/20 to-transparent">
-                  <div className="relative w-full aspect-square mb-4">
-                    <Image 
-                      src={assets.blueTrophy} 
-                      alt="Blue Milestone Trophy"
-                      fill
-                      className="object-contain drop-shadow-[0_0_15px_rgba(43,89,255,0.4)]"
-                    />
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="/milestones"
+                  className="inline-flex items-center justify-center bg-[#2B7FFF] hover:bg-[#1a6ae6] text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300"
+                >
+                  See This Month&apos;s Leaders
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+                <a 
+                  href="#claim"
+                  className="inline-flex items-center justify-center border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.05)] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+                >
+                  How to Claim
+                </a>
+              </div>
+            </div>
+
+            {/* Right Podium Display Section */}
+            <div className="w-full lg:w-1/2 relative flex justify-center items-end h-[400px]">
+              {/* Podium Visuals */}
+              <div className="flex items-end justify-center gap-4 w-full h-full relative">
+                
+                {/* 3rd Place - Silver */}
+                <div className="flex flex-col items-center group">
+                   <div className="absolute top-10 left-[15%] opacity-90 transition-transform duration-500 group-hover:-translate-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-8 rounded-full bg-slate-700 border border-[rgba(255,255,255,0.2)]" />
+                        <div className="flex flex-col">
+                            <span className="text-[12px] font-bold">Joh•••• <Check className="inline w-3 h-3 text-blue-400" /></span>
+                            <span className="text-[10px] text-[rgba(255,255,255,0.5)]">Total Ad Spend:</span>
+                            <span className="text-[12px] font-bold">$3,732,000</span>
+                        </div>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <span className="block text-xs font-bold text-primary uppercase tracking-widest mb-1">Club 100K</span>
-                    <span className="block text-sm font-semibold text-white/60">Blue Tier</span>
+                  <div className="relative w-[120px] lg:w-[140px] h-[160px] bg-gradient-to-t from-[#1e2a4a] to-[#2B7FFF] rounded-xl flex flex-col items-center justify-center border border-[rgba(255,255,255,0.1)] shadow-2xl overflow-hidden">
+                    <div className="absolute inset-0 bg-blue-500/10 blur-xl"></div>
+                    <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#E2E2E2] to-[#8C8C8C] flex items-center justify-center border-4 border-[#A0A0A0] shadow-[0_0_20px_rgba(226,226,226,0.5)]">
+                        <div className="w-10 h-10 border-2 border-white/30 rounded-full flex items-center justify-center rotate-45">
+                            <div className="w-6 h-[2px] bg-white"></div>
+                            <div className="w-6 h-[2px] bg-white -rotate-90"></div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 1st Place - Gold (Center) */}
+                <div className="flex flex-col items-center z-10 group -mt-20">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 opacity-100 transition-transform duration-500 group-hover:-translate-y-2">
+                        <div className="flex items-center gap-2 mb-4 bg-black/40 backdrop-blur-md p-2 rounded-lg border border-white/5">
+                            <div className="w-8 h-8 rounded-full bg-slate-800 border border-blue-500" />
+                            <div className="flex flex-col">
+                                <span className="text-[12px] font-bold text-white">Mag•••• <Check className="inline w-3 h-3 text-blue-400" /></span>
+                                <span className="text-[10px] text-[rgba(255,255,255,0.6)]">Total Ad Spend:</span>
+                                <span className="text-[14px] font-extrabold text-[#FFD700]">$9,685,100</span>
+                            </div>
+                        </div>
+                    </div>
+                  <div className="relative w-[140px] lg:w-[180px] h-[260px] bg-gradient-to-t from-[#2c220f] to-[#A3964E] rounded-xl flex flex-col items-center justify-center border border-[rgba(255,255,255,0.2)] shadow-[0_0_50px_rgba(163,150,78,0.3)]">
+                    <div className="absolute inset-0 bg-gold/10 blur-2xl"></div>
+                    <div className="relative z-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#FDE08D] to-[#A3964E] flex items-center justify-center border-4 border-[#D4AF37] shadow-[0_0_30px_rgba(253,224,141,0.6)]">
+                         <div className="w-14 h-14 border-4 border-white/20 rounded-full flex items-center justify-center">
+                            <div className="w-8 h-1 flex bg-white rotate-45 transform translate-y-2"></div>
+                         </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 2nd Place - Platinum/Silver */}
+                <div className="flex flex-col items-center group">
+                    <div className="absolute top-16 right-[5%] opacity-90 transition-transform duration-500 group-hover:-translate-y-2">
+                        <div className="flex items-center gap-2 mb-2">
+                            <div className="w-8 h-8 rounded-full bg-slate-700 border border-[rgba(255,255,255,0.2)]" />
+                            <div className="flex flex-col">
+                                <span className="text-[12px] font-bold">Cl•••• <Check className="inline w-3 h-3 text-blue-400" /></span>
+                                <span className="text-[10px] text-[rgba(255,255,255,0.5)]">Total Ad Spend:</span>
+                                <span className="text-[12px] font-bold">$8,301,000</span>
+                            </div>
+                        </div>
+                    </div>
+                  <div className="relative w-[120px] lg:w-[140px] h-[200px] bg-gradient-to-t from-[#16273a] to-[#2B7FFF] rounded-xl flex flex-col items-center justify-center border border-[rgba(255,255,255,0.1)] shadow-2xl overflow-hidden">
+                    <div className="absolute inset-0 bg-blue-500/10 blur-xl"></div>
+                    <div className="relative z-10 w-18 h-18 rounded-full bg-gradient-to-br from-[#F5F5F5] to-[#B0B0B0] flex items-center justify-center border-4 border-[#C0C0C0] shadow-[0_0_20px_rgba(245,245,245,0.5)]">
+                        <div className="w-10 h-10 border-2 border-white/40 rounded-full flex items-center justify-center">
+                            <div className="w-6 h-[2px] bg-white translate-y-1"></div>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Gold Milestone (Center - Elevated) */}
-              <div className="flex flex-col items-center z-10 -mb-4 group transition-all duration-500 hover:scale-105">
-                <div className="glass-panel w-full pt-16 pb-8 px-4 rounded-t-2xl border-b-0 flex flex-col items-center justify-center bg-gradient-to-t from-yellow-500/20 to-transparent border-yellow-500/30">
-                  <div className="relative w-full aspect-square mb-6">
-                    <Image 
-                      src={assets.goldTrophy} 
-                      alt="Gold Milestone Trophy"
-                      fill
-                      className="object-contain drop-shadow-[0_0_25px_rgba(241,196,15,0.4)]"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <span className="block text-sm font-bold text-[#f1c40f] uppercase tracking-widest mb-1">Club 1M+</span>
-                    <span className="block text-base font-bold text-white leading-none">Elite Gold</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Silver Milestone (Right) */}
-              <div className="flex flex-col items-center group transition-all duration-500 hover:scale-105">
-                <div className="glass-panel w-full pt-12 pb-6 px-2 rounded-t-2xl border-b-0 flex flex-col items-center justify-center bg-gradient-to-t from-slate-400/20 to-transparent border-slate-400/30">
-                  <div className="relative w-full aspect-square mb-4">
-                    <Image 
-                      src={assets.silverTrophy} 
-                      alt="Silver Milestone Trophy"
-                      fill
-                      className="object-contain drop-shadow-[0_0_15px_rgba(148,163,184,0.4)]"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <span className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Club 500K</span>
-                    <span className="block text-sm font-semibold text-white/60">Silver Tier</span>
-                  </div>
-                </div>
-              </div>
-
+              {/* Decorative Blur Backgrounds */}
+              <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[120%] h-[200px] bg-blue-600/20 blur-[100px] -z-10"></div>
             </div>
           </div>
-        </div>
 
-        {/* Floating Leaderboard Entry Mockup - positioned below or overlaying */}
-        <div className="mt-20 glass-panel rounded-2xl p-1 overflow-hidden">
-          <div className="relative h-24 md:h-32 w-full flex items-center px-6 md:px-12 bg-cover bg-center" style={{ backgroundImage: `url(${assets.leaderboardBg})` }}>
-             <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
-             <div className="relative w-full flex items-center justify-between">
-                <div className="flex items-center gap-6">
-                  <span className="text-3xl font-black italic text-white/20">01</span>
-                  <div className="flex flex-col">
-                    <span className="text-lg font-bold text-white">Top Media Buyer</span>
-                    <span className="text-sm text-success font-medium uppercase tracking-tighter">Current Leaderboard</span>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm font-semibold text-white/70 uppercase tracking-widest leading-none mb-1">Total Scale</div>
-                  <div className="text-2xl font-bold text-white">$4,290,000+</div>
-                </div>
-             </div>
+          {/* Abstract Floating Icons (from assets) */}
+          <div className="absolute top-10 right-10 opacity-20 hidden lg:block pointer-events-none">
+            <Image 
+              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690ba63160dbee8f4bcf443d_milestones-18.svg" 
+              alt="Floating Milestone Icon" 
+              width={80} 
+              height={80}
+            />
           </div>
         </div>
       </div>

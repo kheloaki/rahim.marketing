@@ -1,149 +1,154 @@
 import React from 'react';
-import { Check, X } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle2, XCircle, Info } from 'lucide-react';
 
 const ComparisonTable = () => {
-  // Data for the comparison table based on the screenshots and instructions
-  const comparisonData = [
+  const features = [
     {
-      feature: "Agency Ad Accounts",
-      uproas: "Included",
-      others: "Personal / BM"
+      label: 'Run Ads For Almost Any Vertical',
+      uproas: { type: 'check' },
+      traditional: { type: 'cross' },
     },
     {
-      feature: "Spending Limit",
-      uproas: "Unlimited",
-      others: "$50-$250/day"
+      label: 'Unlimited Spending Limit 📈',
+      uproas: { type: 'check' },
+      traditional: { type: 'cross' },
     },
     {
-      feature: "Scale potential",
-      uproas: "Extremely high",
-      others: "Very low"
+      label: 'Unlimited Ad Accounts',
+      uproas: { type: 'check' },
+      traditional: { type: 'cross' },
     },
     {
-      feature: "Ban protection",
-      uproas: true,
-      others: false
+      label: (
+        <span className="flex items-center gap-1.5">
+          Accounts HIVA Score <Info className="w-3.5 h-3.5 text-[#2B7FFF] cursor-help" />
+        </span>
+      ),
+      uproas: { type: 'text', value: 'Platinum' },
+      traditional: { type: 'text', value: 'Silver' },
     },
     {
-      feature: "Dedicated Meta/Google Rep",
-      uproas: true,
-      others: false
+      label: "CPM's & CPA's",
+      uproas: { type: 'badge', value: 'Low', color: 'bg-[#25D366]' },
+      traditional: { type: 'badge', value: 'High', color: 'bg-[#ef4444]' },
     },
     {
-      feature: "Replacement speed",
-      uproas: "Instant",
-      others: "Days/Weeks"
+      label: 'Increase Ad Approval Rate',
+      uproas: { type: 'text', value: '687%' },
+      traditional: { type: 'text', value: '0%' },
     },
     {
-      feature: "Pixel data safety",
-      uproas: true,
-      others: false
+      label: '24/7 Customer Support',
+      uproas: { type: 'check' },
+      traditional: { type: 'cross' },
     },
     {
-      feature: "Card compatibility",
-      uproas: "All cards accepted",
-      others: "Highly restricted"
+      label: 'Average Ad Approval Time',
+      uproas: { type: 'text', value: '5 Minutes' },
+      traditional: { type: 'text', value: '5-9 Hours' },
     },
     {
-      feature: "Approval time",
-      uproas: "Seconds",
-      others: "Hours/Days"
+      label: 'Payment Options',
+      uproas: { type: 'text', value: 'Bank transfer, Card, Crypto' },
+      traditional: { type: 'text', value: 'Card Payment Only' },
     },
-    {
-      feature: "Cashback",
-      uproas: "Up to 1%",
-      others: "None"
-    }
   ];
 
+  const renderCellContent = (data: any) => {
+    if (data.type === 'check') {
+      return (
+        <div className="flex justify-center">
+          <CheckCircle2 className="w-6 h-6 text-[#25D366] fill-[#25D366]/20" strokeWidth={2.5} />
+        </div>
+      );
+    }
+    if (data.type === 'cross') {
+      return (
+        <div className="flex justify-center">
+          <XCircle className="w-6 h-6 text-[#ef4444] opacity-80" strokeWidth={2.5} />
+        </div>
+      );
+    }
+    if (data.type === 'badge') {
+      return (
+        <div className="flex justify-center">
+          <span className={`${data.color} px-3 py-1 rounded-md text-xs font-semibold text-white min-w-[60px] text-center`}>
+            {data.value}
+          </span>
+        </div>
+      );
+    }
+    return (
+      <div className="flex justify-center">
+        <span className="text-white text-sm font-medium">{data.value}</span>
+      </div>
+    );
+  };
+
   return (
-    <section className="py-[120px] bg-[#02040a] relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E44F71] opacity-[0.05] blur-[150px] rounded-full pointer-events-none"></div>
-
-      <div className="container mx-auto px-5 lg:px-10 max-w-[1280px]">
+    <section className="bg-[#020412] section-padding">
+      <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-[3rem] font-bold leading-[1.1] mb-6 tracking-tight text-white">Comparison</h2>
-          <p className="text-[1.125rem] text-white/70 max-w-[700px] mx-auto">
-            See how Uproas agency services beat all other service providers in stability, scale, and support.
-          </p>
+          <span className="text-[#2B7FFF] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">
+            COMPARISON
+          </span>
+          <h2 className="max-w-4xl mx-auto text-white">
+            See how Uproas Beats Regular Ad Accounts Every Single Time
+          </h2>
         </div>
 
-        <div className="glass-panel rounded-[1rem] border border-white/10 bg-[#150d1f]/80 backdrop-blur-md overflow-hidden">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b border-white/10">
-                <th className="py-8 px-6 text-left w-1/3 text-white/60 font-semibold uppercase tracking-wider text-sm">Feature</th>
-                <th className="py-8 px-6 text-center w-1/3 bg-[#E44F71]/10 border-x border-white/10">
-                  <div className="flex flex-col items-center gap-2">
-                    <img 
-                      src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857660d17fcbc0b572ffd2_uproas-logo-white.svg" 
-                      alt="Uproas" 
-                      className="h-6"
-                    />
-                  </div>
-                </th>
-                <th className="py-8 px-6 text-center w-1/3 text-white/60 font-semibold uppercase tracking-wider text-sm">Other Providers</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonData.map((row, index) => (
-                <tr 
-                  key={index} 
-                  className={`border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors`}
-                >
-                  <td className="py-6 px-6 text-white font-medium text-base">
-                    {row.feature}
-                  </td>
-                  <td className="py-6 px-6 text-center bg-[#E44F71]/5 border-x border-white/10">
-                    <div className="flex justify-center items-center">
-                      {typeof row.uproas === 'boolean' ? (
-                        <div className="w-8 h-8 rounded-full bg-[#10b981]/20 flex items-center justify-center">
-                          <Check className="w-5 h-5 text-[#10b981]" />
-                        </div>
-                      ) : (
-                        <div className="flex flex-col items-center">
-                          <div className="w-6 h-6 rounded-full bg-[#10b981]/20 flex items-center justify-center mb-2">
-                            <Check className="w-4 h-4 text-[#10b981]" />
-                          </div>
-                          <span className="text-white font-semibold">{row.uproas}</span>
-                        </div>
-                      )}
-                    </div>
-                  </td>
-                  <td className="py-6 px-6 text-center">
-                    <div className="flex justify-center items-center">
-                      {typeof row.others === 'boolean' ? (
-                        <div className="w-8 h-8 rounded-full bg-[#ef4444]/20 flex items-center justify-center">
-                          <X className="w-5 h-5 text-[#ef4444]" />
-                        </div>
-                      ) : (
-                        <div className="flex flex-col items-center">
-                          <div className="w-6 h-6 rounded-full bg-[#ef4444]/20 flex items-center justify-center mb-2">
-                            <X className="w-4 h-4 text-[#ef4444]" />
-                          </div>
-                          <span className="text-white/60">{row.others}</span>
-                        </div>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div className="relative max-w-5xl mx-auto">
+          {/* Subtle Glow Background */}
+          <div className="absolute -inset-4 bg-[#2B7FFF]/5 blur-3xl rounded-3xl -z-10"></div>
+          
+          <div className="glass-morphism rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="grid grid-cols-12 min-h-[80px] bg-[#080B1E]/50 border-b border-white/10 items-center">
+              <div className="col-span-6 px-8"></div>
+              <div className="col-span-3 flex flex-col items-center justify-center border-x border-white/10 h-full py-4 relative">
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#2B7FFF]"></div>
+                <Image 
+                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/66857660d17fcbc0b572ffd2_uproas-logo-white-1.svg" 
+                  alt="Uproas logo" 
+                  width={110} 
+                  height={28}
+                  className="brightness-110"
+                />
+              </div>
+              <div className="col-span-3 flex items-center justify-center text-sm font-semibold opacity-60">
+                Traditional Ad Accounts
+              </div>
+            </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-white/40 text-sm flex items-center justify-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#10b981]"></span>
-            Whitelisted accounts with priority support and rapid scaling.
-          </p>
+            {features.map((feature, index) => (
+              <div 
+                key={index} 
+                className={`grid grid-cols-12 border-b border-white/10 last:border-0 hover:bg-white/[0.02] transition-colors`}
+              >
+                <div className="col-span-6 px-8 py-5 flex items-center text-sm font-medium text-white/90">
+                  {feature.label}
+                </div>
+                <div className="col-span-3 py-5 border-x border-white/10 bg-[#2B7FFF]/[0.02]">
+                  {renderCellContent(feature.uproas)}
+                </div>
+                <div className="col-span-3 py-5">
+                  {renderCellContent(feature.traditional)}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <style jsx>{`
-        .glass-panel {
-          box-shadow: 0 0 40px 0 rgba(43, 89, 255, 0.05);
+      <style jsx global>{`
+        .glass-morphism {
+          background: rgba(8, 11, 30, 0.8);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-padding {
+          padding-top: 120px;
+          padding-bottom: 120px;
         }
       `}</style>
     </section>

@@ -1,115 +1,109 @@
 import React from 'react';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
-    id: 1,
-    category: 'Guides',
-    title: 'Cost Per Result Formula: How to Calculate, Analyze, and Lower Your CPR',
-    description: 'Master the Cost Per Result formula! Calculate, analyze, and apply optimization tips to efficiently lower your CPR and maximize ad campaign profits.',
-    image: 'https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b9e8f615efe1d1a8eb829_Facebook%20Feedback%20Score%20Boost.svg', // Placeholder from assets logic if direct match missing
-    link: '#',
+    title: "Cost Per Result Formula: How to Calculate, Analyze, and Lower Your CPR",
+    description: "Master the Cost Per Result formula! Calculate, analyze, and apply optimization tips to efficiently lower your CPR and maximize ad campaign profits.",
+    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    category: "ADS"
   },
   {
-    id: 2,
-    category: 'Strategies',
-    title: 'How to Spy on Competitors’ Ads: Tools, Strategies, Insider Insights',
-    description: 'Learn how to spy on competitors\' ads ethically using tools, strategies, insider insights to build better, cheap campaigns. Beat your competitors in ads war!',
-    image: 'https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5ee0f69154b58e522_google.svg',
-    link: '#',
+    title: "How to Spy on Competitors’ Ads: Tools, Strategies, Insider Insights",
+    description: "Learn how to spy on competitors' ads ethically using tools, strategies, insider insights to build better, cheap campaigns. Beat your competitors in ads war!",
+    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    category: "ADS"
   },
   {
-    id: 3,
-    category: 'Benchmarks',
-    title: 'Google Ads Benchmarks (2026): CPC, CTR, CPA & Conversion Standards by Industry',
-    description: 'Get the definitive 2026 Google Ads benchmarks. Dive into current average CPC, CTR, CVR, and CPA for your industry to measure and improve campaign ROI.',
-    image: 'https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a51e37f05dbfafd0d3_bing.svg',
-    link: '#',
-  },
+    title: "Google Ads Benchmarks (2026): CPC, CTR, CPA & Conversion Standards by Industry",
+    description: "Get the definitive 2026 Google Ads benchmarks. Dive into current average CPC, CTR, CVR, and CPA for your industry to measure and improve campaign ROI.",
+    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    category: "ADS"
+  }
 ];
 
-export default function LatestBlogs() {
+const LatestBlogs = () => {
   return (
-    <section className="bg-[#02040a] py-[120px] lg:py-[160px]">
-      <div className="container">
+    <section className="bg-[#020412] text-white py-[120px] overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1280px]">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-[64px] gap-6">
-          <div className="max-w-[720px]">
-            <h2 className="text-[48px] font-bold leading-[1.1] tracking-[-0.02em] text-white mb-4">
-              Latest blogs
-            </h2>
-          </div>
-          <a
-            href="/blog"
-            className="flex items-center gap-2 text-white font-semibold hover:text-[#E44F71] transition-colors"
+        <div className="flex justify-between items-end mb-12">
+          <h2 className="text-[48px] font-semibold leading-[1.2] tracking-[-0.02em]">
+            Latest blogs
+          </h2>
+          <a 
+            href="/blog" 
+            className="group flex items-center gap-2 bg-[#ffffff0d] border border-[#ffffff1a] rounded-[8px] px-6 py-3 text-[16px] font-semibold transition-all hover:bg-[#ffffff1a]"
           >
-            view all
-            <ArrowUpRight className="w-5 h-5" />
+            View all
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
 
-        {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
-            <a
-              key={post.id}
-              href={post.link}
-              className="group flex flex-col bg-[#150d1f] border border-[rgba(255,255,255,0.1)] rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#E44F71]/30"
-            >
-              {/* Thumbnail Container */}
-              <div className="relative aspect-[16/9] w-full bg-[#121629] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#E44F71]/20 to-transparent z-10 opacity-60" />
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                   {/* Using a placeholder visual representation consistent with the high-tech UI since specific thumbnails aren't in assets */}
-                   <div className="relative w-full h-full flex items-center justify-center">
-                      <div className="absolute w-[80%] h-[80%] bg-[#E44F71]/10 blur-[40px] rounded-full" />
-                      <Image 
-                        src={post.image}
-                        alt={post.title}
-                        width={80}
-                        height={80}
-                        className="relative z-20 transition-transform duration-500 group-hover:scale-110"
-                      />
+        {/* Carousel/Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.map((post, index) => (
+            <div key={index} className="flex flex-col group">
+              {/* Card Image Wrapper */}
+              <div className="relative aspect-[16/10] bg-[#080B1E] border border-[#ffffff1a] rounded-[12px] overflow-hidden mb-6 flex items-center justify-center p-8 transition-all group-hover:border-[#2B7FFF33]">
+                {/* Simulated Blog Graphic - Matching the blue glowing style in screenshots */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2B7FFF0D] to-transparent opacity-50" />
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center">
+                   <div className="text-[24px] font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ffffff66] mb-2 leading-tight">
+                    {post.title.split(':').shift()}
                    </div>
+                   <div className="w-16 h-1 mt-4 bg-[#2B7FFF] rounded-full shadow-[0_0_15px_#2B7FFF]" />
                 </div>
-                {/* Arrow Icon Badge */}
-                <div className="absolute bottom-4 right-4 z-20 bg-[#E44F71] p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight className="w-4 h-4 text-white" />
+                
+                {/* Category Badge */}
+                <div className="absolute bottom-4 right-4 bg-[#2B7FFF] text-[10px] font-black px-2 py-1 rounded-[4px] tracking-wider uppercase">
+                  {post.category}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="text-[#E44F71] text-[14px] font-semibold uppercase tracking-wider mb-3">
-                  {post.category}
-                </div>
-                <h3 className="text-[24px] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#E44F71] transition-colors line-clamp-2">
+              <div className="flex flex-col flex-grow">
+                <h3 className="text-[20px] font-semibold leading-[1.3] mb-4 hover:text-[#2B7FFF] transition-colors cursor-pointer">
                   {post.title}
                 </h3>
-                <p className="text-[16px] leading-[1.6] text-white/70 line-clamp-3">
+                <p className="text-[#ffffff99] text-[16px] leading-[1.5] mb-6 line-clamp-3">
                   {post.description}
                 </p>
+                <a 
+                  href="#" 
+                  className="mt-auto text-[#2B7FFF] font-semibold text-[16px] flex items-center hover:underline group/link"
+                >
+                  Read how
+                  <span className="ml-1 transition-transform group-hover/link:translate-x-1">&gt;</span>
+                </a>
               </div>
-            </a>
+            </div>
           ))}
+        </div>
+
+        {/* Navigation Controls (Visual-only for clone) */}
+        <div className="mt-12 flex justify-center items-center gap-4">
+          <div className="flex gap-1">
+            {[...Array(6)].map((_, i) => (
+              <div 
+                key={i} 
+                className={`h-[4px] rounded-full transition-all ${i === 0 ? 'w-8 bg-[#2B7FFF]' : 'w-4 bg-[#ffffff1a]'}`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-4 ml-auto">
+            <button className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
   );
-}
-<style jsx global>{`
-  .container {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-  }
-`}</style>
+};
+
+export default LatestBlogs;

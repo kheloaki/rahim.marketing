@@ -5,12 +5,12 @@ const HowItWorks = () => {
   return (
     <section className="relative py-[120px] md:py-[160px] bg-[#02040a] overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#f97316] opacity-[0.05] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.05] blur-[150px] rounded-full pointer-events-none" />
       
       <div className="container mx-auto px-5 lg:px-10 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24">
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-[rgba(43,89,255,0.3)] bg-[rgba(43,89,255,0.1)] text-[#f97316] text-sm font-semibold tracking-wide uppercase">
+          <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-[rgba(43,89,255,0.3)] bg-[rgba(43,89,255,0.1)] text-[#E44F71] text-sm font-semibold tracking-wide uppercase">
             Process
           </div>
           <h2 className="text-[2.5rem] md:text-[3rem] font-bold text-white mb-6 leading-[1.1] tracking-tight">
@@ -26,7 +26,7 @@ const HowItWorks = () => {
           <div className="lg:col-span-6 space-y-12">
             {/* Step 1 */}
             <div className="group relative flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#f97316] font-bold text-xl group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#E44F71] font-bold text-xl group-hover:bg-[#E44F71] group-hover:text-white transition-all duration-300">
                 1
               </div>
               <div>
@@ -43,7 +43,7 @@ const HowItWorks = () => {
 
             {/* Step 2 */}
             <div className="group relative flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#f97316] font-bold text-xl group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#E44F71] font-bold text-xl group-hover:bg-[#E44F71] group-hover:text-white transition-all duration-300">
                 2
               </div>
               <div>
@@ -60,7 +60,7 @@ const HowItWorks = () => {
 
             {/* Step 3 */}
             <div className="group relative flex gap-6">
-              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#f97316] font-bold text-xl group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(43,89,255,0.1)] border border-[rgba(255,255,255,0.1)] flex items-center justify-center text-[#E44F71] font-bold text-xl group-hover:bg-[#E44F71] group-hover:text-white transition-all duration-300">
                 3
               </div>
               <div>
@@ -84,13 +84,13 @@ const HowItWorks = () => {
               <div className="relative z-10 w-full h-full p-8 md:p-12 flex flex-col items-center justify-center text-center">
                 <div className="relative w-full max-w-[400px]">
                   {/* Floating Elements effect */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#f97316] opacity-20 blur-[60px] rounded-full animate-pulse" />
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#f97316] opacity-20 blur-[60px] rounded-full animate-pulse" />
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#E44F71] opacity-20 blur-[60px] rounded-full animate-pulse" />
+                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#E44F71] opacity-20 blur-[60px] rounded-full animate-pulse" />
                   
                   {/* Mockup Card Design */}
                   <div className="relative glass-panel rounded-2xl p-8 border border-[rgba(255,255,255,0.1)] bg-[rgba(10,13,26,0.6)] shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                     <div className="flex justify-between items-start mb-12">
-                      <div className="w-12 h-8 bg-gradient-to-r from-[#f97316] to-[#f97316] rounded-md opacity-80" />
+                      <div className="w-12 h-8 bg-gradient-to-r from-[#E44F71] to-[#E44F71] rounded-md opacity-80" />
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 rounded-full bg-[rgba(255,255,255,0.2)]" />
                         <div className="w-2 h-2 rounded-full bg-[rgba(255,255,255,0.2)]" />

@@ -92,7 +92,7 @@ const OtherServices = () => {
           ))}
           
           {/* Support CTA Card (Visual Placeholder for even grid if needed, otherwise data maps) */}
-          <div className="hidden lg:flex flex-col p-8 bg-gradient-to-br from-[#f9731610] to-transparent border border-[rgba(43,89,255,0.2)] rounded-[16px] justify-center items-center text-center">
+          <div className="hidden lg:flex flex-col p-8 bg-gradient-to-br from-[#E44F7110] to-transparent border border-[rgba(43,89,255,0.2)] rounded-[16px] justify-center items-center text-center">
              <div className="mb-4">
                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary opacity-60">
                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>

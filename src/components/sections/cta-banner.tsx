@@ -48,7 +48,7 @@ const CTABanner = () => {
           </div>
 
           {/* Subtle Glow Effect */}
-          <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] bg-[#f97316] opacity-10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] bg-[#E44F71] opacity-10 blur-[120px] rounded-full pointer-events-none" />
         </div>
       </div>
     </section>

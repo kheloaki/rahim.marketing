@@ -59,7 +59,7 @@ const ComparisonTable = () => {
   return (
     <section className="py-[120px] bg-[#02040a] relative overflow-hidden">
       {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f97316] opacity-[0.05] blur-[150px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E44F71] opacity-[0.05] blur-[150px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-5 lg:px-10 max-w-[1280px]">
         <div className="text-center mb-16">
@@ -74,7 +74,7 @@ const ComparisonTable = () => {
             <thead>
               <tr className="border-b border-white/10">
                 <th className="py-8 px-6 text-left w-1/3 text-white/60 font-semibold uppercase tracking-wider text-sm">Feature</th>
-                <th className="py-8 px-6 text-center w-1/3 bg-[#f97316]/10 border-x border-white/10">
+                <th className="py-8 px-6 text-center w-1/3 bg-[#E44F71]/10 border-x border-white/10">
                   <div className="flex flex-col items-center gap-2">
                     <img 
                       src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857660d17fcbc0b572ffd2_uproas-logo-white.svg" 
@@ -95,7 +95,7 @@ const ComparisonTable = () => {
                   <td className="py-6 px-6 text-white font-medium text-base">
                     {row.feature}
                   </td>
-                  <td className="py-6 px-6 text-center bg-[#f97316]/5 border-x border-white/10">
+                  <td className="py-6 px-6 text-center bg-[#E44F71]/5 border-x border-white/10">
                     <div className="flex justify-center items-center">
                       {typeof row.uproas === 'boolean' ? (
                         <div className="w-8 h-8 rounded-full bg-[#10b981]/20 flex items-center justify-center">

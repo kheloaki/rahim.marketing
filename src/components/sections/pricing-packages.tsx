@@ -88,7 +88,7 @@ const PricingPackages = () => {
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
                 plan.featured 
-                  ? 'border-primary/50 bg-primary/10 shadow-[0_0_40px_rgba(249,115,22,0.15)] md:-mt-4 md:mb-4' 
+                  ? 'border-primary/50 bg-primary/10 shadow-[0_0_40px_rgba(228,79,113,0.15)] md:-mt-4 md:mb-4' 
                   : 'border-white/10 bg-white/[0.02] hover:border-white/20'
               }`}
             >

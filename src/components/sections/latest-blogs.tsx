@@ -42,7 +42,7 @@ export default function LatestBlogs() {
           </div>
           <a
             href="/blog"
-            className="flex items-center gap-2 text-white font-semibold hover:text-[#f97316] transition-colors"
+            className="flex items-center gap-2 text-white font-semibold hover:text-[#E44F71] transition-colors"
           >
             view all
             <ArrowUpRight className="w-5 h-5" />
@@ -55,15 +55,15 @@ export default function LatestBlogs() {
             <a
               key={post.id}
               href={post.link}
-              className="group flex flex-col bg-[#150d1f] border border-[rgba(255,255,255,0.1)] rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#f97316]/30"
+              className="group flex flex-col bg-[#150d1f] border border-[rgba(255,255,255,0.1)] rounded-[16px] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#E44F71]/30"
             >
               {/* Thumbnail Container */}
               <div className="relative aspect-[16/9] w-full bg-[#121629] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f97316]/20 to-transparent z-10 opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E44F71]/20 to-transparent z-10 opacity-60" />
                 <div className="absolute inset-0 flex items-center justify-center p-12">
                    {/* Using a placeholder visual representation consistent with the high-tech UI since specific thumbnails aren't in assets */}
                    <div className="relative w-full h-full flex items-center justify-center">
-                      <div className="absolute w-[80%] h-[80%] bg-[#f97316]/10 blur-[40px] rounded-full" />
+                      <div className="absolute w-[80%] h-[80%] bg-[#E44F71]/10 blur-[40px] rounded-full" />
                       <Image 
                         src={post.image}
                         alt={post.title}
@@ -74,17 +74,17 @@ export default function LatestBlogs() {
                    </div>
                 </div>
                 {/* Arrow Icon Badge */}
-                <div className="absolute bottom-4 right-4 z-20 bg-[#f97316] p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 right-4 z-20 bg-[#E44F71] p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-8 flex flex-col flex-grow">
-                <div className="text-[#f97316] text-[14px] font-semibold uppercase tracking-wider mb-3">
+                <div className="text-[#E44F71] text-[14px] font-semibold uppercase tracking-wider mb-3">
                   {post.category}
                 </div>
-                <h3 className="text-[24px] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#f97316] transition-colors line-clamp-2">
+                <h3 className="text-[24px] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#E44F71] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 <p className="text-[16px] leading-[1.6] text-white/70 line-clamp-3">

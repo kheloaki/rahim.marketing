@@ -129,7 +129,7 @@ const Navigation = () => {
         <div className="flex items-center gap-4">
           <a 
             href="https://t.me/uproas" 
-            className="hidden sm:flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#7b2d8e] via-[#f97316] to-[#f97316] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+            className="hidden sm:flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(228,79,113,0.4)]"
           >
             <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" className="h-5 w-5" />
             Join Telegram
@@ -158,7 +158,7 @@ const DropdownLink = ({ href, icon, title, desc }: { href: string; icon: string;
       <img src={icon} alt="" className="h-full w-full object-contain" />
     </div>
     <div className="flex flex-col">
-      <span className="text-sm font-semibold text-white group-hover:text-[#f97316] transition-colors">{title}</span>
+      <span className="text-sm font-semibold text-white group-hover:text-[#E44F71] transition-colors">{title}</span>
       <span className="text-xs text-white/60 mt-1 line-clamp-1">{desc}</span>
     </div>
   </a>
@@ -172,7 +172,7 @@ const PartnerLink = ({ href, bg, title, desc }: { href: string; bg: string; titl
     <div className="relative z-10">
       <h4 className="text-sm font-bold text-white mb-2">{title}</h4>
       <p className="text-xs text-white/60 mb-3">{desc}</p>
-      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-[#f97316]">
+      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-[#E44F71]">
         Learn More <ArrowRight className="h-3 w-3" />
       </div>
     </div>

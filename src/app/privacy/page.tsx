@@ -1,17 +1,21 @@
 "use client";
 
-import Navbar from "@/components/sections/navbar";
+import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      <Navigation />
       <div className="pt-[89px]">
-        <section className="py-[120px] bg-[#020412]">
-          <div className="container mx-auto px-6 max-w-[800px]">
+        <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
+          <div className="container mx-auto px-6 max-w-[800px] relative z-10">
             <h1 className="text-[48px] font-bold leading-[1.1] mb-8 tracking-tight text-white">
-              Privacy Policy
+              Privacy{' '}
+              <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
+                Policy
+              </span>
             </h1>
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-white/60 mb-8">Last updated: January 1, 2026</p>

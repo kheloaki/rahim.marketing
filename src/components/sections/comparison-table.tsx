@@ -21,9 +21,9 @@ const ComparisonTable = () => {
     },
     {
       label: (
-        <span className="flex items-center gap-1.5">
-          Accounts HIVA Score <Info className="w-3.5 h-3.5 text-[#2B7FFF] cursor-help" />
-        </span>
+          <span className="flex items-center gap-1.5">
+            Accounts HIVA Score <Info className="w-3.5 h-3.5 text-[#E44F71] cursor-help" />
+          </span>
       ),
       uproas: { type: 'text', value: 'Platinum' },
       traditional: { type: 'text', value: 'Silver' },
@@ -87,33 +87,29 @@ const ComparisonTable = () => {
   };
 
   return (
-    <section className="bg-[#020412] section-padding">
+    <section className="bg-[#0a0612] section-padding">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-[#2B7FFF] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">
+          <span className="text-[#E44F71] text-sm font-bold uppercase tracking-[0.2em] mb-4 block">
             COMPARISON
           </span>
           <h2 className="max-w-4xl mx-auto text-white">
-            See how Uproas Beats Regular Ad Accounts Every Single Time
+            See how Brand Rahim Beats Regular Ad Accounts Every Single Time
           </h2>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
           {/* Subtle Glow Background */}
-          <div className="absolute -inset-4 bg-[#2B7FFF]/5 blur-3xl rounded-3xl -z-10"></div>
+          <div className="absolute -inset-4 bg-[#E44F71]/5 blur-3xl rounded-3xl -z-10"></div>
           
           <div className="glass-morphism rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-            <div className="grid grid-cols-12 min-h-[80px] bg-[#080B1E]/50 border-b border-white/10 items-center">
+            <div className="grid grid-cols-12 min-h-[80px] bg-[#150d1f]/50 border-b border-white/10 items-center">
               <div className="col-span-6 px-8"></div>
               <div className="col-span-3 flex flex-col items-center justify-center border-x border-white/10 h-full py-4 relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#2B7FFF]"></div>
-                <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/66857660d17fcbc0b572ffd2_uproas-logo-white-1.svg" 
-                  alt="Uproas logo" 
-                  width={110} 
-                  height={28}
-                  className="brightness-110"
-                />
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#BC2C7B] to-[#E44F71]"></div>
+                <span className="text-xl font-bold bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
+                  Brand Rahim
+                </span>
               </div>
               <div className="col-span-3 flex items-center justify-center text-sm font-semibold opacity-60">
                 Traditional Ad Accounts
@@ -128,7 +124,7 @@ const ComparisonTable = () => {
                 <div className="col-span-6 px-8 py-5 flex items-center text-sm font-medium text-white/90">
                   {feature.label}
                 </div>
-                <div className="col-span-3 py-5 border-x border-white/10 bg-[#2B7FFF]/[0.02]">
+                <div className="col-span-3 py-5 border-x border-white/10 bg-[#E44F71]/[0.02]">
                   {renderCellContent(feature.uproas)}
                 </div>
                 <div className="col-span-3 py-5">

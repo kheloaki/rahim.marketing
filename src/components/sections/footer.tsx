@@ -50,34 +50,30 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#020412] text-white border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-[#0a0612] text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-16">
-          {/* Logo and Info Section */}
           <div className="lg:col-span-1 flex flex-col space-y-6">
             <a href="/" className="inline-block">
-              <Image
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/69442c415873bd6f738c4a81_Logo_full-9.png"
-                alt="Uproas Logo"
-                width={120}
-                height={40}
-                className="h-auto w-auto"
-              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
+                Brand Rahim
+              </span>
             </a>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Uproas provides premium whitelisted advertising infrastructure for serious media buyers and brands.
+              Brand Rahim provides premium whitelisted advertising infrastructure for serious media buyers and brands.
             </p>
             <div className="flex space-x-4 items-center">
-              <div className="flex items-center gap-1">
-                <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690bbea6919c5fb7e0ab68e6_TP-56.svg" alt="Trustpilot" width={80} height={20} />
+              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full">
+                <span className="text-[#E44F71] text-sm font-bold">★ 4.9</span>
+                <span className="text-white/40 text-xs">Trustpilot</span>
               </div>
-              <div className="flex items-center gap-1">
-                <Image src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690bbea6617a6bb8ebcd020a_G2-55.svg" alt="G2" width={60} height={20} />
+              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full">
+                <span className="text-[#E44F71] text-sm font-bold">★ 4.8</span>
+                <span className="text-white/40 text-xs">G2</span>
               </div>
             </div>
           </div>
 
-          {/* Dynamic Link Columns */}
           {footerLinks.map((column, idx) => (
             <div key={idx} className="flex flex-col space-y-4">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
@@ -88,7 +84,7 @@ const Footer = () => {
                   <li key={linkIdx}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/50 hover:text-[#2B7FFF] transition-colors duration-200"
+                      className="text-sm text-white/50 hover:text-[#E44F71] transition-colors duration-200"
                     >
                       {link.name}
                     </a>
@@ -99,10 +95,9 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Uproas. All rights reserved.
+            © {new Date().getFullYear()} Brand Rahim. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
@@ -116,7 +111,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://t.me/uproas" className="bg-white/5 p-2 rounded-full hover:bg-white/10 transition-colors">
+            <a href="https://t.me/brandrahim" className="bg-white/5 p-2 rounded-full hover:bg-white/10 transition-colors">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-white/60 hover:text-white">
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2s-.21-.05-.3-.03c-.12.02-2.11 1.34-5.96 3.94-.57.39-1.08.58-1.54.57-.5-.01-1.46-.28-2.17-.51-.87-.28-1.56-.44-1.5-.92.03-.25.38-.51 1.05-.78 4.12-1.79 6.87-2.97 8.24-3.53 3.93-1.61 4.74-1.89 5.28-1.89.12 0 .38.03.55.17s.17.34.19.49c.02.11.02.24 0 .37z"/>
               </svg>

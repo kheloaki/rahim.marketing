@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Uproas - Premium Agency Ad Accounts for Meta, Google & TikTok",
-  description: "Uproas is the leading provider of premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide. Scale without limits.",
+  title: "Brand Rahim - Premium Agency Ad Accounts for Meta, Google & TikTok",
+  description: "Brand Rahim is the leading provider of premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide. Scale without limits.",
 };
 
 export default function RootLayout({

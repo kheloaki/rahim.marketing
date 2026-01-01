@@ -4,7 +4,7 @@ import { ChevronDown, Send, MessageCircle, Zap, ShieldCheck, Share2, Headphones,
 
 /**
  * ContactForm Section
- * A pixel-perfect clone of the "Get Started with Uproas" section.
+ * A pixel-perfect clone of the "Get Started with Brand Rahim" section.
  * Features a side-by-side layout with contact details on the left and a business inquiry form on the right.
  */
 const ContactForm = () => {
@@ -17,7 +17,7 @@ const ContactForm = () => {
             CONTACT US
           </p>
           <h2 className="text-[48px] font-semibold leading-[1.2] mb-6">
-            Get Started with Uproas
+            Get Started with Brand Rahim
           </h2>
           <p className="text-[18px] text-white/60 max-w-[700px] mx-auto">
             Have questions or need help getting started? Our team is here to support you every step of the way. Reach out and we&apos;ll get back to you within 24 hours.
@@ -53,7 +53,7 @@ const ContactForm = () => {
                 Chat with us
               </a>
               <a 
-                href="https://t.me/uproas?text=Im%20interested%20in%20your%20services"
+                href="https://t.me/brandrahim?text=Im%20interested%20in%20your%20services"
                 className="flex items-center gap-2 bg-[#2B7FFF] hover:bg-[#2572e6] transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
               >
                 <img 

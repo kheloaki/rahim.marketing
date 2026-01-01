@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-12">
               <a 
-                href="https://t.me/uproas" 
+                href="https://t.me/brandrahim" 
                 className="flex items-center gap-2 bg-[#2B7FFF] hover:bg-[#2B7FFF]/90 transition-colors px-6 py-4 rounded-[8px] font-semibold text-white"
               >
                 <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">

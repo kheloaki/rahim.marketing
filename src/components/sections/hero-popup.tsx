@@ -184,7 +184,7 @@ const HeroPopup = () => {
               </div>
               <div>
                 <p className="text-[14px] font-bold text-white">Kamil Z.</p>
-                <p className="text-[12px] text-white/50">SaaS Founder & Uproas Client</p>
+                <p className="text-[12px] text-white/50">SaaS Founder & Brand Rahim Client</p>
               </div>
             </div>
           </div>

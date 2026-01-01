@@ -52,7 +52,7 @@ export default function RequestAccessPage() {
                     Chat with us
                   </a>
                   <a 
-                    href="https://t.me/uproas"
+                    href="https://t.me/brandrahim"
                     className="flex items-center gap-2 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] hover:opacity-90 transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
                   >
                     <Send className="w-5 h-5" />

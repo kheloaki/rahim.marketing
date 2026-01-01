@@ -85,7 +85,7 @@ export default function FeaturesGrid() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group relative flex flex-col p-8 rounded-[16px] bg-[#150d1f] border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d946a8]/30 hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
+              className="group relative flex flex-col p-8 rounded-[16px] bg-[#150d1f] border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-[#f97316]/30 hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
             >
               <div className="relative w-full h-[200px] mb-8 overflow-hidden rounded-[8px] flex items-center justify-center">
                 <div className="absolute inset-0 bg-radial-gradient from-[rgba(43,89,255,0.1)] to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition-opacity" />

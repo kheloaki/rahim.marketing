@@ -14,7 +14,7 @@
   --color-popover: #150d1f;
   --color-popover-foreground: #ffffff;
 
-  --color-primary: #d946a8;
+  --color-primary: #f97316;
   --color-primary-foreground: #ffffff;
 
   --color-secondary: #7b2d8e;
@@ -23,35 +23,35 @@
   --color-muted: rgba(255, 255, 255, 0.1);
   --color-muted-foreground: rgba(255, 255, 255, 0.7);
 
-  --color-accent: rgba(217, 70, 168, 0.15);
-  --color-accent-foreground: #d946a8;
+  --color-accent: rgba(249, 115, 22, 0.15);
+  --color-accent-foreground: #f97316;
 
   --color-destructive: #ef4444;
   --color-destructive-foreground: #ffffff;
 
   --color-border: rgba(255, 255, 255, 0.1);
   --color-input: rgba(255, 255, 255, 0.05);
-  --color-ring: #d946a8;
+  --color-ring: #f97316;
 
-  --color-chart-1: #d946a8;
+  --color-chart-1: #f97316;
   --color-chart-2: #7b2d8e;
-  --color-chart-3: #f97316;
-  --color-chart-4: #ec4899;
+  --color-chart-3: #ea580c;
+  --color-chart-4: #fb923c;
   --color-chart-5: #a855f7;
 
   --color-sidebar: #0a0612;
   --color-sidebar-foreground: rgba(255, 255, 255, 0.7);
-  --color-sidebar-primary: #d946a8;
+  --color-sidebar-primary: #f97316;
   --color-sidebar-primary-foreground: #ffffff;
   --color-sidebar-accent: #150d1f;
   --color-sidebar-accent-foreground: #ffffff;
   --color-sidebar-border: rgba(255, 255, 255, 0.1);
-  --color-sidebar-ring: #d946a8;
+  --color-sidebar-ring: #f97316;
 
   --color-success: #10b981;
   --color-purple: #7b2d8e;
-  --color-magenta: #d946a8;
-  --color-coral: #f97316;
+  --color-orange: #f97316;
+  --color-coral: #ea580c;
   --color-glass: rgba(21, 13, 31, 0.8);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -98,19 +98,19 @@
     --card-foreground: #ffffff;
     --popover: #150d1f;
     --popover-foreground: #ffffff;
-    --primary: #d946a8;
+    --primary: #f97316;
     --primary-foreground: #ffffff;
     --secondary: #7b2d8e;
     --secondary-foreground: #ffffff;
     --muted: rgba(255, 255, 255, 0.1);
     --muted-foreground: rgba(255, 255, 255, 0.7);
-    --accent: rgba(217, 70, 168, 0.15);
-    --accent-foreground: #d946a8;
+    --accent: rgba(249, 115, 22, 0.15);
+    --accent-foreground: #f97316;
     --destructive: #ef4444;
     --destructive-foreground: #ffffff;
     --border: rgba(255, 255, 255, 0.1);
     --input: rgba(255, 255, 255, 0.05);
-    --ring: #d946a8;
+    --ring: #f97316;
     --radius: 1rem;
   }
 
@@ -182,20 +182,20 @@
   }
 
   .glow-primary {
-    box-shadow: 0 0 40px 0 rgba(217, 70, 168, 0.2);
+    box-shadow: 0 0 40px 0 rgba(249, 115, 22, 0.2);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #7b2d8e 0%, #d946a8 50%, #f97316 100%);
+    background: linear-gradient(135deg, #7b2d8e 0%, #c026d3 30%, #f97316 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #7b2d8e 0%, #d946a8 50%, #f97316 100%);
+    background: linear-gradient(135deg, #7b2d8e 0%, #c026d3 30%, #f97316 100%);
   }
 
   .border-gradient {
-    border-image: linear-gradient(135deg, #7b2d8e 0%, #d946a8 50%, #f97316 100%) 1;
+    border-image: linear-gradient(135deg, #7b2d8e 0%, #c026d3 30%, #f97316 100%) 1;
   }
 }

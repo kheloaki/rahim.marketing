@@ -92,7 +92,7 @@ const HeroPopup = () => {
           </div>
 
           {/* Lead Gen Form */}
-          <div className="w-full bg-[#d946a8] rounded-[16px] p-6 md:p-8">
+          <div className="w-full bg-[#f97316] rounded-[16px] p-6 md:p-8">
             <h3 className="text-[20px] font-bold text-white mb-6">Enter Your Details to Get the Books Free</h3>
             
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -121,7 +121,7 @@ const HeroPopup = () => {
                   onClick={() => setPlatform('telegram')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'telegram' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
-                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'telegram' ? 'bg-[#d946a8]' : ''}`}>
+                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'telegram' ? 'bg-[#f97316]' : ''}`}>
                     {platform === 'telegram' && <div className="w-1 h-1 rounded-full bg-white" />}
                   </div>
                   Telegram
@@ -130,7 +130,7 @@ const HeroPopup = () => {
                   onClick={() => setPlatform('whatsapp')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'whatsapp' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
-                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'whatsapp' ? 'bg-[#d946a8]' : ''}`}>
+                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'whatsapp' ? 'bg-[#f97316]' : ''}`}>
                     {platform === 'whatsapp' && <div className="w-1 h-1 rounded-full bg-white" />}
                   </div>
                   Whatsapp

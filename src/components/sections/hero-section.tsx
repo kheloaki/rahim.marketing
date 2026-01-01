@@ -20,7 +20,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#000111] pt-24 pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0612] pt-24 pb-20">
       {/* Background Grid Pattern */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -29,9 +29,10 @@ const HeroSection = () => {
         }}
       />
       
-      {/* Radial Glow Effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2b59ff] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00ccff] opacity-[0.05] blur-[120px] rounded-full pointer-events-none" />
+      {/* Radial Glow Effects - Using logo colors */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#d946a8] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7b2d8e] opacity-[0.06] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#f97316] opacity-[0.05] blur-[100px] rounded-full pointer-events-none" />
       
       <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -40,9 +41,9 @@ const HeroSection = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
               <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-[#000111]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-green-500 to-teal-600 border-2 border-[#000111]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-orange-500 to-red-600 border-2 border-[#000111]" />
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#7b2d8e] to-[#d946a8] border-2 border-[#0a0612]" />
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#d946a8] to-[#f97316] border-2 border-[#0a0612]" />
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#f97316] to-[#7b2d8e] border-2 border-[#0a0612]" />
               </div>
               <span className="text-sm font-medium text-white/80">Trusted by <span className="text-white font-bold">1,750+</span> advertisers</span>
             </div>
@@ -50,7 +51,7 @@ const HeroSection = () => {
             {/* Main Headline */}
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
               Premium Agency Ad Accounts for{' '}
-              <span className="bg-gradient-to-r from-[#2b59ff] via-[#00ccff] to-[#2b59ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+              <span className="bg-gradient-to-r from-[#7b2d8e] via-[#d946a8] to-[#f97316] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
                 Unlimited Scaling
               </span>
             </h1>
@@ -64,7 +65,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-12">
               <a 
                 href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(43,89,255,0.4)] group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#7b2d8e] via-[#d946a8] to-[#f97316] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(217,70,168,0.4)] group"
               >
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -83,7 +84,7 @@ const HeroSection = () => {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={16} className="fill-[#00cc66] text-[#00cc66]" />
+                    <Star key={i} size={16} className="fill-[#d946a8] text-[#d946a8]" />
                   ))}
                 </div>
                 <span className="text-white font-bold text-sm">5.0</span>
@@ -102,10 +103,10 @@ const HeroSection = () => {
           {/* Right Column: Video/Visual Element */}
           <div className="relative">
             {/* Glowing border effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#2b59ff] via-[#00ccff] to-[#2b59ff] rounded-[1.5rem] opacity-20 blur-xl" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#7b2d8e] via-[#d946a8] to-[#f97316] rounded-[1.5rem] opacity-20 blur-xl" />
             
             <div 
-              className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#0a0d1a] shadow-2xl cursor-pointer group"
+              className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl cursor-pointer group"
               onClick={handlePlayVideo}
             >
               {/* Video Thumbnail/Player */}
@@ -123,7 +124,7 @@ const HeroSection = () => {
                 {/* Play Button Overlay */}
                 {!isPlaying && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
-                    <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-[0_0_40px_rgba(43,89,255,0.5)] scale-100 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-r from-[#7b2d8e] via-[#d946a8] to-[#f97316] flex items-center justify-center shadow-[0_0_40px_rgba(217,70,168,0.5)] scale-100 group-hover:scale-110 transition-transform duration-300">
                       <Play size={32} className="fill-white text-white ml-1" />
                     </div>
                   </div>
@@ -149,7 +150,7 @@ const HeroSection = () => {
                   </div>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} size={12} className="fill-[#00cc66] text-[#00cc66]" />
+                      <Star key={i} size={12} className="fill-[#d946a8] text-[#d946a8]" />
                     ))}
                   </div>
                 </div>
@@ -157,10 +158,10 @@ const HeroSection = () => {
             </div>
 
             {/* Floating Stats Cards */}
-            <div className="absolute -left-4 lg:-left-8 top-1/4 glass-panel px-4 py-3 rounded-xl border border-white/10 bg-[#0a0d1a]/90 backdrop-blur-md shadow-xl animate-float">
+            <div className="absolute -left-4 lg:-left-8 top-1/4 glass-panel px-4 py-3 rounded-xl border border-white/10 bg-[#150d1f]/90 backdrop-blur-md shadow-xl animate-float">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#00cc66]/20 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-[#00cc66]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#10b981]/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-[#10b981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 </div>
@@ -171,10 +172,10 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="absolute -right-4 lg:-right-8 bottom-1/4 glass-panel px-4 py-3 rounded-xl border border-white/10 bg-[#0a0d1a]/90 backdrop-blur-md shadow-xl animate-float-delayed">
+            <div className="absolute -right-4 lg:-right-8 bottom-1/4 glass-panel px-4 py-3 rounded-xl border border-white/10 bg-[#150d1f]/90 backdrop-blur-md shadow-xl animate-float-delayed">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#d946a8]/20 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-[#d946a8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>

@@ -4,19 +4,19 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
   return (
-    <div 
-      className="navbar7_component fixed top-0 left-0 right-0 z-[1000] flex h-[89px] items-center bg-[#000111] px-5 lg:px-10 border-b border-white/10"
+<div 
+        className="navbar7_component fixed top-0 left-0 right-0 z-[1000] flex h-[89px] items-center bg-[#0a0612] px-5 lg:px-10 border-b border-white/10"
       style={{ fontFamily: 'Inter, Arial, sans-serif' }}
     >
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between">
 {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <img 
-              src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857660d17fcbc0b572ffd2_uproas-logo-white.svg" 
-              alt="uproas logo white" 
-              className="h-8 w-auto"
-            />
-          </Link>
+<Link href="/" className="flex-shrink-0">
+              <img 
+                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Untitled-design-56-1767290636447.png?width=8000&height=8000&resize=contain" 
+                alt="rahim logo" 
+                className="h-10 w-auto"
+              />
+            </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center gap-8">
@@ -29,7 +29,7 @@ const Navigation = () => {
             
             {/* Mega Menu Dropdown */}
             <div className="invisible absolute left-1/2 top-full mt-2 w-screen max-w-[1200px] -translate-x-1/2 transform opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0d1a] shadow-2xl backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#150d1f] shadow-2xl backdrop-blur-xl">
                 <div className="grid grid-cols-1 p-8 lg:p-10">
                   <div className="mb-8">
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40">Agency ad accounts</h3>
@@ -129,7 +129,7 @@ const Navigation = () => {
         <div className="flex items-center gap-4">
           <a 
             href="https://t.me/uproas" 
-            className="hidden sm:flex items-center gap-2 rounded-lg bg-[#2b59ff] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(43,89,255,0.4)]"
+            className="hidden sm:flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#7b2d8e] via-[#d946a8] to-[#f97316] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(217,70,168,0.4)]"
           >
             <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" className="h-5 w-5" />
             Join Telegram
@@ -158,7 +158,7 @@ const DropdownLink = ({ href, icon, title, desc }: { href: string; icon: string;
       <img src={icon} alt="" className="h-full w-full object-contain" />
     </div>
     <div className="flex flex-col">
-      <span className="text-sm font-semibold text-white group-hover:text-[#2b59ff] transition-colors">{title}</span>
+      <span className="text-sm font-semibold text-white group-hover:text-[#d946a8] transition-colors">{title}</span>
       <span className="text-xs text-white/60 mt-1 line-clamp-1">{desc}</span>
     </div>
   </a>
@@ -172,7 +172,7 @@ const PartnerLink = ({ href, bg, title, desc }: { href: string; bg: string; titl
     <div className="relative z-10">
       <h4 className="text-sm font-bold text-white mb-2">{title}</h4>
       <p className="text-xs text-white/60 mb-3">{desc}</p>
-      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-[#2b59ff]">
+      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-[#d946a8]">
         Learn More <ArrowRight className="h-3 w-3" />
       </div>
     </div>

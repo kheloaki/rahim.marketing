@@ -57,7 +57,7 @@ const OtherServices = () => {
             <a
               key={index}
               href={service.link}
-              className="group relative flex flex-col p-8 bg-[#0a0d1a] border border-[rgba(255,255,255,0.1)] rounded-[16px] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
+              className="group relative flex flex-col p-8 bg-[#150d1f] border border-[rgba(255,255,255,0.1)] rounded-[16px] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
             >
               <div className="mb-6 w-12 h-12 flex items-center justify-center">
                 <Image
@@ -92,7 +92,7 @@ const OtherServices = () => {
           ))}
           
           {/* Support CTA Card (Visual Placeholder for even grid if needed, otherwise data maps) */}
-          <div className="hidden lg:flex flex-col p-8 bg-gradient-to-br from-[#2b59ff10] to-transparent border border-[rgba(43,89,255,0.2)] rounded-[16px] justify-center items-center text-center">
+          <div className="hidden lg:flex flex-col p-8 bg-gradient-to-br from-[#d946a810] to-transparent border border-[rgba(43,89,255,0.2)] rounded-[16px] justify-center items-center text-center">
              <div className="mb-4">
                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary opacity-60">
                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>

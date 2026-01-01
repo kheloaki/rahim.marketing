@@ -57,7 +57,7 @@ const PricingPackages = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 relative overflow-hidden bg-[#02040a]">
+    <section id="pricing" className="py-24 lg:py-32 relative overflow-hidden bg-[#0a0612]">
       {/* Background Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 blur-[150px] pointer-events-none rounded-full" />
       
@@ -88,7 +88,7 @@ const PricingPackages = () => {
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
                 plan.featured 
-                  ? 'border-primary/50 bg-primary/10 shadow-[0_0_40px_rgba(43,89,255,0.15)] md:-mt-4 md:mb-4' 
+                  ? 'border-primary/50 bg-primary/10 shadow-[0_0_40px_rgba(217,70,168,0.15)] md:-mt-4 md:mb-4' 
                   : 'border-white/10 bg-white/[0.02] hover:border-white/20'
               }`}
             >

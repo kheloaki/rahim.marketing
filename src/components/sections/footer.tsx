@@ -4,7 +4,7 @@ import { Mail, ArrowRight, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#02040a] text-white pt-20 pb-10 border-t border-white/10 font-sans">
+    <footer className="bg-[#0a0612] text-white pt-20 pb-10 border-t border-white/10 font-sans">
       <div className="container mx-auto px-5 lg:px-10 max-w-[1280px]">
         {/* Top Section: Newsletter and Partner Badges */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16 px-1">
@@ -144,7 +144,7 @@ const Footer = () => {
         <div className="pt-10 border-t border-white/10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 px-1">
           <div className="max-w-md">
             <div className="flex items-center gap-2 mb-4">
-              <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857660d17fcbc0b572ffd2_uproas-logo-white.svg" alt="Uproas" className="h-6" />
+              <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Untitled-design-56-1767290636447.png?width=8000&height=8000&resize=contain" alt="Rahim" className="h-8" />
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
               Uproas is the leading provider of premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.
@@ -166,7 +166,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="text-[12px] text-white/50 font-medium">
-              © 2025 Uproas — All rights owned by <span className="text-white opacity-100">Uproas</span> & designed by <span className="text-white opacity-100">Webivera</span>.
+              © 2025 Rahim — All rights owned by <span className="text-white opacity-100">Rahim</span>.
             </div>
           </div>
         </div>

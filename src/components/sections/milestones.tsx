@@ -16,7 +16,7 @@ const Milestones = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-[#000111]">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-[#0a0612]">
       <div className="container relative z-10 px-5 md:px-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
           

@@ -69,7 +69,7 @@ const SuccessStories = () => {
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={16} className="fill-[#00cc66] text-[#00cc66]" />
+                <Star key={i} size={16} className="fill-[#10b981] text-[#10b981]" />
               ))}
             </div>
             <span className="text-white font-semibold">5.0</span>
@@ -82,11 +82,11 @@ const SuccessStories = () => {
 
         {/* Featured Video Testimonial Card */}
         <div className="max-w-[1000px] mx-auto mb-20">
-          <div className="glass-panel rounded-[1.25rem] overflow-hidden grid lg:grid-cols-[1.2fr_1fr] bg-[#0a0d1a]/80 border border-white/10 glow-blue">
+          <div className="glass-panel rounded-[1.25rem] overflow-hidden grid lg:grid-cols-[1.2fr_1fr] bg-[#150d1f]/80 border border-white/10 glow-blue">
             <div className="p-8 lg:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-6">
                  <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20 bg-white/5 flex items-center justify-center text-white/40">
-                    <Star size={24} className="fill-[#00cc66] text-[#00cc66]" />
+                    <Star size={24} className="fill-[#10b981] text-[#10b981]" />
                  </div>
                  <div>
                     <div className="text-white font-bold text-xl">Kamil Z.</div>
@@ -139,8 +139,8 @@ const SuccessStories = () => {
                 key={index} 
                 className="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
               >
-                <div className="h-full glass-panel p-8 rounded-2xl bg-[#0a0d1a] border border-white/10 flex flex-col hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
-                  <div className="flex items-center gap-1 mb-4 text-[#00cc66]">
+                <div className="h-full glass-panel p-8 rounded-2xl bg-[#150d1f] border border-white/10 flex flex-col hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
+                  <div className="flex items-center gap-1 mb-4 text-[#10b981]">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} size={14} className="fill-current" />
                     ))}

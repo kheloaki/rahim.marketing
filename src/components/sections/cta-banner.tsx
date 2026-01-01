@@ -8,7 +8,7 @@ const CTABanner = () => {
   return (
     <section className="py-[120px] lg:py-[160px] px-5 lg:px-10 flex justify-center items-center bg-[#02040a]">
       <div className="container max-w-[1280px]">
-        <div className="relative w-full rounded-[20px] overflow-hidden min-h-[400px] lg:min-h-[480px] flex flex-col items-center justify-center text-center p-8 lg:p-16 border border-white/10 shadow-[0_0_40px_0_rgba(43,89,255,0.15)] bg-[#0a0d1a]">
+        <div className="relative w-full rounded-[20px] overflow-hidden min-h-[400px] lg:min-h-[480px] flex flex-col items-center justify-center text-center p-8 lg:p-16 border border-white/10 shadow-[0_0_40px_0_rgba(43,89,255,0.15)] bg-[#150d1f]">
           
           {/* Background Image Layer */}
           <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
@@ -20,7 +20,7 @@ const CTABanner = () => {
               priority
             />
             {/* Gradient Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0d1a]/60 via-[#0a0d1a]/20 to-[#0a0d1a]/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#150d1f]/60 via-[#150d1f]/20 to-[#150d1f]/60" />
           </div>
 
           {/* Content Layer */}
@@ -48,7 +48,7 @@ const CTABanner = () => {
           </div>
 
           {/* Subtle Glow Effect */}
-          <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] bg-[#2b59ff] opacity-10 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-[80%] h-[80%] bg-[#d946a8] opacity-10 blur-[120px] rounded-full pointer-events-none" />
         </div>
       </div>
     </section>

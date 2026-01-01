@@ -15,7 +15,7 @@ const HeroPopup = () => {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="relative w-full max-w-[800px] bg-[#0a0d1a] border border-white/10 rounded-[20px] glow-blue overflow-hidden animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-[800px] bg-[#150d1f] border border-white/10 rounded-[20px] glow-blue overflow-hidden animate-in fade-in zoom-in duration-300">
         
         {/* Close Button Header */}
         <div className="flex justify-end p-6 pb-0">
@@ -92,7 +92,7 @@ const HeroPopup = () => {
           </div>
 
           {/* Lead Gen Form */}
-          <div className="w-full bg-[#2b59ff] rounded-[16px] p-6 md:p-8">
+          <div className="w-full bg-[#d946a8] rounded-[16px] p-6 md:p-8">
             <h3 className="text-[20px] font-bold text-white mb-6">Enter Your Details to Get the Books Free</h3>
             
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -102,7 +102,7 @@ const HeroPopup = () => {
                   <input 
                     type="text" 
                     placeholder="John Doe" 
-                    className="w-full bg-[#0a0d1a]/40 border border-white/10 rounded-[8px] h-[52px] px-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
+                    className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[52px] px-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                   />
                 </div>
                 <div className="space-y-2">
@@ -110,27 +110,27 @@ const HeroPopup = () => {
                   <input 
                     type="email" 
                     placeholder="johndoe32@gmail.com" 
-                    className="w-full bg-[#0a0d1a]/40 border border-white/10 rounded-[8px] h-[52px] px-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
+                    className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[52px] px-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                   />
                 </div>
               </div>
 
               {/* Platform Selection */}
-              <div className="flex bg-[#0a0d1a]/40 p-1.5 rounded-[8px] border border-white/10 w-fit">
+              <div className="flex bg-[#150d1f]/40 p-1.5 rounded-[8px] border border-white/10 w-fit">
                 <button 
                   onClick={() => setPlatform('telegram')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'telegram' ? 'bg-[#0a0d1a] text-white' : 'text-white/60 hover:text-white'}`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'telegram' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
-                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'telegram' ? 'bg-[#2b59ff]' : ''}`}>
+                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'telegram' ? 'bg-[#d946a8]' : ''}`}>
                     {platform === 'telegram' && <div className="w-1 h-1 rounded-full bg-white" />}
                   </div>
                   Telegram
                 </button>
                 <button 
                   onClick={() => setPlatform('whatsapp')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'whatsapp' ? 'bg-[#0a0d1a] text-white' : 'text-white/60 hover:text-white'}`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-[6px] text-[14px] font-semibold transition-all ${platform === 'whatsapp' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
-                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'whatsapp' ? 'bg-[#2b59ff]' : ''}`}>
+                  <div className={`w-3 h-3 rounded-full border border-white/20 flex items-center justify-center ${platform === 'whatsapp' ? 'bg-[#d946a8]' : ''}`}>
                     {platform === 'whatsapp' && <div className="w-1 h-1 rounded-full bg-white" />}
                   </div>
                   Whatsapp
@@ -149,7 +149,7 @@ const HeroPopup = () => {
                 <input 
                   type="text" 
                   placeholder="johndoe" 
-                  className="w-full bg-[#0a0d1a]/40 border border-white/10 rounded-[8px] h-[52px] pl-[56px] pr-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
+                  className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[52px] pl-[56px] pr-4 text-white focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                 />
               </div>
 
@@ -164,7 +164,7 @@ const HeroPopup = () => {
           <div className="w-full border-t border-white/10 mt-10 pt-8">
             <div className="flex items-center gap-1 mb-4">
               {[1, 2, 3, 4, 5].map((s) => (
-                <Star key={s} className="w-4 h-4 fill-[#00cc66] text-[#00cc66]" />
+                <Star key={s} className="w-4 h-4 fill-[#10b981] text-[#10b981]" />
               ))}
               <span className="text-[14px] font-bold ml-2 text-white">5.0</span>
             </div>

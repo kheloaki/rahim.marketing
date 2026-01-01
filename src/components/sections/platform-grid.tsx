@@ -67,7 +67,7 @@ const PlatformGrid = () => {
               <a
                 key={index}
                 href={platform.link}
-                className="group flex flex-col bg-[#0a0d1a] border border-white/10 rounded-[16px] p-8 transition-all duration-300 hover:translate-y-[-5px] hover:border-white/20 hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
+                className="group flex flex-col bg-[#150d1f] border border-white/10 rounded-[16px] p-8 transition-all duration-300 hover:translate-y-[-5px] hover:border-white/20 hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
               >
                 <div className="mb-8 w-[48px] h-[48px] flex items-center justify-center relative">
                   <Image

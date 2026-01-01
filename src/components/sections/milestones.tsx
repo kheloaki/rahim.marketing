@@ -30,7 +30,7 @@ const Milestones = () => {
               Get Rewarded for Your Ad Spend
             </h2>
             
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground opacity-90">
+            <p className="mb-8 text-lg leading-relaxed text-white/70">
               Join our Milestone Program and earn exclusive trophies, curated mystery gifts, and leaderboard status as you scale your monthly ad spend.
             </p>
             
@@ -129,7 +129,7 @@ const Milestones = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-sm font-semibold text-muted-foreground uppercase tracking-widest leading-none mb-1">Total Scale</div>
+                  <div className="text-sm font-semibold text-white/70 uppercase tracking-widest leading-none mb-1">Total Scale</div>
                   <div className="text-2xl font-bold text-white">$4,290,000+</div>
                 </div>
              </div>

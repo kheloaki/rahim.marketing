@@ -75,7 +75,7 @@ const SuccessStories = () => {
             <span className="text-white font-semibold">5.0</span>
           </div>
           <h2 className="text-[3rem] font-bold text-white mb-6">Success Stories from Our Clients</h2>
-          <p className="text-[1.125rem] text-white/60 max-w-[800px] mx-auto">
+          <p className="text-[1.125rem] text-white/70 max-w-[800px] mx-auto">
             Trusted by 1,750+ media buyers, affiliates, and ecommerce brands spending $50K–$500K+/month
           </p>
         </div>
@@ -146,7 +146,7 @@ const SuccessStories = () => {
                     ))}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-4 line-clamp-2">{item.title}</h4>
-                  <p className="text-white/60 text-lg leading-relaxed mb-8 flex-grow">
+                  <p className="text-white/70 text-lg leading-relaxed mb-8 flex-grow">
                     {item.content}
                   </p>
                   <div className="pt-6 border-t border-white/10">

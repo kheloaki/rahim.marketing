@@ -56,7 +56,7 @@ const PlatformGrid = () => {
             <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.1] text-white tracking-[-0.02em] mb-6">
               Limitless Scaling with Agency Ad Accounts Across All Platforms
             </h2>
-            <p className="text-[16px] md:text-[18px] text-white/60 leading-[1.6] max-w-[800px] mx-auto">
+            <p className="text-[16px] md:text-[18px] text-white/70 leading-[1.6] max-w-[800px] mx-auto">
               We work with all major social media platforms to provide enterprise-tier solutions for businesses of all sizes. Forget about advertising limitations, restrictions and unsustainable campaigns.
             </p>
           </div>
@@ -81,7 +81,7 @@ const PlatformGrid = () => {
                 <h3 className="text-[20px] md:text-[24px] font-semibold text-white mb-4">
                   {platform.title}
                 </h3>
-                <p className="text-[15px] md:text-[16px] text-white/60 leading-[1.6] mb-8 flex-grow">
+                <p className="text-[15px] md:text-[16px] text-white/70 leading-[1.6] mb-8 flex-grow">
                   {platform.description}
                 </p>
                 <div className="mt-auto flex items-center text-primary text-[14px] font-semibold uppercase tracking-wider group-hover:text-primary/80 transition-colors">

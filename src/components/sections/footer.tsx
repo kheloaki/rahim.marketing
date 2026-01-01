@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 mb-16 px-1">
           <div className="max-w-md">
             <h3 className="text-xl font-bold mb-3 tracking-tight">Subscribe to our newsletter</h3>
-            <p className="text-sm opacity-60 leading-relaxed">
+            <p className="text-sm text-white/70 leading-relaxed">
               Get a summary of what we&apos;ve shipped during the last month, behind the scenes updates, and team picks.
             </p>
           </div>
@@ -86,45 +86,45 @@ const Footer = () => {
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-widest mb-6 opacity-90">Agency Ad Accounts</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Facebook Ad Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Google Ad Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">TikTok Ad Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Bing Ad Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Taboola Ad Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Outbrain Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Facebook Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Google Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">TikTok Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Bing Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Taboola Ad Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Outbrain Ad Accounts</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-widest mb-6 opacity-90">Assets</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Facebook Accounts</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Business Managers</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Facebook Pages</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Facebook Accounts</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Business Managers</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Facebook Pages</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-widest mb-6 opacity-90">Other Services</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Facebook Feedback Score</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Account Health Assessment</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Unban Service</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Facebook Feedback Score</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Account Health Assessment</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Unban Service</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-widest mb-6 opacity-90">Resources</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Partners</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Reviews</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Blog</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Milestones</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Partners</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Reviews</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Milestones</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[12px] font-bold uppercase tracking-widest mb-6 opacity-90">Partner Services</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Proxies</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Payment Processor</a></li>
-              <li><a href="#" className="text-sm opacity-60 hover:opacity-100 transition-opacity">Anti-Detect Browser</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Proxies</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Payment Processor</a></li>
+              <li><a href="#" className="text-sm text-white/70 hover:text-white transition-colors">Anti-Detect Browser</a></li>
             </ul>
           </div>
           <div>
@@ -146,16 +146,16 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857660d17fcbc0b572ffd2_uproas-logo-white.svg" alt="Uproas" className="h-6" />
             </div>
-            <p className="text-sm opacity-60 leading-relaxed">
+            <p className="text-sm text-white/70 leading-relaxed">
               Uproas is the leading provider of premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.
             </p>
           </div>
 
           <div className="flex flex-col items-start lg:items-end gap-6">
-            <div className="flex flex-wrap items-center gap-6 text-[12px] opacity-60 font-medium tracking-tight">
-              <a href="#" className="hover:opacity-100 transition-opacity">Purchase Policy</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Service Agreement</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Privacy Policy</a>
+            <div className="flex flex-wrap items-center gap-6 text-[12px] font-medium tracking-tight">
+              <a href="#" className="text-white/70 hover:text-white transition-colors">Purchase Policy</a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors">Service Agreement</a>
+              <a href="#" className="text-white/70 hover:text-white transition-colors">Privacy Policy</a>
               <div className="flex items-center gap-2 ml-2">
                 <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba721b0dc38ed805629c4_visa.svg" alt="Visa" className="h-3.5 grayscale opacity-70" />
                 <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba721606cf64731872df0_mastercard.svg" alt="Mastercard" className="h-3.5 grayscale opacity-70" />
@@ -165,7 +165,7 @@ const Footer = () => {
                 <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba721113b2c9535805f1d_bitcoin.svg" alt="Bitcoin" className="h-3.5 grayscale opacity-70" />
               </div>
             </div>
-            <div className="text-[12px] opacity-40 font-medium">
+            <div className="text-[12px] text-white/50 font-medium">
               © 2025 Uproas — All rights owned by <span className="text-white opacity-100">Uproas</span> & designed by <span className="text-white opacity-100">Webivera</span>.
             </div>
           </div>

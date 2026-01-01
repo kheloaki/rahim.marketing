@@ -43,10 +43,10 @@ const OtherServices = () => {
           <div className="text-primary font-semibold text-sm tracking-wider uppercase mb-4">
             Services
           </div>
-          <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.1] mb-6 tracking-tight">
+          <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.1] mb-6 tracking-tight text-white">
             Other Services
           </h2>
-          <p className="text-muted-foreground text-[18px] leading-[1.6]">
+          <p className="text-white/70 text-[18px] leading-[1.6]">
             Additional tailored solutions designed to support your business needs beyond core Facebook offerings.
           </p>
         </div>
@@ -68,10 +68,10 @@ const OtherServices = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-[24px] font-bold mb-4 leading-[1.2]">
+              <h3 className="text-[24px] font-bold mb-4 leading-[1.2] text-white">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-[16px] leading-[1.6]">
+              <p className="text-white/70 text-[16px] leading-[1.6]">
                 {service.description}
               </p>
               
@@ -98,7 +98,7 @@ const OtherServices = () => {
                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                </svg>
              </div>
-             <p className="text-muted-foreground text-sm font-medium mb-4">Need help with something else?</p>
+             <p className="text-white/70 text-sm font-medium mb-4">Need help with something else?</p>
              <a href="/contact" className="text-primary font-bold hover:underline">Contact Support →</a>
           </div>
         </div>

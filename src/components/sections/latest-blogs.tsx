@@ -87,7 +87,7 @@ export default function LatestBlogs() {
                 <h3 className="text-[24px] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#2b59ff] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-[16px] leading-[1.6] text-[rgba(255,255,255,0.6)] line-clamp-3">
+                <p className="text-[16px] leading-[1.6] text-white/70 line-clamp-3">
                   {post.description}
                 </p>
               </div>

@@ -73,7 +73,7 @@ const PricingPackages = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
             Get Your Agency Account Today!
           </h2>
-          <p className="text-lg text-white/60 mb-2">
+          <p className="text-lg text-white/70 mb-2">
             <span className="text-red-500 font-bold">Only 9/20 Spots left</span> | We only open access a few times per year to limited amount of clients to maintain the highest quality accounts & provide hands-on support.
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
@@ -107,7 +107,7 @@ const PricingPackages = () => {
                     <span className="text-4xl font-bold text-white">{plan.price}</span>
                     <span className="text-white/40 text-sm">{plan.period}</span>
                   </div>
-                  <p className="text-sm text-white/60 leading-relaxed">
+                  <p className="text-sm text-white/70 leading-relaxed">
                     {plan.description}
                   </p>
                 </div>

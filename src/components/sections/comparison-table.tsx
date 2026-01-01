@@ -63,8 +63,8 @@ const ComparisonTable = () => {
 
       <div className="container mx-auto px-5 lg:px-10 max-w-[1280px]">
         <div className="text-center mb-16">
-          <h2 className="text-[3rem] font-bold leading-[1.1] mb-6 tracking-tight">Comparison</h2>
-          <p className="text-[1.125rem] text-white/60 max-w-[700px] mx-auto">
+          <h2 className="text-[3rem] font-bold leading-[1.1] mb-6 tracking-tight text-white">Comparison</h2>
+          <p className="text-[1.125rem] text-white/70 max-w-[700px] mx-auto">
             See how Uproas agency services beat all other service providers in stability, scale, and support.
           </p>
         </div>

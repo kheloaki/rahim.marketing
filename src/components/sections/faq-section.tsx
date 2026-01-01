@@ -59,7 +59,7 @@ const FAQSection = () => {
           <h2 className="text-[2.5rem] md:text-[3rem] font-bold leading-[1.1] tracking-tight text-white mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-white/60 max-w-[600px] mx-auto">
+          <p className="text-lg text-white/70 max-w-[600px] mx-auto">
             Everything you need to know about our agency ad accounts and services.
           </p>
         </div>
@@ -103,7 +103,7 @@ const FAQSection = () => {
                 }`}
               >
                 <div className="px-6 pb-6">
-                  <p className="text-white/60 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -114,7 +114,7 @@ const FAQSection = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-white/60 mb-4">Still have questions?</p>
+          <p className="text-white/70 mb-4">Still have questions?</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://t.me/uproas"

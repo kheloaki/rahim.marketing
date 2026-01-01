@@ -72,10 +72,10 @@ export default function FeaturesGrid() {
           <div className="inline-flex items-center px-3 py-1 rounded-full border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] text-[rgb(43,89,255)] text-sm font-semibold tracking-wide uppercase mb-4">
             Features
           </div>
-          <h2 className="text-[32px] md:text-[48px] font-bold leading-[1.1] mb-6 tracking-[-0.02em]">
+          <h2 className="text-[32px] md:text-[48px] font-bold leading-[1.1] mb-6 tracking-[-0.02em] text-white">
             Break Free from Spending Limits,<br className="hidden md:block" /> Rejections, and Bans
           </h2>
-          <p className="max-w-[760px] text-[18px] md:text-[20px] text-[rgba(255,255,255,0.6)] leading-relaxed">
+          <p className="max-w-[760px] text-[18px] md:text-[20px] text-white/70 leading-relaxed">
             We work closely with ad platform reps to ensure you, as an entrepreneur, can run your ads smoothly. 
             Scale without limits, get higher ROI, and run multiple campaigns without any risks!
           </p>
@@ -101,7 +101,7 @@ export default function FeaturesGrid() {
                 <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] mb-3 text-white">
                   {feature.title}
                 </h3>
-                <p className="text-[15px] md:text-[16px] text-[rgba(255,255,255,0.6)] leading-normal">
+                <p className="text-[15px] md:text-[16px] text-white/70 leading-normal">
                   {feature.description}
                 </p>
               </div>

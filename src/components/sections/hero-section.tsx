@@ -56,7 +56,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-[540px] mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-[540px] mx-auto lg:mx-0">
               Stop losing accounts. Scale your ads with whitelisted Meta, Google & TikTok agency accounts. Get unlimited spend, instant replacements, and dedicated rep access.
             </p>
 

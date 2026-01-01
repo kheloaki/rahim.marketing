@@ -35,8 +35,8 @@
 
   --color-chart-1: #E44F71;
   --color-chart-2: #BC2C7B;
-  --color-chart-3: #ea580c;
-  --color-chart-4: #fb923c;
+  --color-chart-3: #E44F71;
+  --color-chart-4: #BC2C7B;
   --color-chart-5: #a855f7;
 
   --color-sidebar: #0a0612;
@@ -51,7 +51,7 @@
   --color-success: #10b981;
   --color-purple: #BC2C7B;
   --color-orange: #E44F71;
-  --color-coral: #ea580c;
+  --color-coral: #BC2C7B;
   --color-glass: rgba(21, 13, 31, 0.8);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;

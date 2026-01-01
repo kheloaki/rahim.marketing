@@ -13,7 +13,7 @@ const testimonials = [
   {
     rating: 5,
     title: "From 3 bans in 6 months to $150K/month",
-    quote: "“Got banned 3 times in half a year. Since moving to Brand Rahim, zero issues. Before, every campaign felt like gambling. Now accounts have been solid for 4 months straight and we’ve scaled past $150K/month without a single ban.”",
+    quote: "“Got banned 3 times in half a year. Since moving to Rahim Marketing, zero issues. Before, every campaign felt like gambling. Now accounts have been solid for 4 months straight and we’ve scaled past $150K/month without a single ban.”",
     author: "DTC Health Offer Owner",
     avatar: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/668ba4589d8137353f868ae7_avatar-1.webp",
     name: "Travis P."

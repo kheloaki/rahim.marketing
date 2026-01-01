@@ -9,8 +9,8 @@ const faqData = [
     answer: "An Agency Ad Account is a premium advertising account provided through certified marketing agencies with direct platform partnerships. These accounts offer higher trust scores, unlimited spending potential, faster ad approvals, and dedicated support from platform representatives."
   },
   {
-    question: "How is Brand Rahim different from other providers?",
-    answer: "Brand Rahim provides whitelisted agency accounts with direct Meta, Google, and TikTok rep access. We offer instant replacements if accounts get restricted, up to 1% cashback on ad spend, and 24/7 dedicated support. Our 0.2% ban rate is the lowest in the industry."
+    question: "How is Rahim Marketing different from other providers?",
+    answer: "Rahim Marketing provides whitelisted agency accounts with direct Meta, Google, and TikTok rep access. We offer instant replacements if accounts get restricted, up to 1% cashback on ad spend, and 24/7 dedicated support. Our 0.2% ban rate is the lowest in the industry."
   },
   {
     question: "What platforms do you support?",

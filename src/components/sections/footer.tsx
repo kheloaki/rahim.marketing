@@ -56,11 +56,11 @@ const Footer = () => {
           <div className="lg:col-span-1 flex flex-col space-y-6">
             <a href="/" className="inline-block">
               <span className="text-2xl font-bold bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                Brand Rahim
+                Rahim Marketing
               </span>
             </a>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Brand Rahim provides premium whitelisted advertising infrastructure for serious media buyers and brands.
+              Rahim Marketing provides premium whitelisted advertising infrastructure for serious media buyers and brands.
             </p>
             <div className="flex space-x-4 items-center">
               <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full">
@@ -97,7 +97,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Brand Rahim. All rights reserved.
+            © {new Date().getFullYear()} Rahim Marketing. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">

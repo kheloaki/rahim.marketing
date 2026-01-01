@@ -79,9 +79,9 @@ const GuaranteesSection = () => {
                 {/* Bottom Signature Section */}
                 <div className="mt-4 pt-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
                   <div className="max-w-[440px]">
-                    <h3 className="text-[18px] font-semibold mb-3">Brand Rahim Satisfaction Guarantee</h3>
+                    <h3 className="text-[18px] font-semibold mb-3">Rahim Marketing Satisfaction Guarantee</h3>
                     <p className="text-[14px] text-white/60 leading-relaxed mb-4">
-                      Brand Rahim guarantees access to premium ad accounts with direct access to a professional support team.
+                      Rahim Marketing guarantees access to premium ad accounts with direct access to a professional support team.
                     </p>
                     <p className="text-[14px] text-white/60 leading-relaxed">
                       Chosen by advertisers who plan to run long term. Focus on the important parts of the business instead of dealing with daily ad account headaches.

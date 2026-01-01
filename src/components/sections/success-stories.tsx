@@ -12,7 +12,7 @@ const testimonials = [
   {
     rating: 5.0,
     title: "From 3 bans in 6 months to $150K/month",
-    content: "“Got banned 3 times in half a year. Since moving to Brand Rahim, zero issues. Before, every campaign felt like gambling. Now accounts have been solid for 4 months straight and we’ve scaled past $150K/month without a single ban.”",
+    content: "“Got banned 3 times in half a year. Since moving to Rahim Marketing, zero issues. Before, every campaign felt like gambling. Now accounts have been solid for 4 months straight and we’ve scaled past $150K/month without a single ban.”",
     author: "DTC Health Offer Owner",
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
   {
     rating: 5.0,
     title: "Finally found accounts that don’t die",
-    content: "“I’ve tried at least five providers before. None of them lasted more than a few weeks. With Brand Rahim, it’s the first time I’ve had both stable accounts and actual support. Even Meta reps answer now. Total game-changer.”",
+    content: "“I’ve tried at least five providers before. None of them lasted more than a few weeks. With Rahim Marketing, it’s the first time I’ve had both stable accounts and actual support. Even Meta reps answer now. Total game-changer.”",
     author: "Lead Gen Affiliate",
   }
 ];
@@ -90,7 +90,7 @@ const SuccessStories = () => {
                  </div>
                  <div>
                     <div className="text-white font-bold text-xl">Kamil Z.</div>
-                    <div className="text-white/40 text-sm">SaaS Founder & Brand Rahim Client</div>
+                    <div className="text-white/40 text-sm">SaaS Founder & Rahim Marketing Client</div>
                  </div>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 italic">“These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands.”</h3>

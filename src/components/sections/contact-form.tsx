@@ -4,7 +4,7 @@ import { ChevronDown, Send, MessageCircle, Zap, ShieldCheck, Share2, Headphones,
 
 /**
  * ContactForm Section
- * A pixel-perfect clone of the "Get Started with Brand Rahim" section.
+ * A pixel-perfect clone of the "Get Started with Rahim Marketing" section.
  * Features a side-by-side layout with contact details on the left and a business inquiry form on the right.
  */
 const ContactForm = () => {
@@ -17,7 +17,7 @@ const ContactForm = () => {
             CONTACT US
           </p>
           <h2 className="text-[48px] font-semibold leading-[1.2] mb-6">
-            Get Started with Brand Rahim
+            Get Started with Rahim Marketing
           </h2>
           <p className="text-[18px] text-white/60 max-w-[700px] mx-auto">
             Have questions or need help getting started? Our team is here to support you every step of the way. Reach out and we&apos;ll get back to you within 24 hours.

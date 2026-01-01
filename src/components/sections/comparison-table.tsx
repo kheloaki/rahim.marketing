@@ -94,7 +94,7 @@ const ComparisonTable = () => {
             COMPARISON
           </span>
           <h2 className="max-w-4xl mx-auto text-white">
-            See how Brand Rahim Beats Regular Ad Accounts Every Single Time
+            See how Rahim Marketing Beats Regular Ad Accounts Every Single Time
           </h2>
         </div>
 
@@ -108,7 +108,7 @@ const ComparisonTable = () => {
               <div className="col-span-3 flex flex-col items-center justify-center border-x border-white/10 h-full py-4 relative">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#BC2C7B] to-[#E44F71]"></div>
                 <span className="text-xl font-bold bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                  Brand Rahim
+                  Rahim Marketing
                 </span>
               </div>
               <div className="col-span-3 flex items-center justify-center text-sm font-semibold opacity-60">

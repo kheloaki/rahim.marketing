@@ -4,7 +4,7 @@ import { ChevronDown, Send, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /**
- * Navbar component for Brand Rahim.
+ * Navbar component for Rahim Marketing.
  * Features:
  * - Sticky glassmorphism header
  * - Mega-menus for Agency Accounts, Other Services, and Resources
@@ -244,7 +244,7 @@ const ContactBottomBar = () => {
   return (
     <div className="bg-white/[0.02] border-t border-white/10 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div className="flex flex-col">
-        <span className="text-white font-semibold text-sm">Contact Brand Rahim</span>
+        <span className="text-white font-semibold text-sm">Contact Rahim Marketing</span>
         <span className="text-[rgba(255,255,255,0.6)] text-xs mt-1">
           Message us on telegram or Whatsapp for real-time support.
         </span>

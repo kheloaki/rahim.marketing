@@ -76,7 +76,7 @@ const Navigation = () => {
                     {/* Bottom Contact Bar */}
                     <div className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.02] p-6">
                       <div className="max-w-md">
-                        <h4 className="text-sm font-semibold text-white">Contact Brand Rahim</h4>
+                        <h4 className="text-sm font-semibold text-white">Contact Rahim Marketing</h4>
                         <p className="mt-1 text-sm text-white/60">Message us on telegram or Whatsapp for real-time time support from industry specialists.</p>
                       </div>
                       <div className="flex gap-4">

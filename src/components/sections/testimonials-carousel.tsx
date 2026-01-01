@@ -38,7 +38,7 @@ const testimonials = [
   {
     rating: '5.0',
     title: 'Scaling is not a problem anymore',
-    content: '"Scaling speed was always a bottleneck for us. With Brand Rahim, we went from initial testing to spending $20k/day in less than two weeks. Their instant approvals and unlimited spend changed everything."',
+    content: '"Scaling speed was always a bottleneck for us. With Rahim Marketing, we went from initial testing to spending $20k/day in less than two weeks. Their instant approvals and unlimited spend changed everything."',
     author: 'Dan O.',
     role: 'E-commerce Brand CEO',
     avatar: 'https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba395ed9ccfde944baa79_moropay.avif'
@@ -46,7 +46,7 @@ const testimonials = [
   {
     rating: '5.0',
     title: 'Pixel data safehouse. LITERALLY!',
-    content: '"Losing pixel data from bans ruined our business multiple times. With Brand Rahim’ accounts, we\'ve kept our pixel intact for over a year. This alone is the very best reason why anyone running ads on Facebook should make a switch."',
+    content: '"Losing pixel data from bans ruined our business multiple times. With Rahim Marketing’ accounts, we\'ve kept our pixel intact for over a year. This alone is the very best reason why anyone running ads on Facebook should make a switch."',
     author: 'Chloe S.',
     role: 'Dropshipping Marketer',
     avatar: 'https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba395ed9ccfde944baa79_moropay.avif'

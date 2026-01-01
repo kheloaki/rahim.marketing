@@ -14,7 +14,7 @@ const Milestones = () => {
             {/* Left Header Content */}
             <div className="w-full lg:w-1/2">
               <span className="text-[#2B7FFF] font-semibold text-[14px] uppercase tracking-wider mb-4 block">
-                Brand Rahim Milestone Clubs
+                Rahim Marketing Milestone Clubs
               </span>
               <h2 className="text-[36px] lg:text-[48px] font-bold leading-[1.1] mb-6">
                 Get Rewarded for Your Ad Spend

@@ -4,11 +4,30 @@ import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import { Clock, Bell, ArrowLeft, Send, MessageCircle, Sparkles, Rocket, Zap } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 interface ComingSoonProps {
   title: string;
   description?: string;
 }
+
+const features = [
+  {
+    icon: Zap,
+    label: "Fast Launch",
+  },
+  {
+    icon: Sparkles,
+    label: "Premium Quality",
+  },
+  {
+    icon: Bell,
+    label: "Get Notified",
+  },
+];
 
 export default function ComingSoon({ title, description }: ComingSoonProps) {
   return (
@@ -37,10 +56,13 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E44F71]/30 bg-gradient-to-r from-[#E44F71]/10 to-[#BC2C7B]/10 text-[#E44F71] text-sm font-semibold tracking-wide uppercase mb-8">
+            <Badge 
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#E44F71]/30 bg-gradient-to-r from-[#E44F71]/10 to-[#BC2C7B]/10 text-[#E44F71] text-sm font-semibold tracking-wide uppercase mb-8"
+              variant="outline"
+            >
               <Clock className="w-4 h-4" />
               Coming Soon
-            </div>
+            </Badge>
 
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-white mb-6">
               {title}
@@ -51,54 +73,70 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
             </p>
 
             <div className="flex items-center justify-center gap-6 mb-10">
-              <div className="flex flex-col items-center p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                <Zap className="w-6 h-6 text-[#E44F71] mb-2" />
-                <span className="text-white/80 text-sm font-medium">Fast Launch</span>
-              </div>
-              <div className="flex flex-col items-center p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                <Sparkles className="w-6 h-6 text-[#E44F71] mb-2" />
-                <span className="text-white/80 text-sm font-medium">Premium Quality</span>
-              </div>
-              <div className="flex flex-col items-center p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                <Bell className="w-6 h-6 text-[#E44F71] mb-2" />
-                <span className="text-white/80 text-sm font-medium">Get Notified</span>
-              </div>
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <Card 
+                    key={index}
+                    className="flex flex-col items-center p-4 rounded-xl bg-white/[0.03] border border-white/10 py-4 gap-0"
+                  >
+                    <CardContent className="flex flex-col items-center p-0">
+                      <Icon className="w-6 h-6 text-[#E44F71] mb-2" />
+                      <span className="text-white/80 text-sm font-medium">{feature.label}</span>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Link 
-                href="/"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
               >
-                <ArrowLeft className="w-5 h-5" />
-                Back to Home
-              </Link>
-              <Link 
-                href="/request-access"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all hover:bg-white/10 hover:border-[#E44F71]/30"
+                <Link href="/">
+                  <ArrowLeft className="w-5 h-5" />
+                  Back to Home
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all hover:bg-white/10 hover:border-[#E44F71]/30"
               >
-                <Bell className="w-5 h-5" />
-                Request Early Access
-              </Link>
+                <Link href="/request-access">
+                  <Bell className="w-5 h-5" />
+                  Request Early Access
+                </Link>
+              </Button>
             </div>
 
-            <div className="pt-10 border-t border-white/10">
+            <div className="pt-10">
+              <Separator className="mb-6 bg-white/10" />
               <p className="text-white/50 text-sm mb-6">Need this service now? Contact us directly</p>
               <div className="flex items-center justify-center gap-4">
-                <a 
-                  href="https://t.me/brandrahim"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#229ED9]/10 border border-[#229ED9]/20 text-[#229ED9] font-medium text-sm transition-all hover:bg-[#229ED9]/20 hover:scale-[1.02]"
+                <Button
+                  asChild
+                  variant="outline"
+                  className="gap-2 px-6 py-3 rounded-xl bg-[#229ED9]/10 border border-[#229ED9]/20 text-[#229ED9] font-medium text-sm transition-all hover:bg-[#229ED9]/20 hover:scale-[1.02]"
                 >
-                  <Send className="w-4 h-4" />
-                  Telegram
-                </a>
-                <a 
-                  href="https://wa.me/37258956859"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] font-medium text-sm transition-all hover:bg-[#25D366]/20 hover:scale-[1.02]"
+                  <a href="https://t.me/brandrahim">
+                    <Send className="w-4 h-4" />
+                    Telegram
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="gap-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] font-medium text-sm transition-all hover:bg-[#25D366]/20 hover:scale-[1.02]"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  WhatsApp
-                </a>
+                  <a href="https://wa.me/37258956859">
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                </Button>
               </div>
             </div>
           </div>

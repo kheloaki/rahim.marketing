@@ -179,7 +179,8 @@ const HeroPopup = () => {
                   src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66c4664a78732e6a9f5835ea_Kamil.webp" 
                   alt="Kamil Z." 
                   width={40} 
-                  height={40} 
+                  height={40}
+                  unoptimized
                 />
               </div>
               <div>

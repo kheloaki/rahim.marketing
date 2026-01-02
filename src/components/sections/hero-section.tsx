@@ -74,7 +74,13 @@ const HeroSection = () => {
                 href="https://t.me/brandrahim"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all duration-300 hover:bg-white/10 hover:border-white/20"
               >
-                <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" className="w-5 h-5" />
+                <Image 
+                  src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" 
+                  alt="Telegram" 
+                  width={20} 
+                  height={20}
+                  className="w-5 h-5"
+                />
                 Join Telegram
               </a>
             </div>
@@ -90,10 +96,12 @@ const HeroSection = () => {
                 <span className="text-white font-bold text-sm">5.0</span>
               </div>
               <div className="h-4 w-px bg-white/20" />
-              <img 
+              <Image 
                 src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857b290df62758169994c6_trustpilot-stars.svg" 
                 alt="Trustpilot" 
-                className="h-5"
+                width={84}
+                height={20}
+                className="h-5 w-auto"
               />
               <div className="h-4 w-px bg-white/20" />
               <span className="text-sm text-white/50">$50M+ in ad spend managed</span>
@@ -141,6 +149,7 @@ const HeroSection = () => {
                         alt="Kamil"
                         width={40}
                         height={40}
+                        unoptimized
                       />
                     </div>
                     <div>
@@ -194,12 +203,12 @@ const HeroSection = () => {
             Official partners with leading ad platforms
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5e6713de7470d6fbf_facebook.svg" alt="Meta" className="h-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5ee0f69154b58e522_google.svg" alt="Google" className="h-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a558069249529ce2f3_tiktok.svg" alt="TikTok" className="h-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a51e37f05dbfafd0d3_bing.svg" alt="Bing" className="h-8 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5a2b997d3650086d9_outbrain.svg" alt="Outbrain" className="h-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a6c1f88424f4b4df48_taboola.svg" alt="Taboola" className="h-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5e6713de7470d6fbf_facebook.svg" alt="Meta" width={32} height={32} className="h-8 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5ee0f69154b58e522_google.svg" alt="Google" width={32} height={32} className="h-8 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a558069249529ce2f3_tiktok.svg" alt="TikTok" width={32} height={32} className="h-8 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a51e37f05dbfafd0d3_bing.svg" alt="Bing" width={32} height={32} className="h-8 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5a2b997d3650086d9_outbrain.svg" alt="Outbrain" width={24} height={24} className="h-6 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a6c1f88424f4b4df48_taboola.svg" alt="Taboola" width={24} height={24} className="h-6 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
           </div>
         </div>
       </div>

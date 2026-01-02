@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
@@ -11,9 +12,11 @@ const Navigation = () => {
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between">
 {/* Logo */}
 <Link href="/" className="flex-shrink-0">
-              <img 
+              <Image 
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Untitled-design-56-1767290636447.png?width=8000&height=8000&resize=contain" 
                 alt="rahim logo" 
+                width={120}
+                height={40}
                 className="h-10 w-auto"
               />
             </Link>
@@ -102,7 +105,7 @@ const Navigation = () => {
                       <h3 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-6">Assets</h3>
                       <div className="space-y-6">
                         <DropdownLink href="/products/buy-facebook-accounts" icon="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5e6713de7470d6fbf_facebook.svg" title="Facebook Accounts" desc="Aged, verified profiles for stability." />
-                        <DropdownLink href="/products/buy-facebook-business-managers" icon="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/690b9e8ff01c0cfaf629b82e_4db4364723691601ed55b96e-1.avif" title="Business Managers" desc="Clean BMs with proper structure." />
+                        <DropdownLink href="/products/buy-facebook-business-managers" icon="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b9e8ff01c0cfaf629b82e_4db4364723691601ed55b96e75bf26d0_business%20managers.avif" title="Business Managers" desc="Clean BMs with proper structure." />
                       </div>
                     </div>
                     <div>
@@ -131,7 +134,7 @@ const Navigation = () => {
               href="https://t.me/brandrahim" 
               className="hidden sm:flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(228,79,113,0.4)]"
             >
-            <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" className="h-5 w-5" />
+            <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" width={20} height={20} className="h-5 w-5" />
             Join Telegram
           </a>
           <a 
@@ -155,7 +158,7 @@ const Navigation = () => {
 const DropdownLink = ({ href, icon, title, desc }: { href: string; icon: string; title: string; desc: string }) => (
   <a href={href} className="group flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-white/5">
     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 p-2 transition-colors group-hover:bg-white/10">
-      <img src={icon} alt="" className="h-full w-full object-contain" />
+      <Image src={icon} alt="" width={24} height={24} className="h-full w-full object-contain" unoptimized />
     </div>
     <div className="flex flex-col">
       <span className="text-sm font-semibold text-white group-hover:text-[#E44F71] transition-colors">{title}</span>
@@ -167,7 +170,7 @@ const DropdownLink = ({ href, icon, title, desc }: { href: string; icon: string;
 const PartnerLink = ({ href, bg, title, desc }: { href: string; bg: string; title: string; desc: string }) => (
   <a href={href} className="group relative block overflow-hidden rounded-xl border border-white/10 p-5 transition-all hover:bg-white/5">
     <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-opacity">
-      <img src={bg} alt="" className="h-full w-full object-cover" />
+      <Image src={bg} alt="" width={400} height={200} className="h-full w-full object-cover" unoptimized />
     </div>
     <div className="relative z-10">
       <h4 className="text-sm font-bold text-white mb-2">{title}</h4>
@@ -190,7 +193,7 @@ const SocialButton = ({ variant, href }: { variant: 'telegram' | 'whatsapp'; hre
       href={href}
       className={`flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-white/10`}
     >
-      <img src={icon} alt={variant} className="h-4 w-4" />
+      <Image src={icon} alt={variant} width={16} height={16} className="h-4 w-4" />
       {isTelegram ? 'Telegram' : 'WhatsApp'}
     </a>
   );

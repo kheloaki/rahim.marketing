@@ -54,6 +54,7 @@ const OtherServices = () => {
                   alt={service.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080B1E] to-transparent opacity-40"></div>
               </div>

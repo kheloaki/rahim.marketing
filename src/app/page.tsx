@@ -2,7 +2,7 @@
 
 import Navigation from "@/components/sections/navigation";
 import HeroPopup from "@/components/sections/hero-popup";
-import HeroSection from "@/components/sections/hero-section";
+import HeroGeometric from "@/components/sections/hero-geometric";
 import PlatformGrid from "@/components/sections/platform-grid";
 import FeaturesGrid from "@/components/sections/features-grid";
 import SuccessStories from "@/components/sections/success-stories";
@@ -22,7 +22,7 @@ export default function Home() {
       <Navigation />
       <HeroPopup />
       <div className="pt-[89px]">
-        <HeroSection />
+        <HeroGeometric />
         <PlatformGrid />
         <FeaturesGrid />
         <SuccessStories />

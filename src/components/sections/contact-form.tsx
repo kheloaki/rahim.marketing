@@ -42,7 +42,7 @@ const ContactForm = () => {
             {/* Chat Buttons */}
             <div className="flex flex-wrap gap-4 mb-16">
               <a 
-                href="https://api.whatsapp.com/send/?phone=37258956859&text=I'm interested in your services.&type=phone_number&app_absent=0"
+                href="https://wa.me/message/WKWQWAZSRAU3N1"
                 className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5b] transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
               >
                 <img 
@@ -53,7 +53,7 @@ const ContactForm = () => {
                 Chat with us
               </a>
               <a 
-                href="https://t.me/brandrahim?text=Im%20interested%20in%20your%20services"
+                href="https://t.me/rahim_ou?text=Im%20interested%20in%20your%20services"
                 className="flex items-center gap-2 bg-[#2B7FFF] hover:bg-[#2572e6] transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
               >
                 <img 

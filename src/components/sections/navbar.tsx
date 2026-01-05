@@ -176,7 +176,7 @@ const Navbar = () => {
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
           <a 
-            href="https://t.me/brandrahim" 
+            href="https://t.me/rahim_ou" 
             className="flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-full px-5 py-2.5 text-sm font-semibold"
           >
             <Send className="w-4 h-4 text-[#2B7FFF]" />
@@ -251,7 +251,7 @@ const ContactBottomBar = () => {
       </div>
       <div className="flex items-center space-x-3">
         <a 
-          href="https://t.me/brandrahim" 
+          href="https://t.me/rahim_ou" 
           className="flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-full px-4 py-2 text-xs font-semibold"
         >
           <Image 
@@ -263,7 +263,7 @@ const ContactBottomBar = () => {
           <span>Telegram</span>
         </a>
         <a 
-          href="https://api.whatsapp.com/send" 
+          href="https://wa.me/message/WKWQWAZSRAU3N1" 
           className="flex items-center space-x-2 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-full px-4 py-2 text-xs font-semibold"
         >
           <Image 

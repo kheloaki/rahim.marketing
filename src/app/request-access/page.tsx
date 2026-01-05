@@ -45,14 +45,14 @@ export default function RequestAccessPage() {
 
                 <div className="flex flex-wrap gap-4 mb-16">
                   <a 
-                    href="https://api.whatsapp.com/send/?phone=37258956859"
+                    href="https://wa.me/message/WKWQWAZSRAU3N1"
                     className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5b] transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Chat with us
                   </a>
                   <a 
-                    href="https://t.me/brandrahim"
+                    href="https://t.me/rahim_ou"
                     className="flex items-center gap-2 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] hover:opacity-90 transition-colors rounded-[8px] py-3 px-6 text-[16px] font-semibold text-white"
                   >
                     <Send className="w-5 h-5" />

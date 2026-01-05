@@ -101,7 +101,20 @@ const HeroPopup = () => {
           <div className="w-full bg-[#E44F71] rounded-[12px] p-4 md:p-6">
             <h3 className="text-[18px] font-bold text-white mb-4">Enter Your Details to Get the Books Free</h3>
             
-            <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
+            <form 
+              className="space-y-3" 
+              onSubmit={(e) => {
+                e.preventDefault();
+                const usernameInput = e.currentTarget.querySelector('input[type="text"]') as HTMLInputElement;
+                const username = usernameInput?.value || '';
+                
+                if (platform === 'telegram') {
+                  window.open(`https://t.me/rahim_ou`, '_blank');
+                } else if (platform === 'whatsapp') {
+                  window.open('https://wa.me/message/WKWQWAZSRAU3N1', '_blank');
+                }
+              }}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <label className="text-[13px] text-white/80 font-medium">Your Name</label>
@@ -154,7 +167,7 @@ const HeroPopup = () => {
                 </div>
                 <input 
                   type="text" 
-                  placeholder="johndoe" 
+                  placeholder={platform === 'telegram' ? 'rahim_ou' : 'your username'} 
                   className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[44px] pl-[48px] pr-3 text-white text-[14px] focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                 />
               </div>

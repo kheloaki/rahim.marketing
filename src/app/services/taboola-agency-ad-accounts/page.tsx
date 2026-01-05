@@ -64,14 +64,14 @@ function TaboolaHeroSection() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
               <a 
-                href="https://t.me/brandrahim"
+                href="https://t.me/rahim_ou"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
               >
                 <Send className="w-5 h-5" />
                 Chat with us
               </a>
               <a 
-                href="https://wa.me/37258956859"
+                href="https://wa.me/message/WKWQWAZSRAU3N1"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-base transition-all"
               >
                 <MessageCircle className="w-5 h-5" />

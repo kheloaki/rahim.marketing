@@ -122,7 +122,7 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
                   variant="outline"
                   className="gap-2 px-6 py-3 rounded-xl bg-[#229ED9]/10 border border-[#229ED9]/20 text-[#229ED9] font-medium text-sm transition-all hover:bg-[#229ED9]/20 hover:scale-[1.02]"
                 >
-                  <a href="https://t.me/brandrahim">
+                  <a href="https://t.me/rahim_ou">
                     <Send className="w-4 h-4" />
                     Telegram
                   </a>
@@ -132,7 +132,7 @@ export default function ComingSoon({ title, description }: ComingSoonProps) {
                   variant="outline"
                   className="gap-2 px-6 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] font-medium text-sm transition-all hover:bg-[#25D366]/20 hover:scale-[1.02]"
                 >
-                  <a href="https://wa.me/37258956859">
+                  <a href="https://wa.me/message/WKWQWAZSRAU3N1">
                     <MessageCircle className="w-4 h-4" />
                     WhatsApp
                   </a>

@@ -56,14 +56,14 @@ export default function NotFound() {
               <p className="text-white/50 text-sm mb-6">Need help? Contact our team</p>
               <div className="flex items-center justify-center gap-4">
                 <a 
-                  href="https://t.me/brandrahim"
+                  href="https://t.me/rahim_ou"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/5 border border-white/10 text-white font-medium text-sm transition-all hover:bg-white/10"
                 >
                   <Send className="w-4 h-4" />
                   Telegram
                 </a>
                 <a 
-                  href="https://wa.me/37258956859"
+                  href="https://wa.me/message/WKWQWAZSRAU3N1"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] font-medium text-sm transition-all hover:bg-[#25D366]/20"
                 >
                   <MessageCircle className="w-4 h-4" />

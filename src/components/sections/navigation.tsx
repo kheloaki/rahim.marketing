@@ -83,8 +83,8 @@ const Navigation = () => {
                         <p className="mt-1 text-sm text-white/60">Message us on telegram or Whatsapp for real-time time support from industry specialists.</p>
                       </div>
                       <div className="flex gap-4">
-                        <SocialButton variant="telegram" href="https://t.me/brandrahim" />
-                        <SocialButton variant="whatsapp" href="https://api.whatsapp.com/send/?phone=37258956859" />
+                        <SocialButton variant="telegram" href="https://t.me/rahim_ou" />
+                        <SocialButton variant="whatsapp" href="https://wa.me/message/WKWQWAZSRAU3N1" />
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Navigation = () => {
           {/* CTA Buttons */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://t.me/brandrahim" 
+              href="https://t.me/rahim_ou" 
               className="hidden sm:flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(228,79,113,0.4)]"
             >
             <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba72114ecacc7cbe7a790_Telegram.svg" alt="Telegram" width={20} height={20} className="h-5 w-5" />

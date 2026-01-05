@@ -113,7 +113,7 @@ const FAQSection = () => {
           <p className="text-white/70 mb-4">Still have questions?</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://t.me/brandrahim"
+              href="https://t.me/rahim_ou"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#BC2C7B] to-[#E44F71] text-white font-semibold text-sm transition-all hover:opacity-90"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -122,7 +122,7 @@ const FAQSection = () => {
               Ask on Telegram
             </a>
             <a
-              href="https://wa.me/37258956859"
+              href="https://wa.me/message/WKWQWAZSRAU3N1"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#25D366] text-white font-semibold text-sm transition-all hover:bg-[#20ba59]"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

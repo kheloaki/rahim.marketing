@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
-import { Play, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
@@ -36,20 +36,7 @@ const testimonials = [
 ];
 
 const SuccessStories = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -80,9 +67,9 @@ const SuccessStories = () => {
           </p>
         </div>
 
-        {/* Featured Video Testimonial Card */}
+        {/* Featured Testimonial Card */}
         <div className="max-w-[1000px] mx-auto mb-20">
-          <div className="glass-panel rounded-[1.25rem] overflow-hidden grid lg:grid-cols-[1.2fr_1fr] bg-[#150d1f]/80 border border-white/10 glow-blue">
+          <div className="glass-panel rounded-[1.25rem] overflow-hidden bg-[#150d1f]/80 border border-white/10 glow-blue">
             <div className="p-8 lg:p-12 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-6">
                  <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20 bg-white/5 flex items-center justify-center text-white/40">
@@ -93,7 +80,7 @@ const SuccessStories = () => {
                     <div className="text-white/40 text-sm">SaaS Founder & Rahim Marketing Client</div>
                  </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 italic">“These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands.”</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 italic">"These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands."</h3>
               <div className="flex items-center gap-3">
                 <Image 
                   src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/68617f6e5cafcdc938e782f7_trustpilotstars-26.avif" 
@@ -104,25 +91,6 @@ const SuccessStories = () => {
                 />
                 <span className="text-white/60 text-sm font-medium">Excellent reviews</span>
               </div>
-            </div>
-
-            <div className="relative group cursor-pointer aspect-video lg:aspect-auto min-h-[300px]" onClick={togglePlay}>
-              <video 
-                ref={videoRef}
-                className="w-full h-full object-cover"
-                poster="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/68a5dac91e6443db4754e05b_rating-23.avif"
-                onEnded={() => setIsPlaying(false)}
-              >
-                <source src="https://uproas.sfo3.cdn.digitaloceanspaces.com/accelerate-testimonial.webm" type="video/webm" />
-              </video>
-              
-              {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
-                  <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white shadow-2xl scale-100 group-hover:scale-110 transition-transform duration-300">
-                    <Play size={32} className="fill-white ml-1" />
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

@@ -14,8 +14,14 @@ const HeroPopup = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="relative w-full max-w-[600px] bg-[#150d1f] border border-white/10 rounded-[20px] glow-blue overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto">
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto"
+      onClick={() => setIsOpen(false)}
+    >
+      <div 
+        className="relative w-full max-w-[600px] bg-[#150d1f] border border-white/10 rounded-[20px] glow-blue overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         
         {/* Close Button Header - Sticky */}
         <div className="sticky top-0 z-10 flex justify-end p-4 bg-[#150d1f]/95 backdrop-blur-sm border-b border-white/5">

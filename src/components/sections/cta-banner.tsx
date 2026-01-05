@@ -1,27 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 
 const CTABanner = () => {
-  // Asset provided in the prompt: cash counting machine background/elements
-  const backgroundImage = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/6909cb9a592ba8bd0c1983a2_68ef859babb16a4a5525c96a_-11.avif";
-
   return (
     <section className="py-[120px] lg:py-[160px] px-5 lg:px-10 flex justify-center items-center bg-[#02040a]">
       <div className="container max-w-[1280px]">
         <div className="relative w-full rounded-[20px] overflow-hidden min-h-[400px] lg:min-h-[480px] flex flex-col items-center justify-center text-center p-8 lg:p-16 border border-white/10 shadow-[0_0_40px_0_rgba(43,89,255,0.15)] bg-[#150d1f]">
-          
-          {/* Background Image Layer */}
-          <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
-            <Image
-              src={backgroundImage}
-              alt="Cash counting background"
-              fill
-              className="object-cover lg:object-contain"
-              priority
-            />
-            {/* Gradient Overlay for Text Readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#150d1f]/60 via-[#150d1f]/20 to-[#150d1f]/60" />
-          </div>
 
           {/* Content Layer */}
           <div className="relative z-10 flex flex-col items-center max-w-[900px]">

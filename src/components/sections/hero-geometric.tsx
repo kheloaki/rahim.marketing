@@ -176,7 +176,7 @@ export default function HeroGeometric({
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Stop losing accounts. Scale your ads with whitelisted Meta, Google & TikTok agency accounts. Get unlimited spend, instant replacements, and dedicated rep access.
           </p>
         </div>

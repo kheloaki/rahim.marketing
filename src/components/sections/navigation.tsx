@@ -146,8 +146,12 @@ const Navigation = () => {
           </a>
           
           {/* Mobile Menu Toggle (Simplified) */}
-          <button className="lg:hidden p-2 text-white">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <button 
+            className="lg:hidden p-2 text-white"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
       </div>

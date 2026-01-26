@@ -73,24 +73,24 @@ const HeroPopup = () => {
             </div>
 
             <div className="flex-1">
-              <p className="text-[12px] font-semibold text-white/40 uppercase tracking-wider mb-3">You Unlock All 3 Books Including:</p>
+              <p className="text-[12px] font-semibold text-white/70 uppercase tracking-wider mb-3">You Unlock All 3 Books Including:</p>
               <ul className="space-y-2.5">
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">1</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book I: Bulletproof Facebook Account Structures <span className="text-white/30 line-through ml-1">$975</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book I: Bulletproof Facebook Account Structures <span className="text-white/50 line-through ml-1">$975</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">2</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book II: Running Aggressive Facebook Campaigns <span className="text-white/30 line-through ml-1">$1115</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book II: Running Aggressive Facebook Campaigns <span className="text-white/50 line-through ml-1">$1115</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">3</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book III: Agency Ad Accounts 101 <span className="text-white/30 line-through ml-1">$2155</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book III: Agency Ad Accounts 101 <span className="text-white/50 line-through ml-1">$2155</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
               </ul>
@@ -117,7 +117,7 @@ const HeroPopup = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="space-y-1.5">
-                  <label className="text-[13px] text-white/80 font-medium">Your Name</label>
+                  <label className="text-[13px] text-white/90 font-medium">Your Name</label>
                   <input 
                     type="text" 
                     placeholder="John Doe" 
@@ -125,7 +125,7 @@ const HeroPopup = () => {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[13px] text-white/80 font-medium">Business Email Address</label>
+                  <label className="text-[13px] text-white/90 font-medium">Business Email Address</label>
                   <input 
                     type="email" 
                     placeholder="johndoe32@gmail.com" 
@@ -157,7 +157,7 @@ const HeroPopup = () => {
               </div>
 
               <div className="relative group">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-2 text-white/40">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-2 text-white/60">
                   {platform === 'telegram' ? (
                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.303.48-.429-.012-1.253-.245-1.865-.444-.754-.245-1.354-.374-1.301-.79.028-.217.326-.44.896-.67 3.509-1.527 5.848-2.534 7.018-3.02 3.333-1.386 4.025-1.627 4.476-1.635z"/></svg>
                   ) : (
@@ -213,7 +213,7 @@ const HeroPopup = () => {
           <div className="w-full mt-4 border border-white/10 rounded-[10px] overflow-hidden">
             <div className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-white/5 transition-colors">
               <span className="text-[12px] font-bold text-white uppercase tracking-wider">What You&apos;ll Get:</span>
-              <ChevronDown className="w-4 h-4 text-white/40" />
+              <ChevronDown className="w-4 h-4 text-white/60" aria-hidden="true" />
             </div>
           </div>
         </div>

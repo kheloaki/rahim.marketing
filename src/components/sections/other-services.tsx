@@ -83,11 +83,17 @@ const OtherServices = () => {
 
         {/* Carousel buttons (as seen in screenshots) */}
         <div className="flex justify-end mt-[-32px] gap-2">
-            <button className="p-3 border border-white/10 rounded-md bg-[#080B1E] hover:bg-white/5 transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60"><path d="m15 18-6-6 6-6"/></svg>
+            <button 
+              className="p-3 border border-white/10 rounded-md bg-[#080B1E] hover:bg-white/5 transition-colors"
+              aria-label="Previous service"
+            >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
             </button>
-            <button className="p-3 border border-white/10 rounded-md bg-[#080B1E] hover:bg-white/5 transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60"><path d="m9 18 6-6-6-6"/></svg>
+            <button 
+              className="p-3 border border-white/10 rounded-md bg-[#080B1E] hover:bg-white/5 transition-colors"
+              aria-label="Next service"
+            >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/60" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
             </button>
         </div>
       </div>

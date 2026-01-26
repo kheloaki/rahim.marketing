@@ -194,6 +194,8 @@ const Navbar = () => {
         <button 
           className="lg:hidden p-2 text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={mobileMenuOpen}
         >
           <div className="w-6 h-0.5 bg-current mb-1.5 transition-all"></div>
           <div className="w-6 h-0.5 bg-current mb-1.5 transition-all"></div>

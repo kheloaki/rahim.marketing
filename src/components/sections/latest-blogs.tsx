@@ -93,11 +93,17 @@ const LatestBlogs = () => {
             ))}
           </div>
           <div className="flex gap-4 ml-auto">
-            <button className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all">
-              <ChevronLeft className="w-5 h-5" />
+            <button 
+              className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all"
+              aria-label="Previous blog post"
+            >
+              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
             </button>
-            <button className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-all">
-              <ChevronRight className="w-5 h-5" />
+            <button 
+              className="w-12 h-12 rounded-[8px] border border-[#ffffff1a] flex items-center justify-center text-white/60 hover:text-white hover:border-white transition-all"
+              aria-label="Next blog post"
+            >
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
         </div>

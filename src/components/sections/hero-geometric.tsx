@@ -9,6 +9,8 @@ const pacifico = Pacifico({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-pacifico",
+  display: "swap",
+  preload: true,
 })
 
 function ElegantShape({

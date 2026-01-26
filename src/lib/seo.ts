@@ -139,6 +139,7 @@ export function generateStructuredData(type: string, data?: any) {
       };
     
     case "Service":
+      const { path: servicePath, breadcrumbs: serviceBreadcrumbs, faqs: serviceFaqs, ...serviceData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -155,10 +156,11 @@ export function generateStructuredData(type: string, data?: any) {
           availability: "https://schema.org/InStock",
           priceCurrency: "USD",
         },
-        ...data,
+        ...serviceData,
       };
     
     case "Product":
+      const { path: productPath, ...productData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -172,20 +174,21 @@ export function generateStructuredData(type: string, data?: any) {
           priceCurrency: data?.priceCurrency || "USD",
           price: data?.price,
           priceValidUntil: data?.priceValidUntil,
-          url: data?.url || `${siteUrl}${data?.path}`,
+          url: data?.url || `${siteUrl}${productPath || ""}`,
           seller: baseOrganization,
         },
         aggregateRating: baseOrganization.aggregateRating,
-        ...data,
+        ...productData,
       };
     
     case "WebPage":
+      const { path, breadcrumbs, faqs, services, blogPost, ...webPageData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: data?.name,
         description: data?.description,
-        url: `${siteUrl}${data?.path || ""}`,
+        url: `${siteUrl}${path || ""}`,
         inLanguage: "en-US",
         isPartOf: {
           "@type": "WebSite",
@@ -194,7 +197,7 @@ export function generateStructuredData(type: string, data?: any) {
         },
         about: baseOrganization,
         publisher: baseOrganization,
-        ...data,
+        ...webPageData,
       };
     
     case "FAQPage":
@@ -242,6 +245,7 @@ export function generateStructuredData(type: string, data?: any) {
       };
     
     case "BlogPosting":
+      const { path: blogPath, ...blogData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -257,23 +261,24 @@ export function generateStructuredData(type: string, data?: any) {
         publisher: baseOrganization,
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${siteUrl}${data?.path}`,
+          "@id": `${siteUrl}${blogPath || ""}`,
         },
-        ...data,
+        ...blogData,
       };
     
     case "CollectionPage":
+      const { path: collectionPath, ...collectionData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         name: data?.name,
         description: data?.description,
-        url: `${siteUrl}${data?.path}`,
+        url: `${siteUrl}${collectionPath || ""}`,
         mainEntity: {
           "@type": "ItemList",
           itemListElement: data?.items || [],
         },
-        ...data,
+        ...collectionData,
       };
     
     default:
@@ -296,7 +301,7 @@ export function generateAllSchemas(pageType: "home" | "service" | "product" | "b
   schemas.push(generateStructuredData("WebPage", {
     name: data?.title || siteName,
     description: data?.description,
-    path: path,
+    path: path, // Used to construct URL, but not included in final schema
   }));
 
   // BreadcrumbList - always included if items provided
@@ -342,7 +347,7 @@ export function generateAllSchemas(pageType: "home" | "service" | "product" | "b
         description: data?.description,
         price: data?.price,
         priceCurrency: data?.priceCurrency || "USD",
-        path: path,
+        path: path, // Used to construct URL in schema, but excluded from final output
         url: url,
       }));
       break;

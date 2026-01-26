@@ -228,5 +228,6 @@ export default function RequestAccessPage() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

@@ -64,5 +64,6 @@ export default function ReviewsPage() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

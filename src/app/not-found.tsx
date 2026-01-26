@@ -106,5 +106,6 @@ export default function NotFound() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

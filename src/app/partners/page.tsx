@@ -122,5 +122,6 @@ export default function PartnersPage() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

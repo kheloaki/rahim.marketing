@@ -43,5 +43,6 @@ export default function BlogPage() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

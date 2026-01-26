@@ -43,5 +43,6 @@ export default function MilestonesPage() {
       </div>
       <Footer />
     </main>
+    </>
   );
 }

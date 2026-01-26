@@ -122,6 +122,23 @@ export default function RootLayout({
         {/* Preload Critical Resources */}
         <link rel="preload" as="image" href="/og-image.jpg" />
         
+        {/* Critical CSS for LCP element - inline to prevent render blocking */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes fade-in {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+            .animate-fade-in {
+              animation: fade-in 0.3s ease-out forwards;
+            }
+            /* Ensure LCP element is visible immediately */
+            h1.animate-fade-in {
+              animation-delay: 0s !important;
+            }
+          `
+        }} />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

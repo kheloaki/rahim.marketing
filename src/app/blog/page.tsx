@@ -3,10 +3,23 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import LatestBlogs from "@/components/sections/latest-blogs";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 
 export default function BlogPage() {
+  const schemaData = otherPageSchemas["blog"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="blog"
+        data={{
+          ...schemaData,
+          path: "/blog",
+          breadcrumbs: getBreadcrumbs("/blog", "Blog"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-20 bg-[#0a0612] relative overflow-hidden">

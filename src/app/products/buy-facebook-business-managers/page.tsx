@@ -6,6 +6,8 @@ import PricingPackages from "@/components/sections/pricing-packages";
 import SuccessStories from "@/components/sections/success-stories";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { productPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 
 function BMHeroSection() {
@@ -122,17 +124,29 @@ function BMHeroSection() {
 }
 
 export default function BuyBusinessManagersPage() {
+  const schemaData = productPageSchemas["buy-facebook-business-managers"];
+  
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="pt-[89px]">
-        <BMHeroSection />
-        <PricingPackages />
-        <SuccessStories />
-        <FAQSection />
-        <CTABanner />
-      </div>
-      <Footer />
-    </main>
+    <>
+      <ComprehensiveSchema
+        pageType="product"
+        data={{
+          ...schemaData,
+          path: "/products/buy-facebook-business-managers",
+          breadcrumbs: getBreadcrumbs("/products/buy-facebook-business-managers", "Buy Facebook Business Managers"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
+        <Navigation />
+        <div className="pt-[89px]">
+          <BMHeroSection />
+          <PricingPackages />
+          <SuccessStories />
+          <FAQSection />
+          <CTABanner />
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }

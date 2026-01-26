@@ -2,10 +2,23 @@
 
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 
 export default function TermsPage() {
+  const schemaData = otherPageSchemas["terms"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/terms",
+          breadcrumbs: getBreadcrumbs("/terms", "Terms of Service"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">

@@ -2,6 +2,8 @@
 
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
@@ -45,8 +47,25 @@ const partners = [
 ];
 
 export default function PartnersPage() {
+  const schemaData = otherPageSchemas["partners"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/partners",
+          breadcrumbs: getBreadcrumbs("/partners", "Partners"),
+          services: partners.map(p => ({
+            name: p.name,
+            url: p.href,
+            description: p.description,
+            itemType: "Organization",
+          })),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">

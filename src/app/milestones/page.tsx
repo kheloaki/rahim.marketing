@@ -3,10 +3,23 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import Milestones from "@/components/sections/milestones";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 
 export default function MilestonesPage() {
+  const schemaData = otherPageSchemas["milestones"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/milestones",
+          breadcrumbs: getBreadcrumbs("/milestones", "Milestones"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-20 bg-[#0a0612] relative overflow-hidden">

@@ -10,6 +10,7 @@ import ComparisonTable from "@/components/sections/comparison-table";
 import PricingPackages from "@/components/sections/pricing-packages";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -127,21 +128,44 @@ function FacebookHeroSection() {
 }
 
 export default function FacebookAgencyAdAccountPage() {
+  const faqs = [
+    { question: "What is a Facebook Agency Ad Account?", answer: "A Facebook Agency Ad Account is a premium advertising account provided through certified marketing agencies with direct Meta partnerships. These accounts offer higher trust scores, unlimited spending potential, faster ad approvals, and dedicated support from Meta representatives." },
+    { question: "How is Rahim Marketing different from other providers?", answer: "Rahim Marketing provides whitelisted agency accounts with direct Meta rep access. We offer instant replacements if accounts get restricted, up to 1% cashback on ad spend, and 24/7 dedicated support. Our 0.2% ban rate is the lowest in the industry." },
+    { question: "What verticals/niches do you support?", answer: "We support a wide range of verticals including ecommerce, health & wellness, finance, SaaS, lead generation, gaming, and more. Contact us to discuss your specific niche and we'll advise on the best account structure." },
+  ];
+
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="pt-[89px]">
-        <FacebookHeroSection />
-        <PlatformGrid />
-        <FeaturesGrid />
-        <SuccessStories />
-        <HowItWorks />
-        <ComparisonTable />
-        <PricingPackages />
-        <FAQSection />
-        <CTABanner />
-      </div>
-      <Footer />
-    </main>
+    <>
+      <ComprehensiveSchema
+        pageType="service"
+        data={{
+          title: "Facebook Agency Ad Accounts - Premium Whitelisted Accounts",
+          description: "Scale your Facebook advertising without limits. Get premium whitelisted Facebook agency ad accounts with unlimited spend, no bans, instant replacements, and dedicated Meta rep access. Trusted by 1750+ advertisers.",
+          path: "/services/facebook-agency-ad-account",
+          serviceType: "Facebook Advertising Services",
+          breadcrumbs: [
+            { name: "Home", url: "/" },
+            { name: "Services", url: "/services" },
+            { name: "Facebook Agency Ad Accounts", url: "/services/facebook-agency-ad-account" },
+          ],
+          faqs: faqs,
+        }}
+      />
+      <main className="min-h-screen bg-background">
+        <Navigation />
+        <div className="pt-[89px]">
+          <FacebookHeroSection />
+          <PlatformGrid />
+          <FeaturesGrid />
+          <SuccessStories />
+          <HowItWorks />
+          <ComparisonTable />
+          <PricingPackages />
+          <FAQSection />
+          <CTABanner />
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }

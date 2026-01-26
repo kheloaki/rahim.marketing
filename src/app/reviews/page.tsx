@@ -3,11 +3,24 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import SuccessStories from "@/components/sections/success-stories";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Star } from "lucide-react";
 
 export default function ReviewsPage() {
+  const schemaData = otherPageSchemas["reviews"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/reviews",
+          breadcrumbs: getBreadcrumbs("/reviews", "Reviews"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-20 bg-[#0a0612] relative overflow-hidden">

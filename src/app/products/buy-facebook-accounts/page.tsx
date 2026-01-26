@@ -6,6 +6,8 @@ import PricingPackages from "@/components/sections/pricing-packages";
 import SuccessStories from "@/components/sections/success-stories";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { productPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 
 function ProductHeroSection() {
@@ -122,17 +124,29 @@ function ProductHeroSection() {
 }
 
 export default function BuyFacebookAccountsPage() {
+  const schemaData = productPageSchemas["buy-facebook-accounts"];
+  
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="pt-[89px]">
-        <ProductHeroSection />
-        <PricingPackages />
-        <SuccessStories />
-        <FAQSection />
-        <CTABanner />
-      </div>
-      <Footer />
-    </main>
+    <>
+      <ComprehensiveSchema
+        pageType="product"
+        data={{
+          ...schemaData,
+          path: "/products/buy-facebook-accounts",
+          breadcrumbs: getBreadcrumbs("/products/buy-facebook-accounts", "Buy Facebook Accounts"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
+        <Navigation />
+        <div className="pt-[89px]">
+          <ProductHeroSection />
+          <PricingPackages />
+          <SuccessStories />
+          <FAQSection />
+          <CTABanner />
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }

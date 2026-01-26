@@ -10,6 +10,8 @@ import ComparisonTable from "@/components/sections/comparison-table";
 import PricingPackages from "@/components/sections/pricing-packages";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 
 function OutbrainHeroSection() {
@@ -124,21 +126,33 @@ function OutbrainHeroSection() {
 }
 
 export default function OutbrainAgencyAccountsPage() {
+  const schemaData = servicePageSchemas["outbrain-agency-ad-accounts"];
+  
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="pt-[89px]">
-        <OutbrainHeroSection />
-        <PlatformGrid />
-        <FeaturesGrid />
-        <SuccessStories />
-        <HowItWorks />
-        <ComparisonTable />
-        <PricingPackages />
-        <FAQSection />
-        <CTABanner />
-      </div>
-      <Footer />
-    </main>
+    <>
+      <ComprehensiveSchema
+        pageType="service"
+        data={{
+          ...schemaData,
+          path: "/services/outbrain-agency-ad-accounts",
+          breadcrumbs: getBreadcrumbs("/services/outbrain-agency-ad-accounts", "Outbrain Agency Accounts"),
+        }}
+      />
+      <main className="min-h-screen bg-background">
+        <Navigation />
+        <div className="pt-[89px]">
+          <OutbrainHeroSection />
+          <PlatformGrid />
+          <FeaturesGrid />
+          <SuccessStories />
+          <HowItWorks />
+          <ComparisonTable />
+          <PricingPackages />
+          <FAQSection />
+          <CTABanner />
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 }

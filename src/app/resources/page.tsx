@@ -3,6 +3,8 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import LatestBlogs from "@/components/sections/latest-blogs";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { ArrowRight, BookOpen, Users, Award, FileText } from "lucide-react";
 
 const resources = [
@@ -37,8 +39,25 @@ const resources = [
 ];
 
 export default function ResourcesPage() {
+  const schemaData = otherPageSchemas["resources"];
+  
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/resources",
+          breadcrumbs: getBreadcrumbs("/resources", "Resources"),
+          services: resources.map(r => ({
+            name: r.title,
+            url: r.href,
+            description: r.description,
+            itemType: "WebPage",
+          })),
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">

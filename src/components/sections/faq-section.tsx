@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { PageStructuredData } from '@/components/seo/page-structured-data';
 
 const faqData = [
   {
@@ -47,6 +48,19 @@ const FAQSection = () => {
 
   return (
     <section className="py-[120px] lg:py-[160px] bg-[#0a0612] relative overflow-hidden">
+      <PageStructuredData
+        type="FAQPage"
+        data={{
+          mainEntity: faqData.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }}
+      />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E44F71] opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-5 lg:px-10 max-w-[900px] relative z-10">

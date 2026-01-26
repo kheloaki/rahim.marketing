@@ -3,11 +3,30 @@
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import FAQSection from "@/components/sections/faq-section";
+import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { ChevronDown, Zap, Share2, ShieldCheck, Headphones, Send, MessageCircle } from "lucide-react";
 
 export default function RequestAccessPage() {
+  const schemaData = otherPageSchemas["request-access"];
+  const faqs = [
+    { question: "How quickly will I get access?", answer: "Once you submit the request form, our team will review your application and get back to you within 24 hours. Priority onboarding is available for Platinum members (<2 hours)." },
+    { question: "What information do I need to provide?", answer: "You'll need to provide your business details including company name, website, monthly ad spend, and the advertising platform you want to use." },
+    { question: "Is there a minimum ad spend requirement?", answer: "We work with advertisers of all sizes. Contact us to discuss your specific needs and we'll recommend the best package for your budget." },
+  ];
+
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <ComprehensiveSchema
+        pageType="page"
+        data={{
+          ...schemaData,
+          path: "/request-access",
+          breadcrumbs: getBreadcrumbs("/request-access", "Request Access"),
+          faqs: faqs,
+        }}
+      />
+      <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-20 bg-[#0a0612] relative overflow-hidden">

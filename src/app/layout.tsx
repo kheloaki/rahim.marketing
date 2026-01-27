@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Rahim Marketing",
-    title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
+  title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
     description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
     images: [
       {

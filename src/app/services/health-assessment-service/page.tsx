@@ -15,10 +15,10 @@ export default function HealthAssessmentPage() {
           breadcrumbs: getBreadcrumbs("/services/health-assessment-service", "Account Health Assessment"),
         }}
       />
-      <ComingSoon 
-        title="Account Health Assessment" 
-        description="Get a comprehensive analysis of your ad account health with actionable recommendations. This service is launching soon."
-      />
+    <ComingSoon 
+      title="Account Health Assessment" 
+      description="Get a comprehensive analysis of your ad account health with actionable recommendations. This service is launching soon."
+    />
     </>
   );
 }

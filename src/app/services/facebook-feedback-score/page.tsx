@@ -15,10 +15,10 @@ export default function FacebookFeedbackScorePage() {
           breadcrumbs: getBreadcrumbs("/services/facebook-feedback-score", "Facebook Feedback Score Boost"),
         }}
       />
-      <ComingSoon 
-        title="Facebook Feedback Score Boost" 
-        description="Improve your Facebook page feedback score to unlock better ad performance and lower costs. This service is launching soon."
-      />
+    <ComingSoon 
+      title="Facebook Feedback Score Boost" 
+      description="Improve your Facebook page feedback score to unlock better ad performance and lower costs. This service is launching soon."
+    />
     </>
   );
 }

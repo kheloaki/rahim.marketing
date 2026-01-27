@@ -65,7 +65,7 @@ export default function PartnersPage() {
           })),
         }}
       />
-      <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
       <Navigation />
       <div className="pt-[89px]">
         <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">

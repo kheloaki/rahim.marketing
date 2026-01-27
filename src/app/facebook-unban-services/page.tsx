@@ -15,10 +15,10 @@ export default function FacebookUnbanPage() {
           breadcrumbs: getBreadcrumbs("/facebook-unban-services", "Facebook Unban Service"),
         }}
       />
-      <ComingSoon 
-        title="Facebook Unban Service" 
-        description="Professional account recovery and unban services for restricted Facebook ad accounts. This service is launching soon."
-      />
+    <ComingSoon 
+      title="Facebook Unban Service" 
+      description="Professional account recovery and unban services for restricted Facebook ad accounts. This service is launching soon."
+    />
     </>
   );
 }

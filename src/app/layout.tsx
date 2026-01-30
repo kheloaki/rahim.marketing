@@ -26,7 +26,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rahimmarketing.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.rahimagency.com'),
   title: {
     default: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
     template: "%s | Rahim Marketing"
@@ -147,8 +147,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Rahim Marketing",
-              url: process.env.NEXT_PUBLIC_SITE_URL || "https://rahimmarketing.com",
-              logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://rahimmarketing.com"}/logo.png`,
+              url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.rahimagency.com",
+              logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.rahimagency.com"}/logo.png`,
               description: "Premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
               contactPoint: {
                 "@type": "ContactPoint",

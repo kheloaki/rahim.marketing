@@ -10,6 +10,7 @@ import HowItWorks from "@/components/sections/how-it-works";
 import ComparisonTable from "@/components/sections/comparison-table";
 import PricingPackages from "@/components/sections/pricing-packages";
 import Milestones from "@/components/sections/milestones";
+import SeoHomeSection from "@/components/sections/seo-home-section";
 import OtherServices from "@/components/sections/other-services";
 import FAQSection from "@/components/sections/faq-section";
 import LatestBlogs from "@/components/sections/latest-blogs";
@@ -51,6 +52,7 @@ export default function Home() {
           <ComparisonTable />
           <PricingPackages />
           <Milestones />
+          <SeoHomeSection />
           <OtherServices />
           <FAQSection />
           <LatestBlogs />

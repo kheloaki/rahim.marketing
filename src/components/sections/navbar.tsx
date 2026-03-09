@@ -118,6 +118,18 @@ const Navbar = () => {
                       description="Recover page feedback compliant."
                     />
                     <DropdownItem 
+                      href="/services/seo-management"
+                      icon="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b9e8f53e5c5ada378abc1_Unban%20Service.svg"
+                      title="SEO Management"
+                      description="We manage SEO for your projects."
+                    />
+                    <DropdownItem 
+                      href="/services/local-seo"
+                      icon="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b9e8f53e5c5ada378abc1_Unban%20Service.svg"
+                      title="Local SEO"
+                      description="Get found in your area."
+                    />
+                    <DropdownItem 
                       href="/facebook-unban-services"
                       icon="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b9e8f53e5c5ada378abc1_Unban%20Service.svg"
                       title="Unban Service"

@@ -130,6 +130,30 @@ export const otherPageSchemas = {
     title: "Cookie Settings - Manage Your Preferences",
     description: "Manage your cookie preferences and privacy settings. Control how we use cookies on our website.",
   },
+  "seo-management": {
+    title: "SEO Management - We Manage SEO for Your Projects",
+    description: "Professional SEO management for your projects. Technical SEO, content strategy, analytics, and ongoing optimization to grow your organic visibility.",
+    serviceType: "SEO Services",
+    faqs: [
+      { question: "What does your SEO management include?", answer: "We handle technical SEO, on-page optimization, content strategy, link building, and analytics. You get a dedicated point of contact and regular reports on rankings and traffic." },
+      { question: "How long until I see results?", answer: "SEO typically shows meaningful improvements within 3–6 months. We focus on sustainable growth and will share a custom timeline based on your site and competition." },
+      { question: "Do you offer a free audit or report?", answer: "Yes. Request a free report for your project and we'll analyze your site and send you actionable recommendations." },
+    ],
+  },
+  "local-seo": {
+    title: "Local SEO - Get Found in Your Area",
+    description: "Get found by customers near you. We optimize your Google Business Profile, local rankings, and maps visibility so local searchers find you first.",
+    serviceType: "Local SEO Services",
+    faqs: [
+      { question: "What is Local SEO?", answer: "Local SEO helps your business show up when people search for products or services in your area—e.g. on Google Maps and 'near me' searches. We optimize your Google Business Profile and local signals." },
+      { question: "How do you optimize my Google Business Profile?", answer: "We optimize your listing (categories, hours, photos, posts), manage reviews, and improve local citations so you rank higher in local pack and maps." },
+      { question: "Can I get a free local SEO report?", answer: "Yes. Request a free report and we'll analyze your local presence and send you a short audit with recommendations." },
+    ],
+  },
+  "free-seo-report": {
+    title: "Free SEO Report - Get a Free Audit for Your Project",
+    description: "Request a free SEO report for your project. We'll analyze your site and send you a short audit with actionable recommendations.",
+  },
 };
 
 export function getBreadcrumbs(path: string, pageName: string) {

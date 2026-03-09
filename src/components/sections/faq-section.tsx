@@ -39,8 +39,20 @@ const faqData = [
   }
 ];
 
-const FAQSection = () => {
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  faqs?: FAQItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const FAQSection = ({ faqs: customFaqs, title, subtitle }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqsToShow = customFaqs ?? faqData;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -51,7 +63,7 @@ const FAQSection = () => {
       <PageStructuredData
         type="FAQPage"
         data={{
-          mainEntity: faqData.map((faq) => ({
+          mainEntity: faqsToShow.map((faq) => ({
             "@type": "Question",
             name: faq.question,
             acceptedAnswer: {
@@ -69,15 +81,15 @@ const FAQSection = () => {
             FAQ
           </div>
           <h2 className="text-[2.5rem] md:text-[3rem] font-bold leading-[1.1] tracking-tight text-white mb-6">
-            Frequently Asked Questions
+            {title ?? "Frequently Asked Questions"}
           </h2>
           <p className="text-lg text-white/70 max-w-[600px] mx-auto">
-            Everything you need to know about our agency ad accounts and services.
+            {subtitle ?? "Everything you need to know about our agency ad accounts and services."}
           </p>
         </div>
 
         <div className="space-y-4">
-          {faqData.map((faq, index) => (
+          {faqsToShow.map((faq, index) => (
             <div
               key={index}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${

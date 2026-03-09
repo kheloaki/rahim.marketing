@@ -376,6 +376,9 @@ export function generateAllSchemas(pageType: "home" | "service" | "product" | "b
           path: path,
         }));
       }
+      if (data?.faqs && data.faqs.length > 0) {
+        schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
+      }
       break;
     
     case "page":

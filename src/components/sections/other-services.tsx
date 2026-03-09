@@ -27,6 +27,18 @@ const OtherServices = () => {
       description: "Secure profiles that enable users to connect, interact, and manage business or personal activities online.",
       image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/690b9e8ff01c0cfaf629b82e_4db4364723691601ed55b96e7-1.avif", // Reusing BM asset as fallback for accounts graphics which has similar theme
       link: "/products/buy-facebook-accounts"
+    },
+    {
+      title: "SEO Management",
+      description: "We manage SEO for your projects. Technical SEO, content strategy, and ongoing optimization to grow your organic visibility.",
+      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+      link: "/services/seo-management"
+    },
+    {
+      title: "Local SEO",
+      description: "Get found in your area. We optimize your Google Business Profile and local search visibility.",
+      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+      link: "/services/local-seo"
     }
   ];
 

@@ -19,6 +19,8 @@ const Footer = () => {
       links: [
         { name: "Facebook Feedback Score Boost", href: "/services/facebook-feedback-score" },
         { name: "Account Health Assessment", href: "/services/health-assessment-service" },
+        { name: "SEO Management", href: "/services/seo-management" },
+        { name: "Local SEO", href: "/services/local-seo" },
         { name: "Unban Service", href: "/facebook-unban-services" },
       ],
     },

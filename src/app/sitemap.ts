@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogSlugs } from '@/data/blog-posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.rahimagency.com'
-  
+  const blogPostRoutes = getAllBlogSlugs().map((slug) => `/blog/${slug}`)
+
   const routes = [
     '',
     '/services/facebook-agency-ad-account',
@@ -13,12 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/taboola-agency-ad-accounts',
     '/services/facebook-feedback-score',
     '/services/health-assessment-service',
+    '/services/seo-management',
+    '/services/local-seo',
+    '/free-seo-report',
     '/products/buy-facebook-accounts',
     '/products/buy-facebook-pages',
     '/products/buy-facebook-business-managers',
     '/request-access',
     '/reviews',
     '/blog',
+    ...blogPostRoutes,
     '/resources',
     '/milestones',
     '/partners',

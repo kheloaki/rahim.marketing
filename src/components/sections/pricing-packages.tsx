@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { Check, Info } from 'lucide-react';
+import Link from 'next/link';
+import { Check, Info, Star } from 'lucide-react';
+import { BingIcon, GoogleIcon, MetaIcon, TikTokIcon } from '@/components/brand/platform-icons';
 
 const PricingPackages = () => {
   const plans = [
@@ -78,13 +80,11 @@ const PricingPackages = () => {
             <span className="text-red-500 font-bold">Only 9/20 Spots left</span> | We only open access a few times per year to limited amount of clients to maintain the highest quality accounts & provide hands-on support.
           </p>
           <div className="flex items-center justify-center gap-4 mt-8">
-            <Image 
-              src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66857b290df62758169994c6_trustpilot-stars.svg" 
-              alt="Trustpilot" 
-              width={100}
-              height={24}
-              className="h-6 w-auto"
-            />
+            <div className="flex">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} size={18} className="fill-[#E44F71] text-[#E44F71]" />
+              ))}
+            </div>
             <span className="text-sm font-medium text-white">Excellent 4.9/5</span>
           </div>
         </div>
@@ -131,21 +131,21 @@ const PricingPackages = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <button className={`w-full py-3.5 rounded-xl font-bold transition-all duration-200 cursor-pointer text-sm ${
+                  <Link href="/request-access" className={`w-full py-3.5 rounded-xl font-bold transition-all duration-200 cursor-pointer text-sm inline-flex items-center justify-center ${
                     plan.featured
                       ? 'bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20'
                       : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'
                   }`}>
                     {plan.cta}
-                  </button>
+                  </Link>
                   
-                  <div className="mt-4 flex items-center justify-center gap-2 grayscale opacity-50">
+                  <div className="mt-4 flex items-center justify-center gap-2">
                     <Image 
-                      src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/68eea656b52e6d210182211c_cards-40.svg" 
-                      alt="Payments" 
+                      src="/images/payment-cards.jpg" 
+                      alt="Accepted payment methods" 
                       width={160}
-                      height={16}
-                      className="h-4 w-auto"
+                      height={32}
+                      className="h-6 w-auto rounded-sm object-cover opacity-70"
                     />
                   </div>
                 </div>
@@ -159,11 +159,11 @@ const PricingPackages = () => {
             <Info size={14} />
             All packages come with a 7-day money-back guarantee if accounts aren&apos;t delivered within 48h.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6">
-             <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5e6713de7470d6fbf_facebook.svg" alt="Meta" width={24} height={24} className="h-6 w-auto opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all" />
-             <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5ee0f69154b58e522_google.svg" alt="Google" width={24} height={24} className="h-6 w-auto opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all" />
-             <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a558069249529ce2f3_tiktok.svg" alt="TikTok" width={24} height={24} className="h-6 w-auto opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all" />
-             <Image src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a51e37f05dbfafd0d3_bing.svg" alt="Bing" width={24} height={24} className="h-6 w-auto opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all" />
+          <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6 text-white/40">
+             <MetaIcon size={24} />
+             <GoogleIcon size={24} />
+             <TikTokIcon size={24} />
+             <BingIcon size={24} />
           </div>
         </div>
       </div>

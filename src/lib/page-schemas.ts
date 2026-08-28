@@ -83,6 +83,19 @@ export const otherPageSchemas = {
     title: "Request Access - Get Started with Premium Agency Ad Accounts",
     description: "Request access to premium agency ad accounts for Meta, Google, and TikTok. Fill out our form and get started within 24 hours.",
   },
+  "peptides-meta-ads": {
+    title: "Meta Ads Structure for Peptide Brands",
+    description: "A ready-to-scale Meta ads structure for peptide brands: whitelisted agency accounts, Business Manager setup, pixel and CAPI, and a campaign architecture built for this vertical.",
+    serviceType: "Meta Advertising Structure for Peptide Brands",
+    faqs: [
+      { question: "What is a Meta ads structure for peptide brands?", answer: "It is a complete advertising setup: Holder Business Manager, brand page, pixel, conversions API, naming conventions, and campaign architecture (prospecting, retargeting, offer) so peptide brands can test and scale on Meta without rebuilding from scratch after every restriction." },
+      { question: "What is the difference between Starter, Pro, Master, and Enterprise?", answer: "Starter ($399) is two BMs and six ad accounts for a first launch. Pro ($899) splits admin and advertiser lanes with twelve ad accounts. Master ($1,499) adds a verified holder BM so the pixel survives if a spend node is limited. Enterprise ($2,999) is dual holders, six advertiser BMs, and eighteen ad accounts for high-volume buyers." },
+      { question: "Why do peptide ads fail on regular accounts?", answer: "Peptide and research-compound offers sit in a high-scrutiny health vertical. Personal ad accounts and weak Business Managers get limited or banned quickly. The pixel usually dies with the account. A holder BM plus replaceable agency spend is what keeps events and campaigns alive." },
+      { question: "Do you write ads that hide medical claims?", answer: "No. We do not sell policy evasion. We set up infrastructure and a campaign framework, and we share creative and landing-page guidelines that stay inside Meta’s advertising rules for health and wellness. Your copy and claims remain your responsibility." },
+      { question: "What do I receive after approval?", answer: "The pack you requested: isolated browsers, profiles, Business Managers, brand pages, ad accounts, and on Master/Enterprise a verified holder BM for the pixel. Plus campaign naming and a 30-minute walkthrough. Most setups are delivered within 24 hours of approval." },
+      { question: "Is this only for research peptides?", answer: "It is built for peptide and adjacent wellness brands that already have a store, offer, and landing page. If your product cannot be advertised on Meta at all, we will tell you before you spend. Request access or contact us on Telegram with the offer so we can confirm fit." },
+    ],
+  },
   "health-assessment-service": {
     title: "Account Health Assessment Service",
     description: "Get a comprehensive analysis of your ad account health with actionable recommendations. Professional account health assessment service.",
@@ -119,16 +132,16 @@ export const otherPageSchemas = {
     description: "Everything you need to scale your advertising. From guides to partner tools, find all resources in one place.",
   },
   "privacy": {
-    title: "Privacy Policy - Rahim Marketing",
+    title: "Privacy Policy",
     description: "Read our privacy policy to understand how we collect, use, and protect your personal information.",
   },
   "terms": {
-    title: "Terms of Service - Rahim Marketing",
+    title: "Terms of Service",
     description: "Read our terms of service to understand the rules and guidelines for using Rahim Marketing services.",
   },
   "cookies": {
-    title: "Cookie Settings - Manage Your Preferences",
-    description: "Manage your cookie preferences and privacy settings. Control how we use cookies on our website.",
+    title: "Cookie Policy",
+    description: "How Rahim Marketing uses cookies and similar technologies on rahimagency.com.",
   },
   "seo-management": {
     title: "SEO Management - We Manage SEO for Your Projects",

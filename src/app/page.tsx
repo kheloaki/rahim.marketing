@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import HeroPopup from "@/components/sections/hero-popup";
 import HeroGeometric from "@/components/sections/hero-geometric";
@@ -17,6 +15,14 @@ import LatestBlogs from "@/components/sections/latest-blogs";
 import CTABanner from "@/components/sections/cta-banner";
 import Footer from "@/components/sections/footer";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
+  description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+  path: "/",
+  absoluteTitle: true,
+});
 
 export default function Home() {
   return (
@@ -37,6 +43,7 @@ export default function Home() {
             { name: "Bing Agency Accounts", url: "/services/bing-agency-accounts", description: "Premium Bing agency ad accounts", itemType: "Service" },
             { name: "Taboola Agency Accounts", url: "/services/taboola-agency-ad-accounts", description: "Premium Taboola agency accounts", itemType: "Service" },
             { name: "Outbrain Agency Accounts", url: "/services/outbrain-agency-ad-accounts", description: "Premium Outbrain agency accounts", itemType: "Service" },
+            { name: "Meta Ads Structure for Peptide Brands", url: "/services/peptides-meta-ads", description: "Whitelisted Meta ads structure for peptide brands", itemType: "Service" },
           ],
         }}
       />

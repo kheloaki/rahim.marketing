@@ -10,7 +10,7 @@ const seoServices = [
     link: "/services/seo-management",
     cta: "Learn more",
     icon: Search,
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+    image: "/images/service-seo.jpg",
   },
   {
     title: "Local SEO",
@@ -18,7 +18,7 @@ const seoServices = [
     link: "/services/local-seo",
     cta: "Learn more",
     icon: MapPin,
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+    image: "/images/service-local-seo.jpg",
   },
 ];
 

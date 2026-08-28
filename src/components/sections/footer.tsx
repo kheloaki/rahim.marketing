@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   const footerLinks = [
@@ -17,6 +18,7 @@ const Footer = () => {
     {
       title: "Other Services",
       links: [
+        { name: "Peptides Meta Ads Structure", href: "/services/peptides-meta-ads" },
         { name: "Facebook Feedback Score Boost", href: "/services/facebook-feedback-score" },
         { name: "Account Health Assessment", href: "/services/health-assessment-service" },
         { name: "SEO Management", href: "/services/seo-management" },
@@ -56,11 +58,9 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-1 flex flex-col space-y-6">
-            <a href="/" className="inline-block">
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                Rahim Marketing
-              </span>
-            </a>
+            <Link href="/" className="inline-block">
+              <Image src="/logo.png" alt="rahim logo" width={120} height={40} className="h-10 w-auto" unoptimized />
+            </Link>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
               Rahim Marketing provides premium whitelisted advertising infrastructure for serious media buyers and brands.
             </p>
@@ -84,12 +84,13 @@ const Footer = () => {
               <ul className="space-y-3">
                 {column.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-white/50 hover:text-[#E44F71] transition-colors duration-200"
+                      {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -102,15 +103,15 @@ const Footer = () => {
             © {new Date().getFullYear()} Rahim Marketing. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
+            <Link href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
               Terms of Service
-            </a>
-            <a href="/privacy" className="text-xs text-white/40 hover:text-white transition-colors">
+            </Link>
+            <Link href="/privacy" className="text-xs text-white/40 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="/cookies" className="text-xs text-white/40 hover:text-white transition-colors">
-              Cookie Settings
-            </a>
+            </Link>
+            <Link href="/cookies" className="text-xs text-white/40 hover:text-white transition-colors">
+              Cookie Policy
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <a 

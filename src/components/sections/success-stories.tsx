@@ -1,5 +1,6 @@
+"use client";
+
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
@@ -80,15 +81,13 @@ const SuccessStories = () => {
                     <div className="text-white/40 text-sm">SaaS Founder & Rahim Marketing Client</div>
                  </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 italic">"These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands."</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 italic">&ldquo;These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands.&rdquo;</h3>
               <div className="flex items-center gap-3">
-                <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/68617f6e5cafcdc938e782f7_trustpilotstars-26.avif" 
-                  alt="Trustpilot Stars" 
-                  width={100} 
-                  height={20}
-                  className="h-5 w-auto object-contain"
-                />
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={16} className="fill-[#E44F71] text-[#E44F71]" />
+                  ))}
+                </div>
                 <span className="text-white/60 text-sm font-medium">Excellent reviews</span>
               </div>
             </div>

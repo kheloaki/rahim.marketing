@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import CaseStudiesSection from "@/components/sections/case-studies-section";
@@ -11,6 +9,7 @@ import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { seoCaseStudies } from "@/data/seo-case-studies";
 import { Check, Search, FileText, BarChart3, Send, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function SeoHeroSection() {
   return (
@@ -107,6 +106,8 @@ function WhatWeDoSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(otherPageSchemas["seo-management"], "/services/seo-management");
 
 export default function SeoManagementPage() {
   const schemaData = otherPageSchemas["seo-management"] as {

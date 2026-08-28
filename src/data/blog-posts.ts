@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     title: "Cost Per Result Formula: How to Calculate, Analyze, and Lower Your CPR",
     description: "Master the Cost Per Result formula! Calculate, analyze, and apply optimization tips to efficiently lower your CPR and maximize ad campaign profits.",
     category: "ADS",
-    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    image: "/images/blog-cpr.jpg",
     datePublished: "2026-01-15",
     dateModified: "2026-02-01",
     content: [
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Spy on Competitors' Ads: Tools, Strategies, Insider Insights",
     description: "Learn how to spy on competitors' ads ethically using tools, strategies, insider insights to build better, cheap campaigns. Beat your competitors in ads war!",
     category: "ADS",
-    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    image: "/images/blog-competitors.jpg",
     datePublished: "2026-01-22",
     dateModified: "2026-02-01",
     content: [
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
     title: "Google Ads Benchmarks (2026): CPC, CTR, CPA & Conversion Standards by Industry",
     description: "Get the definitive 2026 Google Ads benchmarks. Dive into current average CPC, CTR, CVR, and CPA for your industry to measure and improve campaign ROI.",
     category: "ADS",
-    image: "https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690ba6311a444904561effad_blog.svg",
+    image: "/images/blog-benchmarks.jpg",
     datePublished: "2026-02-01",
     content: [
       { type: "paragraph", content: "Benchmarks help you answer: \"Am I doing well or not?\"" },

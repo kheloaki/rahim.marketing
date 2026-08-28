@@ -1,6 +1,10 @@
+"use client";
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ChevronDown, MoveRight, Star } from 'lucide-react';
+import { TELEGRAM_URL, WHATSAPP_URL } from '@/lib/site';
+import { submitLead } from '@/lib/leads';
 
 /**
  * HeroPopup Component
@@ -10,6 +14,8 @@ import { ChevronDown, MoveRight, Star } from 'lucide-react';
 const HeroPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [platform, setPlatform] = useState<'telegram' | 'whatsapp'>('telegram');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
@@ -49,22 +55,22 @@ const HeroPopup = () => {
               {/* Using assets provided directly as fallback references for mockups */}
               <div className="relative flex items-center justify-center">
                 <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/6912f75a7fb7a49c4e008082_bcb2da77df23ae8b0fae36d27-6.avif"
-                  alt="Book Mockup 1"
+                  src="/images/book-high-risk.jpg"
+                  alt="High-Risk Ads Playbook"
                   width={85}
                   height={115}
                   className="relative z-30 shadow-2xl rounded-sm transform -rotate-6 -translate-x-6"
                 />
                 <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/6912fbb1897945ca186105f0_16b5eda3c20e69ec256f351d7-7.avif"
-                  alt="Book Mockup 2"
+                  src="/images/book-scaling.jpg"
+                  alt="Scaling Playbook"
                   width={95}
                   height={120}
                   className="absolute z-40 shadow-2xl rounded-sm"
                 />
                 <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/68af566490a4b25644947adc_5802c0bf34869e6acbf32a6fd-24.avif"
-                  alt="Book Mockup 3"
+                  src="/images/book-shield.jpg"
+                  alt="Account Shield Playbook"
                   width={85}
                   height={115}
                   className="absolute z-30 shadow-2xl rounded-sm transform rotate-6 translate-x-6"
@@ -103,23 +109,35 @@ const HeroPopup = () => {
             
             <form 
               className="space-y-3" 
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                const usernameInput = e.currentTarget.querySelector('input[type="text"]') as HTMLInputElement;
-                const username = usernameInput?.value || '';
-                
-                if (platform === 'telegram') {
-                  window.open(`https://t.me/rahim_ou`, '_blank');
-                } else if (platform === 'whatsapp') {
-                  window.open('https://wa.me/message/WKWQWAZSRAU3N1', '_blank');
+                const form = e.currentTarget;
+                const fd = new FormData(form);
+                setStatus('sending');
+                setError('');
+                const result = await submitLead({
+                  type: 'playbook',
+                  name: String(fd.get('name') || ''),
+                  email: String(fd.get('email') || ''),
+                  platform,
+                  message: String(fd.get('handle') || ''),
+                });
+                if (!result.ok) {
+                  setStatus('error');
+                  setError(result.error || 'Could not send your request');
+                  return;
                 }
+                setStatus('sent');
+                window.open(platform === 'telegram' ? TELEGRAM_URL : WHATSAPP_URL, '_blank');
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <label className="text-[13px] text-white/90 font-medium">Your Name</label>
                   <input 
-                    type="text" 
+                    type="text"
+                    name="name"
+                    required
                     placeholder="John Doe" 
                     className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[44px] px-3 text-white text-[14px] focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                   />
@@ -127,7 +145,9 @@ const HeroPopup = () => {
                 <div className="space-y-1.5">
                   <label className="text-[13px] text-white/90 font-medium">Business Email Address</label>
                   <input 
-                    type="email" 
+                    type="email"
+                    name="email"
+                    required
                     placeholder="johndoe32@gmail.com" 
                     className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[44px] px-3 text-white text-[14px] focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                   />
@@ -137,6 +157,7 @@ const HeroPopup = () => {
               {/* Platform Selection */}
               <div className="flex bg-[#150d1f]/40 p-1 rounded-[8px] border border-white/10 w-fit">
                 <button 
+                  type="button"
                   onClick={() => setPlatform('telegram')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] text-[13px] font-semibold transition-all ${platform === 'telegram' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
@@ -146,6 +167,7 @@ const HeroPopup = () => {
                   Telegram
                 </button>
                 <button 
+                  type="button"
                   onClick={() => setPlatform('whatsapp')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] text-[13px] font-semibold transition-all ${platform === 'whatsapp' ? 'bg-[#150d1f] text-white' : 'text-white/60 hover:text-white'}`}
                 >
@@ -166,14 +188,17 @@ const HeroPopup = () => {
                   <span className="text-[12px]">@</span>
                 </div>
                 <input 
-                  type="text" 
+                  type="text"
+                  name="handle"
                   placeholder={platform === 'telegram' ? 'rahim_ou' : 'your username'} 
                   className="w-full bg-[#150d1f]/40 border border-white/10 rounded-[8px] h-[44px] pl-[48px] pr-3 text-white text-[14px] focus:outline-none focus:border-white/30 transition-colors placeholder:text-white/20"
                 />
               </div>
 
-              <button className="w-full h-[48px] bg-[#1a42cc] hover:bg-[#1534a6] text-white font-bold rounded-[8px] flex items-center justify-center gap-2 transition-all shadow-lg active:scale-[0.98] text-[14px]">
-                Get All 3 E-Books For Free
+              {error && <p className="text-[13px] text-white">{error}</p>}
+              {status === 'sent' && <p className="text-[13px] text-white">Request sent. We will follow up with the playbooks.</p>}
+              <button type="submit" disabled={status === 'sending' || status === 'sent'} className="w-full h-[48px] bg-[#1a42cc] hover:bg-[#1534a6] text-white font-bold rounded-[8px] flex items-center justify-center gap-2 transition-all shadow-lg active:scale-[0.98] text-[14px] disabled:opacity-60">
+                {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent' : 'Get All 3 E-Books For Free'}
                 <MoveRight className="w-4 h-4" />
               </button>
             </form>
@@ -195,11 +220,10 @@ const HeroPopup = () => {
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden">
                 <Image 
-                  src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/66c4664a78732e6a9f5835ea_Kamil.webp" 
+                  src="/images/portrait-advisor.jpg" 
                   alt="Kamil Z." 
                   width={32} 
                   height={32}
-                  unoptimized
                 />
               </div>
               <div>

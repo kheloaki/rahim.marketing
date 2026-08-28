@@ -99,9 +99,6 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
   },
-  alternates: {
-    canonical: "/",
-  },
   category: "Advertising Services",
 };
 
@@ -116,9 +113,11 @@ export default function RootLayout({
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.prod.website-files.com" />
         <link rel="dns-prefetch" href="https://t.me" />
         <link rel="dns-prefetch" href="https://wa.me" />
+        
+        <link rel="icon" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         
         {/* Preload Critical Resources */}
         <link rel="preload" as="image" href="/og-image.jpg" />
@@ -156,11 +155,6 @@ export default function RootLayout({
                 availableLanguage: ["English"],
               },
               sameAs: ["https://t.me/rahim_ou"],
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5.0",
-                reviewCount: "1750",
-              },
             }),
           }}
         />

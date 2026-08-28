@@ -121,10 +121,11 @@ const Milestones = () => {
           {/* Abstract Floating Icons (from assets) */}
           <div className="absolute top-10 right-10 opacity-20 hidden lg:block pointer-events-none">
             <Image 
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690ba63160dbee8f4bcf443d_milestones-18.svg" 
-              alt="Floating Milestone Icon" 
+              src="/images/milestones-hero.jpg" 
+              alt="Rahim Marketing milestone rewards" 
               width={80} 
               height={80}
+              className="rounded-lg object-cover"
             />
           </div>
         </div>

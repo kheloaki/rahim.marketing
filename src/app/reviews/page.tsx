@@ -1,11 +1,12 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import SuccessStories from "@/components/sections/success-stories";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Star } from "lucide-react";
+import { metaFromSchema } from "@/lib/page-meta";
+
+export const metadata = metaFromSchema(otherPageSchemas["reviews"], "/reviews");
 
 export default function ReviewsPage() {
   const schemaData = otherPageSchemas["reviews"];

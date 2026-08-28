@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rahimmarketing.com";
-const siteName = "Rahim Marketing";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+
+const siteUrl = SITE_URL;
+const siteName = SITE_NAME;
 
 export interface SEOProps {
   title: string;
@@ -13,9 +15,70 @@ export interface SEOProps {
   type?: "website" | "article";
   publishedTime?: string;
   modifiedTime?: string;
+  absoluteTitle?: boolean;
 }
 
-export function generateMetadata({
+export interface SchemaFaq {
+  question: string;
+  answer: string;
+}
+
+export interface SchemaBreadcrumb {
+  name: string;
+  url: string;
+}
+
+export interface SchemaListItem {
+  name: string;
+  url: string;
+  description?: string;
+  itemType?: string;
+}
+
+export interface SchemaBlogPost {
+  title: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+}
+
+export interface PageSchemaData {
+  title?: string;
+  name?: string;
+  description?: string;
+  path?: string;
+  url?: string;
+  serviceType?: string;
+  price?: string;
+  priceCurrency?: string;
+  priceValidUntil?: string;
+  breadcrumbs?: SchemaBreadcrumb[];
+  faqs?: SchemaFaq[];
+  services?: SchemaListItem[];
+  blogPost?: SchemaBlogPost;
+  items?: Array<Record<string, unknown>>;
+  headline?: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  offers?: Record<string, unknown>;
+}
+
+export type JsonLd = Record<string, unknown>;
+
+const defaultKeywords = [
+  "agency ad accounts",
+  "Meta agency accounts",
+  "Facebook agency accounts",
+  "Google Ads agency accounts",
+  "TikTok agency accounts",
+  "whitelisted ad accounts",
+  "premium ad accounts",
+  "Rahim Marketing",
+];
+
+export function buildPageMetadata({
   title,
   description,
   path = "",
@@ -25,23 +88,15 @@ export function generateMetadata({
   type = "website",
   publishedTime,
   modifiedTime,
+  absoluteTitle = false,
 }: SEOProps): Metadata {
-  const url = `${siteUrl}${path}`;
-  const fullTitle = path ? `${title} | ${siteName}` : title;
-
-  const defaultKeywords = [
-    "agency ad accounts",
-    "Meta agency accounts",
-    "Facebook agency accounts",
-    "Google Ads agency accounts",
-    "TikTok agency accounts",
-    "whitelisted ad accounts",
-    "premium ad accounts",
-    "Rahim Marketing",
-  ];
+  const canonicalPath = path === "/" ? "/" : path;
+  const url = canonicalPath ? `${siteUrl}${canonicalPath === "/" ? "/" : canonicalPath}` : siteUrl;
+  const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+  const pageTitle = absoluteTitle ? { absolute: title } : title;
 
   return {
-    title: fullTitle,
+    title: pageTitle,
     description,
     keywords: [...defaultKeywords, ...keywords],
     alternates: {
@@ -51,11 +106,11 @@ export function generateMetadata({
       type,
       url,
       siteName,
-      title: fullTitle,
+      title,
       description,
       images: [
         {
-          url: image.startsWith("http") ? image : `${siteUrl}${image}`,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -66,9 +121,9 @@ export function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title,
       description,
-      images: [image.startsWith("http") ? image : `${siteUrl}${image}`],
+      images: [imageUrl],
     },
     robots: noIndex
       ? {
@@ -89,38 +144,30 @@ export function generateMetadata({
   };
 }
 
-const baseOrganization = {
+const baseOrganization: JsonLd = {
   "@type": "Organization",
-  name: "Rahim Marketing",
+  name: siteName,
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
-  description: "Premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+  description:
+    "Premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     availableLanguage: ["English"],
     contactOption: "TollFree",
   },
-  sameAs: [
-    "https://t.me/rahim_ou",
-  ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "1750",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  sameAs: ["https://t.me/rahim_ou"],
 };
 
-export function generateStructuredData(type: string, data?: any) {
+export function generateStructuredData(type: string, data: PageSchemaData = {}): JsonLd {
   switch (type) {
     case "Organization":
       return {
         "@context": "https://schema.org",
         ...baseOrganization,
       };
-    
+
     case "WebSite":
       return {
         "@context": "https://schema.org",
@@ -128,67 +175,53 @@ export function generateStructuredData(type: string, data?: any) {
         name: siteName,
         url: siteUrl,
         publisher: baseOrganization,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${siteUrl}/search?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       };
-    
+
     case "Service":
-      const { path: servicePath, breadcrumbs: serviceBreadcrumbs, faqs: serviceFaqs, ...serviceData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "Service",
-        name: data?.name,
-        serviceType: data?.serviceType || "Advertising Services",
+        name: data.name,
+        serviceType: data.serviceType || "Advertising Services",
         provider: baseOrganization,
         areaServed: {
           "@type": "Place",
           name: "Worldwide",
         },
-        description: data?.description,
-        offers: data?.offers || {
+        description: data.description,
+        offers: data.offers || {
           "@type": "Offer",
           availability: "https://schema.org/InStock",
           priceCurrency: "USD",
         },
-        ...serviceData,
       };
-    
+
     case "Product":
-      const { path: productPath, ...productData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "Product",
-        name: data?.name,
-        description: data?.description,
+        name: data.name,
+        description: data.description,
         brand: baseOrganization,
         manufacturer: baseOrganization,
         offers: {
           "@type": "Offer",
           availability: "https://schema.org/InStock",
-          priceCurrency: data?.priceCurrency || "USD",
-          price: data?.price,
-          priceValidUntil: data?.priceValidUntil,
-          url: data?.url || `${siteUrl}${productPath || ""}`,
+          priceCurrency: data.priceCurrency || "USD",
+          price: data.price,
+          priceValidUntil: data.priceValidUntil,
+          url: data.url || `${siteUrl}${data.path || ""}`,
           seller: baseOrganization,
         },
-        aggregateRating: baseOrganization.aggregateRating,
-        ...productData,
       };
-    
+
     case "WebPage":
-      const { path, breadcrumbs, faqs, services, blogPost, ...webPageData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: data?.name,
-        description: data?.description,
-        url: `${siteUrl}${path || ""}`,
+        name: data.name,
+        description: data.description,
+        url: `${siteUrl}${data.path || ""}`,
         inLanguage: "en-US",
         isPartOf: {
           "@type": "WebSite",
@@ -197,63 +230,64 @@ export function generateStructuredData(type: string, data?: any) {
         },
         about: baseOrganization,
         publisher: baseOrganization,
-        ...webPageData,
       };
-    
+
     case "FAQPage":
       return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: data?.faqs?.map((faq: any) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })) || [],
+        mainEntity:
+          data.faqs?.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })) || [],
       };
-    
+
     case "BreadcrumbList":
       return {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        itemListElement: data?.items?.map((item: any, index: number) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: item.name,
-          item: `${siteUrl}${item.url}`,
-        })) || [],
+        itemListElement:
+          data.breadcrumbs?.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: item.name,
+            item: `${siteUrl}${item.url}`,
+          })) || [],
       };
-    
+
     case "ItemList":
       return {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        name: data?.name,
-        description: data?.description,
-        itemListElement: data?.items?.map((item: any, index: number) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
-            "@type": item.itemType || "Service",
-            name: item.name,
-            url: `${siteUrl}${item.url}`,
-            description: item.description,
-          },
-        })) || [],
+        name: data.name,
+        description: data.description,
+        itemListElement:
+          data.services?.map((item, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": item.itemType || "Service",
+              name: item.name,
+              url: `${siteUrl}${item.url}`,
+              description: item.description,
+            },
+          })) || [],
       };
-    
+
     case "BlogPosting":
-      const { path: blogPath, ...blogData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        headline: data?.headline,
-        description: data?.description,
-        image: data?.image,
-        datePublished: data?.datePublished,
-        dateModified: data?.dateModified || data?.datePublished,
+        headline: data.headline,
+        description: data.description,
+        image: data.image,
+        datePublished: data.datePublished,
+        dateModified: data.dateModified || data.datePublished,
         author: {
           "@type": "Organization",
           name: siteName,
@@ -261,26 +295,23 @@ export function generateStructuredData(type: string, data?: any) {
         publisher: baseOrganization,
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${siteUrl}${blogPath || ""}`,
+          "@id": `${siteUrl}${data.path || ""}`,
         },
-        ...blogData,
       };
-    
+
     case "CollectionPage":
-      const { path: collectionPath, ...collectionData } = data || {};
       return {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: data?.name,
-        description: data?.description,
-        url: `${siteUrl}${collectionPath || ""}`,
+        name: data.name,
+        description: data.description,
+        url: `${siteUrl}${data.path || ""}`,
         mainEntity: {
           "@type": "ItemList",
-          itemListElement: data?.items || [],
+          itemListElement: data.items || [],
         },
-        ...collectionData,
       };
-    
+
     default:
       return {
         "@context": "https://schema.org",
@@ -289,110 +320,126 @@ export function generateStructuredData(type: string, data?: any) {
   }
 }
 
-export function generateAllSchemas(pageType: "home" | "service" | "product" | "blog" | "page", data: any) {
-  const schemas: any[] = [];
-  const path = data?.path || "";
+export function generateAllSchemas(
+  pageType: "home" | "service" | "product" | "blog" | "page",
+  data: PageSchemaData = {},
+): JsonLd[] {
+  const schemas: JsonLd[] = [];
+  const path = data.path || "";
   const url = `${siteUrl}${path}`;
 
-  // Organization schema - always included
   schemas.push(generateStructuredData("Organization"));
+  schemas.push(
+    generateStructuredData("WebPage", {
+      name: data.title || siteName,
+      description: data.description,
+      path,
+    }),
+  );
 
-  // WebPage schema - always included
-  schemas.push(generateStructuredData("WebPage", {
-    name: data?.title || siteName,
-    description: data?.description,
-    path: path, // Used to construct URL, but not included in final schema
-  }));
-
-  // BreadcrumbList - always included if items provided
-  if (data?.breadcrumbs && data.breadcrumbs.length > 0) {
-    schemas.push(generateStructuredData("BreadcrumbList", {
-      items: data.breadcrumbs,
-    }));
+  if (data.breadcrumbs && data.breadcrumbs.length > 0) {
+    schemas.push(
+      generateStructuredData("BreadcrumbList", {
+        breadcrumbs: data.breadcrumbs,
+      }),
+    );
   }
 
-  // Page-specific schemas
   switch (pageType) {
     case "home":
       schemas.push(generateStructuredData("WebSite"));
-      if (data?.services) {
-        schemas.push(generateStructuredData("ItemList", {
-          name: "Agency Ad Account Services",
-          description: "Premium agency ad accounts for Meta, Google, and TikTok",
-          items: data.services,
-        }));
+      if (data.services) {
+        schemas.push(
+          generateStructuredData("ItemList", {
+            name: "Agency Ad Account Services",
+            description: "Premium agency ad accounts for Meta, Google, and TikTok",
+            services: data.services,
+          }),
+        );
       }
       break;
-    
+
     case "service":
-      schemas.push(generateStructuredData("Service", {
-        name: data?.title,
-        description: data?.description,
-        serviceType: data?.serviceType || "Advertising Services",
-        offers: {
-          "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: "USD",
-          url: url,
-        },
-      }));
-      if (data?.faqs && data.faqs.length > 0) {
+      schemas.push(
+        generateStructuredData("Service", {
+          name: data.title,
+          description: data.description,
+          serviceType: data.serviceType || "Advertising Services",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "USD",
+            url,
+          },
+        }),
+      );
+      if (data.faqs && data.faqs.length > 0) {
         schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
       }
       break;
-    
+
     case "product":
-      schemas.push(generateStructuredData("Product", {
-        name: data?.title,
-        description: data?.description,
-        price: data?.price,
-        priceCurrency: data?.priceCurrency || "USD",
-        path: path, // Used to construct URL in schema, but excluded from final output
-        url: url,
-      }));
+      schemas.push(
+        generateStructuredData("Product", {
+          name: data.title,
+          description: data.description,
+          price: data.price,
+          priceCurrency: data.priceCurrency || "USD",
+          path,
+          url,
+        }),
+      );
       break;
-    
+
     case "blog":
-      // For blog listing page, use CollectionPage
-      if (data?.services && data.services.length > 0) {
-        schemas.push(generateStructuredData("CollectionPage", {
-          name: data?.title || "Blog",
-          description: data?.description,
-          path: path,
-          items: data.services.map((item: any) => ({
-            "@type": "BlogPosting",
-            name: item.name,
-            url: `${siteUrl}${item.url}`,
-            description: item.description,
-          })),
-        }));
-      } else if (data?.blogPost) {
-        schemas.push(generateStructuredData("BlogPosting", {
-          headline: data.blogPost.title,
-          description: data.blogPost.description,
-          image: data.blogPost.image,
-          datePublished: data.blogPost.datePublished,
-          dateModified: data.blogPost.dateModified,
-          path: path,
-        }));
+      if (data.services && data.services.length > 0) {
+        schemas.push(
+          generateStructuredData("CollectionPage", {
+            name: data.title || "Blog",
+            description: data.description,
+            path,
+            items: data.services.map((item) => ({
+              "@type": "BlogPosting",
+              name: item.name,
+              url: `${siteUrl}${item.url}`,
+              description: item.description,
+            })),
+          }),
+        );
+      } else if (data.blogPost) {
+        schemas.push(
+          generateStructuredData("BlogPosting", {
+            headline: data.blogPost.title,
+            description: data.blogPost.description,
+            image: data.blogPost.image,
+            datePublished: data.blogPost.datePublished,
+            dateModified: data.blogPost.dateModified,
+            path,
+          }),
+        );
       }
-      if (data?.faqs && data.faqs.length > 0) {
+      if (data.faqs && data.faqs.length > 0) {
         schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
       }
       break;
-    
+
     case "page":
-      // For pages with item lists (partners, resources), add CollectionPage
-      if (data?.services && data.services.length > 0) {
-        schemas.push(generateStructuredData("CollectionPage", {
-          name: data?.title,
-          description: data?.description,
-          path: path,
-          items: data.services,
-        }));
+      if (data.services && data.services.length > 0) {
+        schemas.push(
+          generateStructuredData("CollectionPage", {
+            name: data.title,
+            description: data.description,
+            path,
+            items: data.services.map((item) => ({
+              "@type": item.itemType || "Thing",
+              name: item.name,
+              url: `${siteUrl}${item.url}`,
+              description: item.description,
+            })),
+          }),
+        );
       }
-      // Add FAQPage if FAQs exist
-      if (data?.faqs && data.faqs.length > 0) {
+      if (data.faqs && data.faqs.length > 0) {
         schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
       }
       break;
@@ -400,4 +447,3 @@ export function generateAllSchemas(pageType: "home" | "service" | "product" | "b
 
   return schemas;
 }
-

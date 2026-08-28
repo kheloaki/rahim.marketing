@@ -13,13 +13,13 @@ const LatestBlogs = () => {
           <h2 className="text-[48px] font-semibold leading-[1.2] tracking-[-0.02em]">
             Latest blogs
           </h2>
-          <a 
+          <Link 
             href="/blog" 
             className="group flex items-center gap-2 bg-[#ffffff0d] border border-[#ffffff1a] rounded-[8px] px-6 py-3 text-[16px] font-semibold transition-all hover:bg-[#ffffff1a]"
           >
             View all
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
         {/* Carousel/Grid Section */}
@@ -28,15 +28,14 @@ const LatestBlogs = () => {
             <div key={post.slug} className="flex flex-col group">
               {/* Card Image Wrapper */}
               <Link href={`/blog/${post.slug}`} className="block">
-                <div className="relative aspect-[16/10] bg-[#080B1E] border border-[#ffffff1a] rounded-[12px] overflow-hidden mb-6 flex items-center justify-center p-8 transition-all group-hover:border-[#2B7FFF33]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#2B7FFF0D] to-transparent opacity-50" />
-                  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center">
-                    <div className="text-[24px] font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ffffff66] mb-2 leading-tight">
-                      {post.title.split(':').shift()}
-                    </div>
-                    <div className="w-16 h-1 mt-4 bg-[#2B7FFF] rounded-full shadow-[0_0_15px_#2B7FFF]" />
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-[#2B7FFF] text-[10px] font-black px-2 py-1 rounded-[4px] tracking-wider uppercase">
+                <div className="relative aspect-[16/10] bg-[#080B1E] border border-[#ffffff1a] rounded-[12px] overflow-hidden mb-6">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-[#E44F71] text-[10px] font-black px-2 py-1 rounded-[4px] tracking-wider uppercase">
                     {post.category}
                   </div>
                 </div>

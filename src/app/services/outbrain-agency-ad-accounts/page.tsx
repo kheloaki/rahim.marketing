@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PlatformGrid from "@/components/sections/platform-grid";
@@ -13,6 +11,8 @@ import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
+import { OutbrainIcon } from "@/components/brand/platform-icons";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function OutbrainHeroSection() {
   return (
@@ -107,7 +107,7 @@ function OutbrainHeroSection() {
             <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-[#FF6600] rounded-2xl flex items-center justify-center shadow-2xl p-4">
-                  <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a5a2b997d3650086d9_outbrain.svg" alt="Outbrain" className="w-full h-full object-contain" />
+                  <OutbrainIcon size={56} className="text-white" />
                 </div>
                 <h3 className="text-[28px] font-bold text-white mb-4">Outbrain Agency Accounts</h3>
                 <p className="text-white/60 mb-8">Premium Native Advertising Accounts</p>
@@ -124,6 +124,8 @@ function OutbrainHeroSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(servicePageSchemas["outbrain-agency-ad-accounts"], "/services/outbrain-agency-ad-accounts");
 
 export default function OutbrainAgencyAccountsPage() {
   const schemaData = servicePageSchemas["outbrain-agency-ad-accounts"];

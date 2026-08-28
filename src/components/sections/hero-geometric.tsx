@@ -87,19 +87,6 @@ export default function HeroGeometric({
   title1?: string
   title2?: string
 }) {
-  const fadeUpVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: [0.25, 0.4, 0.25, 1],
-      },
-    }),
-  }
-
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0a0612]">
       <div className="absolute inset-0 bg-gradient-to-br from-[#BC2C7B]/[0.05] via-transparent to-[#E44F71]/[0.05] blur-3xl" />

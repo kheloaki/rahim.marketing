@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PlatformGrid from "@/components/sections/platform-grid";
@@ -13,6 +11,7 @@ import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function TikTokHeroSection() {
   return (
@@ -126,6 +125,8 @@ function TikTokHeroSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(servicePageSchemas["tiktok-agency-account"], "/services/tiktok-agency-account");
 
 export default function TikTokAgencyAccountPage() {
   const schemaData = servicePageSchemas["tiktok-agency-account"];

@@ -1,9 +1,16 @@
+"use client";
+
 import React from 'react';
-import Image from 'next/image';
 import { CheckCircle2, XCircle, Info } from 'lucide-react';
 
+type CellData =
+  | { type: 'check' }
+  | { type: 'cross' }
+  | { type: 'text'; value: string }
+  | { type: 'badge'; value: string; color: string };
+
 const ComparisonTable = () => {
-  const features = [
+  const features: Array<{ label: React.ReactNode; uproas: CellData; traditional: CellData }> = [
     {
       label: 'Run Ads For Almost Any Vertical',
       uproas: { type: 'check' },
@@ -55,7 +62,7 @@ const ComparisonTable = () => {
     },
   ];
 
-  const renderCellContent = (data: any) => {
+  const renderCellContent = (data: CellData) => {
     if (data.type === 'check') {
       return (
         <div className="flex justify-center">

@@ -1,43 +1,50 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const OtherServices = () => {
   const services = [
     {
+      title: "Peptides Meta Ads Structure",
+      description: "A ready-to-scale Meta campaign architecture for peptide brands: accounts, pixel, and funnel shells.",
+      image: "/images/peptides/rahim-pack-starter.jpg",
+      link: "/services/peptides-meta-ads"
+    },
+    {
       title: "Facebook Unban Services",
       description: "Comprehensive solutions tailored for managing local digital campaigns and reaching targeted communities effectively.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+      image: "/images/service-unban.jpg",
       link: "/facebook-unban-services"
     },
     {
       title: "Facebook Business Managers",
       description: "Centralized tool for organizing assets, managing permissions, and streamlining all business operations.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/690b9e8ff01c0cfaf629b82e_4db4364723691601ed55b96e7-1.avif",
+      image: "/images/service-business-manager.jpg",
       link: "/products/buy-facebook-business-managers"
     },
     {
       title: "Facebook Pages",
       description: "Dedicated platform to showcase your brand, engage audiences, and grow an online community seamlessly.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/690b9e90063a7c130f95c211_ff85f2f31b4179c499149315a-2.avif",
+      image: "/images/service-pages.jpg",
       link: "/products/buy-facebook-pages"
     },
     {
       title: "Facebook Accounts",
       description: "Secure profiles that enable users to connect, interact, and manage business or personal activities online.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/images/690b9e8ff01c0cfaf629b82e_4db4364723691601ed55b96e7-1.avif", // Reusing BM asset as fallback for accounts graphics which has similar theme
+      image: "/images/service-accounts.jpg",
       link: "/products/buy-facebook-accounts"
     },
     {
       title: "SEO Management",
       description: "We manage SEO for your projects. Technical SEO, content strategy, and ongoing optimization to grow your organic visibility.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+      image: "/images/service-seo.jpg",
       link: "/services/seo-management"
     },
     {
       title: "Local SEO",
       description: "Get found in your area. We optimize your Google Business Profile and local search visibility.",
-      image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/690b9e8f53e5c5ada378abc1_Unban_20Service-12.svg",
+      image: "/images/service-local-seo.jpg",
       link: "/services/local-seo"
     }
   ];
@@ -55,7 +62,7 @@ const OtherServices = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <a 
+            <Link 
               key={index}
               href={service.link}
               className="group flex flex-col bg-[#080B1E] border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-[#2B7FFF]/50 hover:shadow-2xl hover:shadow-[#2B7FFF]/10"
@@ -82,7 +89,7 @@ const OtherServices = () => {
                   {service.description}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

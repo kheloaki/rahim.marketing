@@ -1,11 +1,10 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import LatestBlogs from "@/components/sections/latest-blogs";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { ArrowRight, BookOpen, Users, Award, FileText } from "lucide-react";
+import { metaFromSchema } from "@/lib/page-meta";
 
 const resources = [
   {
@@ -37,6 +36,8 @@ const resources = [
     color: "#BC2C7B"
   }
 ];
+
+export const metadata = metaFromSchema(otherPageSchemas["resources"], "/resources");
 
 export default function ResourcesPage() {
   const schemaData = otherPageSchemas["resources"];

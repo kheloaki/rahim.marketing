@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PlatformGrid from "@/components/sections/platform-grid";
@@ -13,6 +11,8 @@ import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
+import { TaboolaIcon } from "@/components/brand/platform-icons";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function TaboolaHeroSection() {
   return (
@@ -107,7 +107,7 @@ function TaboolaHeroSection() {
             <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-[#0052CC] rounded-2xl flex items-center justify-center shadow-2xl p-4">
-                  <img src="https://cdn.prod.website-files.com/6685720b48faa89595e9c9d0/690b93a6c1f88424f4b4df48_taboola.svg" alt="Taboola" className="w-full h-full object-contain" />
+                  <TaboolaIcon size={56} className="text-white" />
                 </div>
                 <h3 className="text-[28px] font-bold text-white mb-4">Taboola Agency Accounts</h3>
                 <p className="text-white/60 mb-8">Premium Native Advertising Accounts</p>
@@ -124,6 +124,8 @@ function TaboolaHeroSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(servicePageSchemas["taboola-agency-ad-accounts"], "/services/taboola-agency-ad-accounts");
 
 export default function TaboolaAgencyAccountsPage() {
   const schemaData = servicePageSchemas["taboola-agency-ad-accounts"];

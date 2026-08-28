@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import FAQSection from "@/components/sections/faq-section";
@@ -8,6 +6,7 @@ import FreeReportCta from "@/components/sections/free-report-cta";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, MapPin, Star, TrendingUp, Send, MessageCircle } from "lucide-react";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function LocalSeoHeroSection() {
   return (
@@ -104,6 +103,8 @@ function LocalSeoValueSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(otherPageSchemas["local-seo"], "/services/local-seo");
 
 export default function LocalSeoPage() {
   const schemaData = otherPageSchemas["local-seo"] as {

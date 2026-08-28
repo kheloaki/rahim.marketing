@@ -1,28 +1,11 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
-import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
-import { getBreadcrumbs } from "@/lib/page-schemas";
-import { ArrowLeft, Home, Search, MessageCircle, Send } from "lucide-react";
+import { ArrowLeft, Home, MessageCircle, Send } from "lucide-react";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <>
-      <ComprehensiveSchema
-        pageType="page"
-        data={{
-          title: "404 - Page Not Found",
-          description: "The page you're looking for doesn't exist or has been moved. Return to homepage or contact our support team.",
-          path: "/404",
-          breadcrumbs: [
-            { name: "Home", url: "/" },
-            { name: "404", url: "/404" },
-          ],
-        }}
-      />
-      <main className="min-h-screen bg-[#0a0612]">
+    <main className="min-h-screen bg-[#0a0612]">
       <Navigation />
       <div className="pt-[89px]">
         <section className="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
@@ -106,6 +89,5 @@ export default function NotFound() {
       </div>
       <Footer />
     </main>
-    </>
   );
 }

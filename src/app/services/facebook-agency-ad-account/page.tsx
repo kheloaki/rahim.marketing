@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PlatformGrid from "@/components/sections/platform-grid";
@@ -12,7 +10,8 @@ import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
-import Image from "next/image";
+import { servicePageSchemas } from "@/lib/page-schemas";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function FacebookHeroSection() {
   return (
@@ -126,6 +125,8 @@ function FacebookHeroSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(servicePageSchemas["facebook-agency-ad-account"], "/services/facebook-agency-ad-account");
 
 export default function FacebookAgencyAdAccountPage() {
   const faqs = [

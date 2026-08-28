@@ -5,8 +5,10 @@ import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import BlogArticleContent from "@/components/blog/blog-article-content";
+import { buildPageMetadata } from "@/lib/seo";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/data/blog-posts";
 import { ArrowLeft, Calendar } from "lucide-react";
+import Image from "next/image";
 
 interface BlogArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -20,17 +22,15 @@ export async function generateMetadata({ params }: BlogArticlePageProps): Promis
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) return { title: "Blog" };
-  return {
+  return buildPageMetadata({
     title: post.title,
     description: post.description,
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: "article",
-      publishedTime: post.datePublished,
-      modifiedTime: post.dateModified,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: post.datePublished,
+    modifiedTime: post.dateModified,
+    image: post.image,
+  });
 }
 
 export default async function BlogArticlePage({ params }: BlogArticlePageProps) {
@@ -88,6 +88,15 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
                 <p className="text-lg text-white/70 mb-6">
                   {post.description}
                 </p>
+                <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 mb-8">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
                 <div className="flex items-center gap-2 text-white/50 text-sm">
                   <Calendar className="w-4 h-4" />
                   <time dateTime={post.datePublished}>

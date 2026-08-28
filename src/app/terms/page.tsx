@@ -1,9 +1,10 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
+import { metaFromSchema } from "@/lib/page-meta";
+
+export const metadata = metaFromSchema(otherPageSchemas["terms"], "/terms");
 
 export default function TermsPage() {
   const schemaData = otherPageSchemas["terms"];

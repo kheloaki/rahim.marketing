@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 const HowItWorks = () => {
   return (
@@ -120,17 +119,6 @@ const HowItWorks = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Decorative Arrow SVG from assets if needed, otherwise general styling suffices */}
-              <div className="absolute top-10 left-10 opacity-20 pointer-events-none">
-                <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/82acdb25-9ead-41a3-9e58-a393f66f7c2d-uproas-io/assets/svgs/685d6f71d832b4495e440669_arrow-39.svg"
-                  width={60}
-                  height={60}
-                  alt=""
-                  className="invert brightness-200"
-                />
               </div>
             </div>
           </div>

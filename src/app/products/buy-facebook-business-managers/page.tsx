@@ -1,5 +1,3 @@
-"use client";
-
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PricingPackages from "@/components/sections/pricing-packages";
@@ -9,6 +7,7 @@ import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { productPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
+import { metaFromSchema } from "@/lib/page-meta";
 
 function BMHeroSection() {
   return (
@@ -122,6 +121,8 @@ function BMHeroSection() {
     </section>
   );
 }
+
+export const metadata = metaFromSchema(productPageSchemas["buy-facebook-business-managers"], "/products/buy-facebook-business-managers");
 
 export default function BuyBusinessManagersPage() {
   const schemaData = productPageSchemas["buy-facebook-business-managers"];

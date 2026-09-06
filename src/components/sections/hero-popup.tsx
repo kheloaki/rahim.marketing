@@ -42,11 +42,11 @@ const HeroPopup = () => {
         <div className="px-4 md:px-8 pb-8 pt-4 flex flex-col items-center">
           {/* Main Title */}
           <h2 className="text-[24px] md:text-[28px] font-bold text-center leading-[1.1] mb-3 text-white">
-            Unlock the Complete High-Risk <br /> Facebook Ads Playbook
+            Meta Advertising <br /> Infrastructure Playbook
           </h2>
           
           <p className="text-[14px] md:text-[15px] text-white/60 text-center max-w-[500px] mb-6">
-            Get instant access to the 3 books used by top-tier advertisers to run aggressive campaigns, stay unbanned, and scale to 7–9 figures.
+            Three practical guides on Meta asset architecture, account health while scaling, and how agency ad accounts actually work.
           </p>
 
           {/* Book Mockup Section */}
@@ -56,21 +56,21 @@ const HeroPopup = () => {
               <div className="relative flex items-center justify-center">
                 <Image 
                   src="/images/book-high-risk.jpg"
-                  alt="High-Risk Ads Playbook"
+                  alt="Meta advertising risk playbook cover"
                   width={85}
                   height={115}
                   className="relative z-30 shadow-2xl rounded-sm transform -rotate-6 -translate-x-6"
                 />
                 <Image 
                   src="/images/book-scaling.jpg"
-                  alt="Scaling Playbook"
+                  alt="Meta advertising scaling playbook cover"
                   width={95}
                   height={120}
                   className="absolute z-40 shadow-2xl rounded-sm"
                 />
                 <Image 
                   src="/images/book-shield.jpg"
-                  alt="Account Shield Playbook"
+                  alt="Account continuity playbook cover"
                   width={85}
                   height={115}
                   className="absolute z-30 shadow-2xl rounded-sm transform rotate-6 translate-x-6"
@@ -84,19 +84,19 @@ const HeroPopup = () => {
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">1</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book I: Bulletproof Facebook Account Structures <span className="text-white/50 line-through ml-1">$975</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book I: Meta Asset Architecture <span className="text-white/50 line-through ml-1">$975</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">2</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book II: Running Aggressive Facebook Campaigns <span className="text-white/50 line-through ml-1">$1115</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book II: Scaling &amp; Account Health <span className="text-white/50 line-through ml-1">$1115</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="flex items-center justify-center w-5 h-5 rounded bg-primary text-[11px] font-bold shrink-0 mt-0.5">3</span>
                   <p className="text-[13px] font-medium text-white/90">
-                    Book III: Agency Ad Accounts 101 <span className="text-white/50 line-through ml-1">$2155</span> <span className="text-white font-bold ml-1">Free</span>
+                    Book III: Agency Ad Accounts Explained <span className="text-white/50 line-through ml-1">$2155</span> <span className="text-white font-bold ml-1">Free</span>
                   </p>
                 </li>
               </ul>
@@ -214,14 +214,14 @@ const HeroPopup = () => {
             </div>
             
             <p className="text-[13px] italic text-white/80 leading-relaxed mb-4">
-              &quot;These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands.&quot;
+              &quot;Clearer account structure and tracking ownership made it easier to keep campaigns running when we needed to adjust spend nodes.&quot;
             </p>
 
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-full bg-white/10 overflow-hidden">
                 <Image 
                   src="/images/portrait-advisor.jpg" 
-                  alt="Kamil Z." 
+                  alt="Photo of Kamil Z., Rahim Marketing client" 
                   width={32} 
                   height={32}
                 />

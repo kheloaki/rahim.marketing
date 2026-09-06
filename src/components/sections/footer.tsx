@@ -7,6 +7,7 @@ const Footer = () => {
     {
       title: "Agency Accounts",
       links: [
+        { name: "Agency Ad Accounts Overview", href: "/services/agency-ad-accounts" },
         { name: "Facebook Agency Ad Accounts", href: "/services/facebook-agency-ad-account" },
         { name: "Google Agency Ad Accounts", href: "/services/google-ads-agency-account" },
         { name: "TikTok Agency Ad Accounts", href: "/services/tiktok-agency-account" },
@@ -23,7 +24,7 @@ const Footer = () => {
         { name: "Account Health Assessment", href: "/services/health-assessment-service" },
         { name: "SEO Management", href: "/services/seo-management" },
         { name: "Local SEO", href: "/services/local-seo" },
-        { name: "Unban Service", href: "/facebook-unban-services" },
+        { name: "Restriction Review", href: "/facebook-unban-services" },
       ],
     },
     {
@@ -59,21 +60,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-1 flex flex-col space-y-6">
             <Link href="/" className="inline-block">
-              <Image src="/logo.png" alt="rahim logo" width={120} height={40} className="h-10 w-auto" unoptimized />
+              <Image src="/logo.png" alt="Rahim Marketing" width={120} height={40} className="h-10 w-auto" unoptimized />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Rahim Marketing provides premium whitelisted advertising infrastructure for serious media buyers and brands.
+              Advertising infrastructure for Meta, Google, TikTok and other platforms — agency accounts,
+              continuity support, and structured onboarding.
             </p>
-            <div className="flex space-x-4 items-center">
-              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full">
-                <span className="text-[#E44F71] text-sm font-bold">★ 4.9</span>
-                <span className="text-white/40 text-xs">Trustpilot</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full">
-                <span className="text-[#E44F71] text-sm font-bold">★ 4.8</span>
-                <span className="text-white/40 text-xs">G2</span>
-              </div>
-            </div>
+            <p className="text-xs text-white/40">
+              Client feedback is shared on our Reviews page. We do not display unverified platform ratings here.
+            </p>
           </div>
 
           {footerLinks.map((column, idx) => (

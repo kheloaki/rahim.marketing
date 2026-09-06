@@ -6,36 +6,44 @@ import { Plus, Minus } from 'lucide-react';
 const faqData = [
   {
     question: "What is an Agency Ad Account?",
-    answer: "An Agency Ad Account is a premium advertising account provided through certified marketing agencies with direct platform partnerships. These accounts offer higher trust scores, unlimited spending potential, faster ad approvals, and dedicated support from platform representatives."
+    answer:
+      "An agency ad account is advertising infrastructure accessed through an agency setup — typically with clearer permissions, billing workflows, operational support, and continuity options than a basic new self-serve account. It does not override platform advertising policies.",
   },
   {
     question: "How is Rahim Marketing different from other providers?",
-    answer: "Rahim Marketing provides whitelisted agency accounts with direct Meta, Google, and TikTok rep access. We offer instant replacements if accounts get restricted, up to 1% cashback on ad spend, and 24/7 dedicated support. Our 0.2% ban rate is the lowest in the industry."
+    answer:
+      "We focus on structured advertising infrastructure: eligibility review before onboarding, documented access, tracking continuity guidance, replacement support where included in your plan, and responsive operational help. We do not claim immunity from platform restrictions.",
   },
   {
     question: "What platforms do you support?",
-    answer: "We provide agency ad accounts for Meta (Facebook/Instagram), Google Ads, TikTok, Bing/Microsoft Ads, Taboola, and Outbrain. Each platform has dedicated account managers and specialized support."
+    answer:
+      "We provide agency advertising infrastructure for Meta (Facebook/Instagram), Google Ads, TikTok, Bing/Microsoft Ads, Taboola, and Outbrain. Fit depends on your offer and each platform’s policies.",
   },
   {
     question: "How quickly can I get started?",
-    answer: "Once approved, your agency account is delivered within 24 hours. You can fund via credit card, crypto, or bank transfer and start running ads immediately. Priority onboarding is available for Platinum members (<2 hours)."
+    answer:
+      "After eligibility review and approval, accounts are typically delivered within about 24 hours. Funding methods (card, crypto, or bank transfer) are confirmed per setup. Priority onboarding may be available on higher plans.",
   },
   {
     question: "What happens if my account gets restricted?",
-    answer: "We provide instant replacements at no additional cost. Our dedicated team works directly with platform reps to resolve issues quickly. Your pixel data and campaigns can be transferred to minimize downtime."
+    answer:
+      "Restrictions can still happen. Where your plan includes replacement support, we help review options and restore spend capacity. Tracking continuity depends on how Pixel/Dataset ownership was structured.",
   },
   {
     question: "What verticals/niches do you support?",
-    answer: "We support a wide range of verticals including ecommerce, health & wellness, finance, SaaS, lead generation, gaming, and more. Contact us to discuss your specific niche and we'll advise on the best account structure."
+    answer:
+      "We review ecommerce, wellness, finance, SaaS, lead generation, and other offers case by case. Some products or claim sets are not a fit — we will say so before you spend.",
   },
   {
     question: "How does the cashback program work?",
-    answer: "Platinum package members earn up to 1% cashback on all ad spend. Cashback is calculated monthly and can be applied as account credit or withdrawn. There's no cap on cashback earnings."
+    answer:
+      "Platinum members may earn cashback on eligible ad spend. Rates, caps, and payout method are confirmed during onboarding and may change.",
   },
   {
-    question: "Do you offer a money-back guarantee?",
-    answer: "Yes, all packages come with a 7-day money-back guarantee if accounts aren't delivered within 48 hours. We're confident in our service quality and stand behind our delivery promises."
-  }
+    question: "What if delivery is delayed?",
+    answer:
+      "If accounts are not delivered within the agreed window after approval, contact support. Delivery timelines depend on verification and package selection.",
+  },
 ];
 
 interface FAQItem {
@@ -59,23 +67,6 @@ const FAQSection = ({ faqs: customFaqs, title, subtitle }: FAQSectionProps) => {
 
   return (
     <section className="py-[120px] lg:py-[160px] bg-[#0a0612] relative overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqsToShow.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E44F71] opacity-[0.03] blur-[150px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-5 lg:px-10 max-w-[900px] relative z-10">

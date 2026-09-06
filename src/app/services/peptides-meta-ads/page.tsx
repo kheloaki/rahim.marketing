@@ -15,6 +15,8 @@ import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import FAQSection from "@/components/sections/faq-section";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { RelatedResources } from "@/components/seo/related-resources";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { buildPageMetadata } from "@/lib/seo";
 import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
@@ -22,6 +24,7 @@ import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
 const schema = otherPageSchemas["peptides-meta-ads"];
 const path = "/services/peptides-meta-ads";
 const requestHref = "/request-access?service=peptides";
+const breadcrumbs = getBreadcrumbs(path, "Peptides Meta Ads Structure");
 
 export const metadata = buildPageMetadata({
   title: schema.title,
@@ -49,7 +52,7 @@ const reasons = [
   { icon: Layers, title: "Every asset covered", desc: "Page, pixel, agency account, and campaign shells arrive as one stack, not a login dump." },
   { icon: Target, title: "Pixel protection", desc: "Events keep flowing to the holder if an advertiser account is replaced." },
   { icon: Workflow, title: "Campaign architecture", desc: "Prospecting, retargeting, and offer tests are split so learning does not fight itself." },
-  { icon: RefreshCw, title: "Instant replacement", desc: "Restricted ad accounts get swapped. The pixel and the board stay." },
+  { icon: RefreshCw, title: "Replacement support", desc: "When a spend account is restricted, we help swap nodes where the plan allows — while protecting tracking ownership." },
 ];
 
 const inventory = [
@@ -135,7 +138,7 @@ const packs = [
     name: "Master",
     price: "$1,499",
     period: "one-time",
-    forWho: "Already spending — pixel cannot die",
+    forWho: "Already spending — prioritize tracking continuity",
     blurb: "Verified holder BM keeps the pixel. Three advertiser BMs and nine ad accounts run spend. If a spend node is limited, the pixel stays in the holder.",
     image: "/images/peptides/rahim-pack-master.jpg",
     featured: true,
@@ -153,7 +156,7 @@ const packs = [
     price: "$2,999",
     period: "one-time",
     forWho: "Networks and high-volume media buyers",
-    blurb: "Dual verified holders, six advertiser BMs, and eighteen ad accounts across four isolated browsers. Built for peptide brands that cannot go dark.",
+    blurb: "Dual verified holders, six advertiser BMs, and eighteen ad accounts across four isolated browsers. Built for peptide brands that need higher operational continuity.",
     image: "/images/peptides/rahim-pack-enterprise.jpg",
     featured: false,
     includes: [
@@ -219,7 +222,7 @@ export default function PeptidesMetaAdsPage() {
         data={{
           ...schema,
           path,
-          breadcrumbs: getBreadcrumbs(path, "Peptides Meta Ads Structure"),
+          breadcrumbs,
           faqs: schema.faqs,
         }}
       />
@@ -229,15 +232,16 @@ export default function PeptidesMetaAdsPage() {
           <section className="relative overflow-hidden bg-[#0a0612] pt-16 pb-20 lg:pt-20 lg:pb-24">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
             <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
+              <PageBreadcrumbs items={breadcrumbs} className="mb-8" />
               <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 <div className="text-center lg:text-left">
                   <p className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-5">
                     Peptide brands · Meta ads structure
                   </p>
                   <h1 className="text-[2.4rem] sm:text-[3.1rem] lg:text-[3.75rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
-                    The Meta stack peptide brands actually{" "}
+                    Meta advertising infrastructure peptide brands use to{" "}
                     <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                      scale on
+                      operate with continuity
                     </span>
                   </h1>
                   <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-[540px] mx-auto lg:mx-0">
@@ -284,10 +288,12 @@ export default function PeptidesMetaAdsPage() {
                 <div>
                   <p className="text-[#E44F71] text-sm font-semibold tracking-widest uppercase mb-4">Why this exists</p>
                   <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-[#12061c] leading-tight mb-5">
-                    Peptide ads do not die because of creative. They die because the stack is wrong.
+                    Peptide Meta campaigns can fail at more than the creative level
                   </h2>
                   <p className="text-[#12061c]/70 text-lg leading-relaxed mb-4">
-                    Personal accounts, mixed pages, and one bloated CBO cannot carry a high-scrutiny wellness offer. The pixel dies with the ban. The learning is gone. You rebuild from zero.
+                    Asset structure, account health, tracking, landing-page claims and product
+                    eligibility all matter. Fragile personal setups and unclear ownership increase
+                    operational risk when a spend node is limited.
                   </p>
                   <p className="text-[#12061c]/70 text-lg leading-relaxed mb-8">
                     This product puts the pixel and domain in a holder BM, runs spend through replaceable agency accounts, and installs a campaign board built for peptide funnels. Copy and claims stay yours.
@@ -548,6 +554,32 @@ export default function PeptidesMetaAdsPage() {
               </div>
             </div>
           </section>
+
+          <RelatedResources
+            title="Peptide & Meta guides"
+            links={[
+              {
+                href: "/resources/can-you-advertise-peptides-on-facebook",
+                title: "Can You Advertise Peptides on Facebook?",
+              },
+              {
+                href: "/resources/peptide-meta-ads-compliance",
+                title: "Meta Ads Compliance for Peptide Brands",
+              },
+              {
+                href: "/resources/peptide-meta-landing-page-compliance",
+                title: "Peptide landing page compliance",
+              },
+              {
+                href: "/resources/peptide-meta-tracking-capi",
+                title: "Peptide Meta tracking & CAPI",
+              },
+              {
+                href: "/resources/why-peptide-meta-ads-get-rejected",
+                title: "Why Peptide Meta Ads Get Rejected",
+              },
+            ]}
+          />
 
           <FAQSection
             faqs={schema.faqs}

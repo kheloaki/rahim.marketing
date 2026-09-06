@@ -17,18 +17,36 @@ export default function FacebookFeedbackScorePage() {
       pageType="service"
       path="/services/facebook-feedback-score"
       schema={schema}
-      breadcrumbs={getBreadcrumbs("/services/facebook-feedback-score", "Facebook Feedback Score Boost")}
+      breadcrumbs={getBreadcrumbs("/services/facebook-feedback-score", "Facebook Feedback Score")}
       kicker="PAGE REPUTATION"
       title="Feedback Score"
-      highlight="Boost"
-      description="Improve your Facebook page feedback score to unlock better delivery, lower CPMs, and more stable account health."
-      bullets={["Score diagnosis", "Reputation recovery plan", "Review quality workflow", "Ongoing monitoring"]}
+      highlight="Review"
+      description="Support reviewing and improving Facebook page feedback signals that can affect delivery and costs — without guaranteed score outcomes."
+      bullets={[
+        "Score diagnosis",
+        "Reputation recovery plan",
+        "Creative & landing review",
+        "Ongoing monitoring guidance",
+      ]}
       image="/images/service-feedback.jpg"
-      imageAlt="Rahim Marketing feedback score service"
+      imageAlt="Rahim Marketing feedback score review"
+      showAgencyStack={false}
       faqs={[
-        { question: "Why does feedback score matter?", answer: "A weak page score can raise CPMs, limit delivery, and increase restriction risk. A healthier score usually means cheaper, more stable ads." },
-        { question: "How do you improve the score?", answer: "We audit page quality, hide or address negative feedback, tighten creative and landing-page experience, and monitor the score as ads run." },
-        { question: "How soon will I see a change?", answer: "Early movement can appear within 1–2 weeks. Lasting improvement depends on spend volume and creative quality." },
+        {
+          question: "Why does feedback score matter?",
+          answer:
+            "Weak page feedback can correlate with harder delivery and higher costs. Improving signals may help stability, but results vary and are not guaranteed.",
+        },
+        {
+          question: "How do you approach improvement?",
+          answer:
+            "We review page quality, feedback patterns, creative and landing-page experience, and monitor changes as ads run.",
+        },
+        {
+          question: "How soon will I see a change?",
+          answer:
+            "Timelines vary with spend volume and creative quality. We set expectations during onboarding rather than promising fixed dates.",
+        },
       ]}
     />
   );

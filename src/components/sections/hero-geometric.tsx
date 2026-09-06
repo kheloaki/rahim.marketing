@@ -80,8 +80,8 @@ function ElegantShape({
 
 export default function HeroGeometric({
   badge = "Rahim Marketing",
-  title1 = "Premium Agency Ad Accounts",
-  title2 = "Unlimited Scaling",
+  title1 = "Agency Ad Accounts",
+  title2 = "Built for Continuity",
 }: {
   badge?: string
   title1?: string
@@ -152,6 +152,7 @@ export default function HeroGeometric({
           {/* LCP Element - Render immediately without animation delay */}
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight opacity-0 animate-fade-in">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">{title1}</span>
+            {" "}
             <br />
             <span
               className={cn(
@@ -164,7 +165,8 @@ export default function HeroGeometric({
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Stop losing accounts. Scale your ads with whitelisted Meta, Google & TikTok agency accounts. Get unlimited spend, instant replacements, and dedicated rep access.
+            Advertising infrastructure for Meta, Google, TikTok and other platforms — structured
+            agency accounts, continuity support, and clear onboarding.
           </p>
         </div>
       </div>

@@ -16,6 +16,7 @@ import {
 } from "@/components/brand/platform-icons";
 
 const agencyLinks = [
+  { href: "/services/agency-ad-accounts", title: "Agency Ad Accounts Overview", desc: "How agency advertising accounts work", Icon: MetaIcon },
   { href: "/services/facebook-agency-ad-account", title: "Facebook Agency Ad Accounts", desc: "Get a Meta Agency Ad Account", Icon: MetaIcon },
   { href: "/services/google-ads-agency-account", title: "Google Agency Ad Accounts", desc: "Get a Google Agency Ad Account", Icon: GoogleIcon },
   { href: "/services/tiktok-agency-account", title: "TikTok Agency Ad Accounts", desc: "Get a TikTok Agency Ad Account", Icon: TikTokIcon },
@@ -34,7 +35,7 @@ const partnerServiceLinks = [
   { href: "/services/peptides-meta-ads", title: "Peptides Meta Ads Structure", desc: "Campaign architecture for peptide brands." },
   { href: "/services/facebook-feedback-score", title: "Feedback Score Boost", desc: "Improve page reputation and CPMs." },
   { href: "/services/health-assessment-service", title: "Account Health Assessment", desc: "Diagnose restrictions before you scale." },
-  { href: "/facebook-unban-services", title: "Unban Service", desc: "Recover restricted ad accounts." },
+  { href: "/facebook-unban-services", title: "Restriction Review", desc: "Professional review of restricted Meta ad accounts." },
 ];
 
 export default function Navigation() {
@@ -52,7 +53,7 @@ export default function Navigation() {
         <Link href="/" className="flex-shrink-0" onClick={closeMobile}>
           <Image
             src="/logo.png"
-            alt="rahim logo"
+            alt="Rahim Marketing"
             width={120}
             height={40}
             className="h-10 w-auto"

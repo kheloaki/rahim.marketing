@@ -1,47 +1,54 @@
+import Link from "next/link";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import LatestBlogs from "@/components/sections/latest-blogs";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
-import { ArrowRight, BookOpen, Users, Award, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { metaFromSchema } from "@/lib/page-meta";
-
-const resources = [
-  {
-    title: "Blog",
-    description: "Tested playbooks, guides, and industry insights for media buyers.",
-    icon: BookOpen,
-    href: "/blog",
-    color: "#E44F71"
-  },
-  {
-    title: "Partners",
-    description: "Exclusive tools and providers we trust and recommend.",
-    icon: Users,
-    href: "/partners",
-    color: "#25D366"
-  },
-  {
-    title: "Reviews",
-    description: "See what our clients say on Trustpilot and G2.",
-    icon: Award,
-    href: "/reviews",
-    color: "#A3964E"
-  },
-  {
-    title: "Milestones",
-    description: "Claim your rewards based on your ad spend levels.",
-    icon: FileText,
-    href: "/milestones",
-    color: "#BC2C7B"
-  }
-];
+import { getAllResourceGuides, getResourceGuide } from "@/data/resource-guides";
+import { SEO_CLUSTERS } from "@/data/seo-clusters";
 
 export const metadata = metaFromSchema(otherPageSchemas["resources"], "/resources");
 
 export default function ResourcesPage() {
   const schemaData = otherPageSchemas["resources"];
-  
+  const breadcrumbs = getBreadcrumbs("/resources", "Resources");
+  const guides = getAllResourceGuides();
+
+  const hubSections = SEO_CLUSTERS.map((cluster) => {
+    const supportLinks = cluster.supportSlugs
+      .map((slug) => {
+        const g = getResourceGuide(slug);
+        if (!g) return null;
+        return { href: `/resources/${slug}`, title: g.title };
+      })
+      .filter(Boolean) as Array<{ href: string; title: string }>;
+
+    const moneyLinks = cluster.moneyPages.map((m) => ({
+      href: m.href,
+      title: m.title,
+    }));
+
+    const pillarLink = cluster.pillarPath
+      ? [{ href: cluster.pillarPath, title: `${cluster.name} hub` }]
+      : [];
+
+    // Dedupe by href, prefer first occurrence
+    const seen = new Set<string>();
+    const links = [...pillarLink, ...moneyLinks, ...supportLinks].filter((l) => {
+      if (seen.has(l.href)) return false;
+      seen.add(l.href);
+      return true;
+    });
+
+    // Skip clusters with nothing crawlable beyond empty planned stubs
+    if (links.length === 0) return null;
+
+    return { ...cluster, links };
+  }).filter(Boolean) as Array<(typeof SEO_CLUSTERS)[number] & { links: Array<{ href: string; title: string }> }>;
+
   return (
     <>
       <ComprehensiveSchema
@@ -49,68 +56,97 @@ export default function ResourcesPage() {
         data={{
           ...schemaData,
           path: "/resources",
-          breadcrumbs: getBreadcrumbs("/resources", "Resources"),
-          services: resources.map(r => ({
-            name: r.title,
-            url: r.href,
-            description: r.description,
-            itemType: "WebPage",
-          })),
+          breadcrumbs,
+          services: [
+            ...hubSections.flatMap((c) =>
+              c.links.map((l) => ({
+                name: l.title,
+                url: l.href,
+                description: c.name,
+                itemType: "WebPage",
+              })),
+            ),
+            ...guides.map((g) => ({
+              name: g.title,
+              url: `/resources/${g.slug}`,
+              description: g.description,
+              itemType: "WebPage",
+            })),
+          ],
         }}
       />
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <div className="pt-[89px]">
-        <section className="py-[120px] bg-[#0a0612] relative overflow-hidden">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
-          <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
-            <div className="text-center mb-16">
-              <span className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-4 block">
-                RESOURCES
-              </span>
-              <h1 className="text-[48px] lg:text-[64px] font-bold leading-[1.1] mb-6 tracking-tight text-white">
-                Resources &{' '}
-                <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                  Guides
+      <main className="min-h-screen bg-background">
+        <Navigation />
+        <div className="pt-[89px]">
+          <section className="py-[100px] bg-[#0a0612] relative overflow-hidden">
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
+            <div className="container mx-auto px-6 max-w-[1100px] relative z-10">
+              <PageBreadcrumbs items={breadcrumbs} className="justify-center mb-8" />
+              <div className="text-center mb-16">
+                <span className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-4 block">
+                  RESOURCES
                 </span>
-              </h1>
-              <p className="text-[18px] text-white/60 max-w-[600px] mx-auto">
-                Everything you need to scale your advertising. From guides to partner tools.
-              </p>
-            </div>
+                <h1 className="text-[40px] lg:text-[56px] font-bold leading-[1.1] mb-6 tracking-tight text-white">
+                  Resources &{" "}
+                  <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
+                    Guides
+                  </span>
+                </h1>
+                <p className="text-[18px] text-white/60 max-w-[640px] mx-auto">
+                  Structured by topic: agency accounts, Meta, restrictions, peptides, Google,
+                  TikTok, Microsoft Advertising, native, assets, and SEO.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {resources.map((resource, idx) => (
-                <a
-                  key={idx}
-                  href={resource.href}
-                  className="group bg-[#150d1f] border border-white/10 rounded-[24px] p-8 lg:p-10 hover:border-[#E44F71]/30 transition-all"
-                >
-                  <div 
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                    style={{ backgroundColor: `${resource.color}20` }}
+              <div className="space-y-10">
+                {hubSections.map((cluster) => (
+                  <div
+                    key={cluster.id}
+                    id={cluster.id}
+                    className="scroll-mt-28 rounded-2xl border border-white/10 bg-[#150d1f] p-6 lg:p-8"
                   >
-                    <resource.icon className="w-7 h-7" style={{ color: resource.color }} />
+                    <h2 className="text-xl font-bold text-white mb-2">{cluster.name}</h2>
+                    <p className="text-white/55 text-sm leading-relaxed mb-5 max-w-[720px]">
+                      {cluster.intro}
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-3">
+                      {cluster.links.map((link) => (
+                        <li key={link.href + link.title}>
+                          <Link
+                            href={link.href}
+                            className="group flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3 text-white/80 hover:border-[#E44F71]/40 hover:text-white transition-colors"
+                          >
+                            <span>{link.title}</span>
+                            <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-[#E44F71]" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="text-[24px] font-semibold text-white mb-3 group-hover:text-[#E44F71] transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-white/60 mb-6">
-                    {resource.description}
-                  </p>
-                  <div className="flex items-center text-[#E44F71] font-semibold">
-                    Explore
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </a>
-              ))}
+                ))}
+              </div>
+
+              <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { href: "/blog", title: "Blog" },
+                  { href: "/partners", title: "Partners" },
+                  { href: "/reviews", title: "Reviews" },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 text-white font-semibold hover:border-[#E44F71]/40"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-        <LatestBlogs />
-      </div>
-      <Footer />
-    </main>
+          </section>
+          <LatestBlogs />
+        </div>
+        <Footer />
+      </main>
     </>
   );
 }

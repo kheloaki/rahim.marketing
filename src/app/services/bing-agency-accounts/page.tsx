@@ -34,7 +34,7 @@ function BingHeroSection() {
                 <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#E44F71] border-2 border-[#0a0612]" />
                 <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#BC2C7B] border-2 border-[#0a0612]" />
               </div>
-              <span className="text-sm font-medium text-white/80">Trusted by <span className="text-white font-bold">1,750+</span> advertisers</span>
+              <span className="text-sm font-medium text-white/80">Eligibility review before onboarding</span>
             </div>
 
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
@@ -97,7 +97,7 @@ function BingHeroSection() {
                 <span className="text-white font-bold text-sm">5.0</span>
               </div>
               <div className="h-4 w-px bg-white/20" />
-              <span className="text-sm text-white/50">$50M+ in ad spend managed</span>
+              <span className="text-sm text-white/50">Structured advertising infrastructure</span>
             </div>
           </div>
 

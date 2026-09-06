@@ -1,149 +1,129 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Check, ArrowRight } from "lucide-react";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
-import PricingPackages from "@/components/sections/pricing-packages";
-import SuccessStories from "@/components/sections/success-stories";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
+import { RelatedResources } from "@/components/seo/related-resources";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { productPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
-import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
-import { metaFromSchema } from "@/lib/page-meta";
+import { buildPageMetadata } from "@/lib/seo";
 
-function BMHeroSection() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0612] pt-24 pb-20">
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#BC2C7B] opacity-[0.06] blur-[120px] rounded-full pointer-events-none" />
+const path = "/products/buy-facebook-business-managers";
+const schema = productPageSchemas["buy-facebook-business-managers"];
+const breadcrumbs = getBreadcrumbs(path, "Facebook Business Managers");
 
-      <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
-              <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#BC2C7B] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#BC2C7B] border-2 border-[#0a0612]" />
-              </div>
-              <span className="text-sm font-medium text-white/80">Trusted by <span className="text-white font-bold">1,750+</span> advertisers</span>
-            </div>
+export const metadata: Metadata = buildPageMetadata({
+  title: schema.title,
+  description: schema.description,
+  path,
+});
 
-            <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
-              Buy Business{' '}
-              <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                Managers
-              </span>
-            </h1>
+const faqs = [
+  {
+    question: "What is a Business Manager?",
+    answer:
+      "Meta Business Manager is the control layer for Pages, ad accounts, pixels/datasets, domains, and people permissions used in advertising operations.",
+  },
+  {
+    question: "What is delivered?",
+    answer:
+      "A Business Manager setup suitable for advertising workflows, with ownership/access transfer steps confirmed at fulfillment. Exact configuration depends on the package you request.",
+  },
+  {
+    question: "How do Pages, Pixels, and ad accounts relate?",
+    answer:
+      "A BM can hold or request access to Pages, ad accounts, and datasets. Clear ownership of each asset matters for continuity when spend nodes change.",
+  },
+  {
+    question: "Is this the same as an agency ad account subscription?",
+    answer:
+      "No. This page is about Business Managers as an asset. For ongoing Meta agency ad account infrastructure, see the Facebook Agency Ad Accounts service.",
+  },
+];
 
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-[540px] mx-auto lg:mx-0">
-              Clean Business Managers with proper structure. Ready to manage your ads, pages, and pixels at scale.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10 max-w-[500px] mx-auto lg:mx-0">
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Clean BMs</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Proper Structure</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Ready for Scale</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
-              <a 
-                href="https://t.me/rahim_ou"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
-              >
-                <Send className="w-5 h-5" />
-                Chat with us
-              </a>
-              <a 
-                href="https://wa.me/message/WKWQWAZSRAU3N1"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-base transition-all"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </a>
-              <a 
-                href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all hover:bg-white/10"
-              >
-                View Pricing
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={16} className="fill-[#E44F71] text-[#E44F71]" />
-                  ))}
-                </div>
-                <span className="text-white font-bold text-sm">5.0</span>
-              </div>
-              <div className="h-4 w-px bg-white/20" />
-              <span className="text-sm text-white/50">$50M+ in ad spend managed</span>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] rounded-[1.5rem] opacity-20 blur-xl" />
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
-              <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-[#1877F2] to-[#0A5DC2] rounded-2xl flex items-center justify-center shadow-2xl">
-                  <svg viewBox="0 0 24 24" className="w-14 h-14" fill="white">
-                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                  </svg>
-                </div>
-                <h3 className="text-[28px] font-bold text-white mb-4">Business Managers</h3>
-                <p className="text-white/60 mb-8">Premium Clean BMs</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Clean BMs</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Structured</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Scale Ready</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export const metadata = metaFromSchema(productPageSchemas["buy-facebook-business-managers"], "/products/buy-facebook-business-managers");
-
-export default function BuyBusinessManagersPage() {
-  const schemaData = productPageSchemas["buy-facebook-business-managers"];
-  
+export default function BuyFacebookBusinessManagersPage() {
   return (
     <>
       <ComprehensiveSchema
         pageType="product"
         data={{
-          ...schemaData,
-          path: "/products/buy-facebook-business-managers",
-          breadcrumbs: getBreadcrumbs("/products/buy-facebook-business-managers", "Buy Facebook Business Managers"),
+          title: schema.title,
+          description: schema.description,
+          path,
+          price: schema.price,
+          breadcrumbs,
+          faqs,
         }}
       />
       <main className="min-h-screen bg-background">
         <Navigation />
         <div className="pt-[89px]">
-          <BMHeroSection />
-          <PricingPackages />
-          <SuccessStories />
-          <FAQSection />
+          <section className="bg-[#0a0612] pt-16 pb-20">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[900px]">
+              <PageBreadcrumbs items={breadcrumbs} />
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-5">
+                Facebook Business Managers
+              </h1>
+              <p className="text-lg text-white/70 mb-8 max-w-[680px]">
+                Business Manager setup for advertising operations — ownership, Pages, Pixels, ad
+                accounts, access, and delivery — without unrelated monthly agency subscription copy.
+              </p>
+              <Link
+                href="/request-access?service=business-managers"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold"
+              >
+                Request pricing
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </section>
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[860px] space-y-10">
+              <div>
+                <h2 className="text-2xl font-bold text-[#0a0612] mb-3">Legitimate use</h2>
+                <p className="text-[#0a0612]/80 leading-relaxed">
+                  Business Managers exist to organize advertising assets and permissions. We support
+                  legitimate operational use — not policy circumvention.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-[#0a0612] mb-3">Security &amp; access</h2>
+                <ul className="space-y-2 text-[#0a0612]/80">
+                  {[
+                    "Transfer and permission steps documented at delivery",
+                    "Never share personal Facebook passwords with vendors",
+                    "Review admin roles after handoff",
+                    "Separate durable tracking assets from spend nodes when possible",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Check className="w-5 h-5 text-[#E44F71] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+          <FAQSection faqs={faqs} title="Business Manager FAQ" />
+          <RelatedResources
+            links={[
+              {
+                href: "/resources/meta-business-manager-restricted",
+                title: "Meta Business Manager Restricted",
+              },
+              {
+                href: "/services/facebook-agency-ad-account",
+                title: "Facebook Agency Ad Accounts",
+              },
+              {
+                href: "/services/health-assessment-service",
+                title: "Meta Ad Account Health Audit",
+              },
+            ]}
+          />
           <CTABanner />
         </div>
         <Footer />

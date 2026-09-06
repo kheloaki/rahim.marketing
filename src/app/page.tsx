@@ -18,8 +18,9 @@ import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
-  description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+  title: "Agency Ad Accounts for Meta, Google & TikTok | Rahim Marketing",
+  description:
+    "Advertising infrastructure for Meta, Google, TikTok and other platforms. Agency ad accounts, account continuity support, tracking protection, and structured onboarding.",
   path: "/",
   absoluteTitle: true,
 });
@@ -30,20 +31,21 @@ export default function Home() {
       <ComprehensiveSchema
         pageType="home"
         data={{
-          title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
-          description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+          title: "Agency Ad Accounts for Meta, Google & TikTok | Rahim Marketing",
+          description:
+            "Advertising infrastructure for Meta, Google, TikTok and other platforms. Agency ad accounts, continuity support, and structured onboarding.",
           path: "/",
           breadcrumbs: [
             { name: "Home", url: "/" },
           ],
           services: [
-            { name: "Facebook Agency Ad Accounts", url: "/services/facebook-agency-ad-account", description: "Premium whitelisted Facebook agency ad accounts", itemType: "Service" },
-            { name: "Google Ads Agency Accounts", url: "/services/google-ads-agency-account", description: "Premium Google Ads agency accounts", itemType: "Service" },
-            { name: "TikTok Agency Accounts", url: "/services/tiktok-agency-account", description: "Premium TikTok agency ad accounts", itemType: "Service" },
-            { name: "Bing Agency Accounts", url: "/services/bing-agency-accounts", description: "Premium Bing agency ad accounts", itemType: "Service" },
-            { name: "Taboola Agency Accounts", url: "/services/taboola-agency-ad-accounts", description: "Premium Taboola agency accounts", itemType: "Service" },
-            { name: "Outbrain Agency Accounts", url: "/services/outbrain-agency-ad-accounts", description: "Premium Outbrain agency accounts", itemType: "Service" },
-            { name: "Meta Ads Structure for Peptide Brands", url: "/services/peptides-meta-ads", description: "Whitelisted Meta ads structure for peptide brands", itemType: "Service" },
+            { name: "Facebook Agency Ad Accounts", url: "/services/facebook-agency-ad-account", description: "Meta advertising infrastructure and agency ad accounts", itemType: "Service" },
+            { name: "Google Ads Agency Accounts", url: "/services/google-ads-agency-account", description: "Google Ads agency account infrastructure", itemType: "Service" },
+            { name: "TikTok Agency Accounts", url: "/services/tiktok-agency-account", description: "TikTok agency advertising infrastructure", itemType: "Service" },
+            { name: "Bing Agency Accounts", url: "/services/bing-agency-accounts", description: "Microsoft Advertising agency accounts", itemType: "Service" },
+            { name: "Taboola Agency Accounts", url: "/services/taboola-agency-ad-accounts", description: "Taboola native advertising infrastructure", itemType: "Service" },
+            { name: "Outbrain Agency Accounts", url: "/services/outbrain-agency-ad-accounts", description: "Outbrain content discovery advertising", itemType: "Service" },
+            { name: "Meta Ads Structure for Peptide Brands", url: "/services/peptides-meta-ads", description: "Meta ads infrastructure for peptide brands", itemType: "Service" },
           ],
         }}
       />

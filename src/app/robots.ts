@@ -1,17 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.rahimagency.com'
-  
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/example-feature-flag'],
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    sitemap: `${SITE_URL}/sitemap.xml`,
+  };
 }
-

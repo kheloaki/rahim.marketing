@@ -34,6 +34,8 @@ const LatestBlogs = () => {
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 45vw, 90vw"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-4 right-4 bg-[#E44F71] text-[10px] font-black px-2 py-1 rounded-[4px] tracking-wider uppercase">
                     {post.category}

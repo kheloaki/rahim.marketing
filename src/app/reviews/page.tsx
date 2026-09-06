@@ -3,7 +3,6 @@ import Footer from "@/components/sections/footer";
 import SuccessStories from "@/components/sections/success-stories";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
-import { Star } from "lucide-react";
 import { metaFromSchema } from "@/lib/page-meta";
 
 export const metadata = metaFromSchema(otherPageSchemas["reviews"], "/reviews");
@@ -37,28 +36,12 @@ export default function ReviewsPage() {
               </span>
             </h1>
             <p className="text-[18px] text-white/60 mb-8 max-w-[600px] mx-auto">
-              Trusted by 1,750+ media buyers, affiliates, and ecommerce brands worldwide.
+              Feedback from media buyers, affiliates, and ecommerce brands working with Rahim Marketing.
             </p>
-            <div className="flex items-center justify-center gap-6 flex-wrap">
-              <div className="flex items-center gap-2 bg-[#150d1f] border border-white/10 rounded-xl px-4 py-2">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#E44F71] fill-[#E44F71]" />
-                  ))}
-                </div>
-                <span className="font-semibold">4.9/5</span>
-                <span className="text-white/60 text-sm">Trustpilot</span>
-              </div>
-              <div className="flex items-center gap-2 bg-[#150d1f] border border-white/10 rounded-xl px-4 py-2">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#BC2C7B] fill-[#BC2C7B]" />
-                  ))}
-                </div>
-                <span className="font-semibold">4.8/5</span>
-                <span className="text-white/60 text-sm">G2</span>
-              </div>
-            </div>
+            <p className="text-sm text-white/40 max-w-[520px] mx-auto">
+              Third-party rating badges are shown only when a verified public profile URL is available.
+              Browse the stories below for qualitative feedback.
+            </p>
           </div>
         </section>
         <SuccessStories />

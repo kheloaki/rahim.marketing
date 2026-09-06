@@ -1,168 +1,339 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Check, ArrowRight, Send, MessageCircle } from "lucide-react";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
-import PlatformGrid from "@/components/sections/platform-grid";
-import FeaturesGrid from "@/components/sections/features-grid";
-import SuccessStories from "@/components/sections/success-stories";
-import HowItWorks from "@/components/sections/how-it-works";
-import ComparisonTable from "@/components/sections/comparison-table";
 import PricingPackages from "@/components/sections/pricing-packages";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
+import { RelatedResources } from "@/components/seo/related-resources";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
-import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
-import { servicePageSchemas } from "@/lib/page-schemas";
-import { metaFromSchema } from "@/lib/page-meta";
+import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
+import { buildPageMetadata } from "@/lib/seo";
+import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
 
-function FacebookHeroSection() {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0612] pt-24 pb-20">
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#BC2C7B] opacity-[0.06] blur-[120px] rounded-full pointer-events-none" />
+const path = "/services/facebook-agency-ad-account";
+const schema = servicePageSchemas["facebook-agency-ad-account"];
+const breadcrumbs = getBreadcrumbs(path, "Facebook Agency Ad Accounts");
 
-      <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
-              <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#BC2C7B] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#BC2C7B] border-2 border-[#0a0612]" />
-              </div>
-              <span className="text-sm font-medium text-white/80">Trusted by <span className="text-white font-bold">1,750+</span> advertisers</span>
-            </div>
+export const metadata: Metadata = buildPageMetadata({
+  title: schema.title,
+  description: schema.description,
+  path,
+  keywords: [
+    "facebook agency ad account",
+    "meta agency ad account",
+    "facebook agency account",
+    "meta advertising account",
+  ],
+  image: "/images/service-accounts.jpg",
+});
 
-            <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
-              Facebook Agency{' '}
-              <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
-                Ad Accounts
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-[540px] mx-auto lg:mx-0">
-              Scale Without Limits, avoid bans and run Ads on steroids with Facebook Agency Ad Accounts.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10 max-w-[500px] mx-auto lg:mx-0">
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Run Ads for Almost Any Vertical</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">No Bans & Restrictions</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Get Cashback on Ad Spend</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
-              <a 
-                href="https://t.me/rahim_ou"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
-              >
-                <Send className="w-5 h-5" />
-                Chat with us
-              </a>
-              <a 
-                href="https://wa.me/message/WKWQWAZSRAU3N1"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-base transition-all"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </a>
-              <a 
-                href="#pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all hover:bg-white/10"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={16} className="fill-[#E44F71] text-[#E44F71]" />
-                  ))}
-                </div>
-                <span className="text-white font-bold text-sm">5.0</span>
-              </div>
-              <div className="h-4 w-px bg-white/20" />
-              <span className="text-sm text-white/50">$50M+ in ad spend managed</span>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] rounded-[1.5rem] opacity-20 blur-xl" />
-            <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
-              <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 bg-[#1877F2] rounded-2xl flex items-center justify-center shadow-2xl">
-                  <svg viewBox="0 0 24 24" className="w-14 h-14" fill="white">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </div>
-                <h3 className="text-[28px] font-bold text-white mb-4">Facebook Agency Accounts</h3>
-                <p className="text-white/60 mb-8">Premium Whitelisted Meta Ad Accounts</p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">No Restrictions</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Unlimited Accounts</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">24/7 Support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export const metadata = metaFromSchema(servicePageSchemas["facebook-agency-ad-account"], "/services/facebook-agency-ad-account");
+const comparison = [
+  { label: "Ownership & access", ours: "Documented BM permissions", theirs: "Often personal / unclear" },
+  { label: "Spend infrastructure", ours: "Higher-capacity agency setup", theirs: "New self-serve limits common" },
+  { label: "Support / escalation", ours: "Operational support included", theirs: "Mostly self-serve help center" },
+  { label: "Onboarding", ours: "Eligibility review first", theirs: "Instant create, limited review" },
+  { label: "Billing", ours: "Card, crypto, or bank (per account)", theirs: "Typically card" },
+  { label: "Account continuity", ours: "Replacement support when included", theirs: "Rebuild from scratch" },
+  { label: "Tracking / data", ours: "Continuity guidance for Pixel/Dataset", theirs: "Often tied to one fragile node" },
+];
 
 export default function FacebookAgencyAdAccountPage() {
-  const faqs = [
-    { question: "What is a Facebook Agency Ad Account?", answer: "A Facebook Agency Ad Account is a premium advertising account provided through certified marketing agencies with direct Meta partnerships. These accounts offer higher trust scores, unlimited spending potential, faster ad approvals, and dedicated support from Meta representatives." },
-    { question: "How is Rahim Marketing different from other providers?", answer: "Rahim Marketing provides whitelisted agency accounts with direct Meta rep access. We offer instant replacements if accounts get restricted, up to 1% cashback on ad spend, and 24/7 dedicated support. Our 0.2% ban rate is the lowest in the industry." },
-    { question: "What verticals/niches do you support?", answer: "We support a wide range of verticals including ecommerce, health & wellness, finance, SaaS, lead generation, gaming, and more. Contact us to discuss your specific niche and we'll advise on the best account structure." },
-  ];
-
   return (
     <>
       <ComprehensiveSchema
         pageType="service"
         data={{
-          title: "Facebook Agency Ad Accounts - Premium Whitelisted Accounts",
-          description: "Scale your Facebook advertising without limits. Get premium whitelisted Facebook agency ad accounts with unlimited spend, no bans, instant replacements, and dedicated Meta rep access. Trusted by 1750+ advertisers.",
-          path: "/services/facebook-agency-ad-account",
-          serviceType: "Facebook Advertising Services",
-          breadcrumbs: [
-            { name: "Home", url: "/" },
-            { name: "Services", url: "/services" },
-            { name: "Facebook Agency Ad Accounts", url: "/services/facebook-agency-ad-account" },
-          ],
-          faqs: faqs,
+          title: schema.title,
+          description: schema.description,
+          path,
+          serviceType: schema.serviceType,
+          breadcrumbs,
+          faqs: schema.faqs,
         }}
       />
       <main className="min-h-screen bg-background">
         <Navigation />
         <div className="pt-[89px]">
-          <FacebookHeroSection />
-          <PlatformGrid />
-          <FeaturesGrid />
-          <SuccessStories />
-          <HowItWorks />
-          <ComparisonTable />
+          <section className="relative overflow-hidden bg-[#0a0612] pt-16 pb-20 lg:pt-20 lg:pb-24">
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
+            <div className="container relative z-10 mx-auto px-5 lg:px-10 max-w-[1280px]">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div>
+                  <PageBreadcrumbs items={breadcrumbs} />
+                  <p className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-5">
+                    Meta advertising infrastructure
+                  </p>
+                  <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
+                    Facebook Agency{" "}
+                    <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
+                      Ad Accounts
+                    </span>
+                  </h1>
+                  <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-[540px]">
+                    Structured Meta agency ad accounts for higher-spend operations: clear access,
+                    tracking continuity, eligibility review, and restriction support — without
+                    promising that platform policies can be ignored.
+                  </p>
+                  <ul className="space-y-3 mb-10">
+                    {[
+                      "Business Manager permissions — never your personal password",
+                      "Eligibility review before onboarding",
+                      "Replacement & restriction support where included",
+                      "Pixel / Dataset continuity guidance",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-white">
+                        <Check className="w-5 h-5 text-[#E44F71] shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link
+                      href="/request-access?service=facebook"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold"
+                    >
+                      Request Access
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <a
+                      href={TELEGRAM_URL}
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold"
+                    >
+                      <Send className="w-5 h-5" />
+                      Telegram
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-semibold"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] rounded-[1.5rem] opacity-20 blur-xl" />
+                  <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10">
+                    <Image
+                      src="/images/service-accounts.jpg"
+                      alt="Meta agency ad account structure with Business Manager, Pixel and advertising account"
+                      width={1200}
+                      height={750}
+                      className="w-full h-auto object-cover"
+                      priority
+                      sizes="(min-width: 1024px) 560px, 90vw"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-[90px] lg:py-[110px] bg-white">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[860px]">
+              <p className="text-[#E44F71] text-sm font-semibold tracking-widest uppercase mb-4">
+                What you receive
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0a0612] mb-6">
+                What is a Facebook / Meta agency ad account?
+              </h2>
+              <p className="text-[#0a0612]/80 leading-relaxed mb-4">
+                A Facebook (Meta) agency ad account is advertising infrastructure accessed through
+                an agency or partner setup. You typically receive Business Manager access to spend
+                nodes, documented permissions, billing workflows, and operational support — instead
+                of relying only on a brand-new personal self-serve account.
+              </p>
+              <p className="text-[#0a0612]/80 leading-relaxed">
+                Agency infrastructure improves continuity and clarity. It does not override Meta
+                Advertising Policies, and it does not guarantee that every offer or creative will be
+                approved.
+              </p>
+            </div>
+          </section>
+
+          <section className="py-[90px] lg:py-[110px] bg-[#0a0612]">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[1000px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
+                Agency account vs standard Meta ad account
+              </h2>
+              <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+                Both models can still face restrictions. The difference is infrastructure and support.
+              </p>
+              <div className="overflow-x-auto rounded-2xl border border-white/10">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-white/5 text-white/70">
+                    <tr>
+                      <th className="px-6 py-4 font-semibold">Topic</th>
+                      <th className="px-6 py-4 font-semibold text-[#E44F71]">Rahim Marketing setup</th>
+                      <th className="px-6 py-4 font-semibold">Typical self-serve</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparison.map((row) => (
+                      <tr key={row.label} className="border-t border-white/10">
+                        <td className="px-6 py-4 text-white font-medium">{row.label}</td>
+                        <td className="px-6 py-4 text-[#E44F71]">{row.ours}</td>
+                        <td className="px-6 py-4 text-white/60">{row.theirs}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-[90px] lg:py-[110px] bg-white">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[1000px] grid md:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0a0612] mb-4">Who this is for</h2>
+                <ul className="space-y-3 text-[#0a0612]/80">
+                  {[
+                    "Ecommerce brands scaling Meta spend",
+                    "Agencies managing client campaigns",
+                    "High-spend advertisers needing clearer infrastructure",
+                    "Teams that need documented access and continuity options",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Check className="w-5 h-5 text-[#E44F71] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0a0612] mb-4">Who this is NOT for</h2>
+                <ul className="space-y-3 text-[#0a0612]/80">
+                  {[
+                    "Anyone looking to bypass Meta advertising policies",
+                    "Offers that fail eligibility review",
+                    "Teams unwilling to use Business Manager permissions properly",
+                    "Advertisers expecting a guarantee that restrictions cannot happen",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Check className="w-5 h-5 text-[#E44F71] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-[90px] lg:py-[110px] bg-[#0a0612]">
+            <div className="container mx-auto px-5 lg:px-10 max-w-[860px] space-y-10">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">How access and ownership work</h2>
+                <p className="text-white/70 leading-relaxed mb-4">
+                  You should never give your personal Facebook password. Access is granted through
+                  Business Manager roles and partner access where applicable. During onboarding we
+                  document what Rahim can see, what you control, and how access can be revoked.
+                </p>
+                <p className="text-white/70 leading-relaxed">
+                  Data ownership for Pages, domains, and Pixel/Dataset should be intentional. We
+                  help you keep measurement on durable assets where the architecture allows.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">Pixel / Dataset / tracking continuity</h2>
+                <p className="text-white/70 leading-relaxed">
+                  When tracking sits only on a fragile spend account, a restriction can interrupt
+                  learning and reporting. We guide setups that separate durable tracking ownership
+                  from replaceable spend nodes — within what Meta permissions allow.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">Funding &amp; billing</h2>
+                <p className="text-white/70 leading-relaxed">
+                  Supported funding methods depend on the account and may include card, crypto, or
+                  bank transfer. Exact options are confirmed during onboarding — we do not invent
+                  methods that are not available for your setup.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">Replacement &amp; restriction support</h2>
+                <p className="text-white/70 leading-relaxed">
+                  Meta can restrict any advertising asset. Where your plan includes replacement
+                  support, we help review the situation and restore spend capacity when possible.
+                  Restoration is never guaranteed. See also our{" "}
+                  <Link href="/facebook-unban-services" className="text-[#E44F71] underline">
+                    restriction review service
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/services/health-assessment-service" className="text-[#E44F71] underline">
+                    Meta ad account health audit
+                  </Link>
+                  .
+                </p>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">How onboarding works</h2>
+                <ol className="space-y-3 text-white/70 list-decimal pl-5">
+                  <li>Submit business and offer details for eligibility review.</li>
+                  <li>We confirm fit, plan, and access model.</li>
+                  <li>After approval, infrastructure is typically delivered within about 24 hours.</li>
+                  <li>Fund the account and launch with documented permissions.</li>
+                </ol>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">Why advertisers choose Rahim</h2>
+                <ul className="space-y-3 text-white/70">
+                  {[
+                    "Meta-focused infrastructure with clear permissions",
+                    "Eligibility review before you spend",
+                    "Continuity-oriented tracking guidance",
+                    "Responsive operational support over Telegram and WhatsApp",
+                    "Honest positioning: policies still apply",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <Check className="w-5 h-5 text-[#E44F71] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
           <PricingPackages />
-          <FAQSection />
+          <FAQSection
+            faqs={schema.faqs}
+            title="Facebook agency ad account FAQ"
+            subtitle="Straight answers about Meta agency accounts, ownership, and restrictions."
+          />
+          <RelatedResources
+            title="Related guides"
+            links={[
+              {
+                href: "/services/agency-ad-accounts",
+                title: "Agency Ad Accounts overview",
+                description: "Cross-platform agency account model",
+              },
+              {
+                href: "/resources/meta-agency-ad-account-guide",
+                title: "What Is a Meta Agency Ad Account?",
+                description: "Definition, access, billing, and tracking",
+              },
+              {
+                href: "/resources/meta-agency-account-vs-standard-ad-account",
+                title: "Agency vs standard Meta accounts",
+                description: "When self-serve is enough",
+              },
+              {
+                href: "/resources/meta-business-manager-permissions",
+                title: "Business Manager permissions",
+                description: "Roles, partners, and safe agency access",
+              },
+              {
+                href: "/resources/meta-pixel-capi-account-structure",
+                title: "Pixel, Dataset & CAPI structure",
+                description: "How measurement should relate to spend nodes",
+              },
+            ]}
+          />
           <CTABanner />
         </div>
         <Footer />

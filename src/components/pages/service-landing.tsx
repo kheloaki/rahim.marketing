@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
+import { Check, ArrowRight, Send, MessageCircle } from "lucide-react";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import PricingPackages from "@/components/sections/pricing-packages";
@@ -10,6 +10,7 @@ import SuccessStories from "@/components/sections/success-stories";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
 import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
 
 export type LandingFaq = { question: string; answer: string };
@@ -32,6 +33,11 @@ export type ServiceLandingProps = {
   image: string;
   imageAlt: string;
   faqs?: LandingFaq[];
+  /** When false, do not append agency pricing / success / default FAQ stack */
+  showAgencyStack?: boolean;
+  ctaHref?: string;
+  ctaLabel?: string;
+  comingSoon?: boolean;
 };
 
 export default function ServiceLanding({
@@ -47,6 +53,10 @@ export default function ServiceLanding({
   image,
   imageAlt,
   faqs,
+  showAgencyStack = false,
+  ctaHref = "/request-access",
+  ctaLabel = "Request Access",
+  comingSoon = false,
 }: ServiceLandingProps) {
   return (
     <>
@@ -67,7 +77,10 @@ export default function ServiceLanding({
             <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="text-center lg:text-left">
-                  <p className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-6">{kicker}</p>
+                  <PageBreadcrumbs items={breadcrumbs} className="justify-center lg:justify-start" />
+                  <p className="text-[#E44F71] font-semibold text-sm tracking-widest uppercase mb-6">
+                    {kicker}
+                  </p>
                   <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
                     {title}{" "}
                     <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
@@ -85,12 +98,12 @@ export default function ServiceLanding({
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-6">
                     <Link
-                      href="/request-access"
+                      href={ctaHref}
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base"
                     >
-                      Request Access
+                      {comingSoon ? "Notify me / Request Access" : ctaLabel}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                     <a
@@ -108,12 +121,12 @@ export default function ServiceLanding({
                       WhatsApp
                     </a>
                   </div>
-                  <div className="flex items-center justify-center lg:justify-start gap-2">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} size={16} className="fill-[#E44F71] text-[#E44F71]" />
-                    ))}
-                    <span className="text-white font-bold text-sm ml-1">Trusted by 1,750+ advertisers</span>
-                  </div>
+                  {comingSoon ? (
+                    <p className="text-white/50 text-sm">
+                      This product page is coming soon. Request access if you need Pages as part of a
+                      Meta setup.
+                    </p>
+                  ) : null}
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] rounded-[1.5rem] opacity-20 blur-xl" />
@@ -125,15 +138,20 @@ export default function ServiceLanding({
                       height={750}
                       className="w-full h-auto object-cover"
                       priority
+                      sizes="(min-width: 1024px) 560px, 90vw"
                     />
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <PricingPackages />
-          <SuccessStories />
-          <FAQSection faqs={faqs} />
+          {showAgencyStack ? (
+            <>
+              <PricingPackages />
+              <SuccessStories />
+            </>
+          ) : null}
+          {faqs ? <FAQSection faqs={faqs} /> : showAgencyStack ? <FAQSection /> : null}
           <CTABanner />
         </div>
         <Footer />

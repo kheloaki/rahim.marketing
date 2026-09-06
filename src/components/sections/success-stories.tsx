@@ -6,34 +6,39 @@ import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 const testimonials = [
   {
     rating: 5.0,
-    title: "Plugged in my card & scaled up same day",
-    content: "“Being able to use my own Visa card was huge. With other providers I couldn’t. Here, I connected my card and within half a day we were already spending. Super smooth.”",
+    title: "Funded and live the same day",
+    content:
+      "“Being able to use my own Visa card was huge. With other providers I couldn’t. Here, I connected my card and within half a day we were already spending. Super smooth.”",
     author: "Ecommerce Brand Owner",
   },
   {
     rating: 5.0,
-    title: "From 3 bans in 6 months to $150K/month",
-    content: "“Got banned 3 times in half a year. Since moving to Rahim Marketing, zero issues. Before, every campaign felt like gambling. Now accounts have been solid for 4 months straight and we’ve scaled past $150K/month without a single ban.”",
-    author: "DTC Health Offer Owner",
+    title: "Clearer continuity after restrictions",
+    content:
+      "“We had repeated account issues before. After moving to a more structured setup with Rahim Marketing, replacements and tracking ownership were clearer, which made it easier to keep campaigns running.”",
+    author: "DTC Brand Owner",
   },
   {
     rating: 5.0,
-    title: "Didn’t expect real Meta feedback",
-    content: "“I thought ‘rep access’ just meant quick replies. But I actually got real Meta feedback explaining why an ad wasn’t approved. Fixed it in minutes. That’s the kind of support I didn’t expect but needed.”",
+    title: "Useful feedback on rejected ads",
+    content:
+      "“I actually got practical feedback explaining why an ad wasn’t approved. Fixed the creative and landing-page mismatch. That’s the kind of support I needed.”",
     author: "Performance Marketer",
   },
   {
     rating: 5.0,
-    title: "Cashback makes my plan basically free",
-    content: "“Our ad spend hit $100k last month. The 1% cashback basically wiped out the $999 plan cost. The subscription ended up paying for itself.”",
+    title: "Cashback offset the plan cost",
+    content:
+      "“At higher spend, the Platinum cashback meaningfully offset our monthly plan. The subscription felt more sustainable.”",
     author: "Agency Owner",
   },
   {
     rating: 5.0,
-    title: "Finally found accounts that don’t die",
-    content: "“I’ve tried at least five providers before. None of them lasted more than a few weeks. With Rahim Marketing, it’s the first time I’ve had both stable accounts and actual support. Even Meta reps answer now. Total game-changer.”",
+    title: "Support that stays available",
+    content:
+      "“I’ve tried multiple providers. What stood out here was responsive operational support when something broke — not just delivery and silence.”",
     author: "Lead Gen Affiliate",
-  }
+  },
 ];
 
 const SuccessStories = () => {
@@ -62,9 +67,10 @@ const SuccessStories = () => {
             </div>
             <span className="text-white font-semibold">5.0</span>
           </div>
-          <h2 className="text-[3rem] font-bold text-white mb-6">Success Stories from Our Clients</h2>
+          <h2 className="text-[3rem] font-bold text-white mb-6">What advertisers say</h2>
           <p className="text-[1.125rem] text-white/70 max-w-[800px] mx-auto">
-            Trusted by 1,750+ media buyers, affiliates, and ecommerce brands spending $50K–$500K+/month
+            Feedback from media buyers, affiliates, and ecommerce brands using Rahim Marketing
+            advertising infrastructure.
           </p>
         </div>
 
@@ -81,7 +87,7 @@ const SuccessStories = () => {
                     <div className="text-white/40 text-sm">SaaS Founder & Rahim Marketing Client</div>
                  </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 italic">&ldquo;These guides changed everything. We applied the structures and instantly stopped losing accounts. The aggressive scaling book alone is worth thousands.&rdquo;</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 italic">&ldquo;Clearer account structure and tracking ownership made it easier to keep campaigns running when we needed to adjust spend nodes.&rdquo;</h3>
               <div className="flex items-center gap-3">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((i) => (

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Navigation from "@/components/sections/navigation";
 import Footer from "@/components/sections/footer";
 import FAQSection from "@/components/sections/faq-section";
@@ -10,11 +9,14 @@ import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { ChevronDown, Zap, Share2, ShieldCheck, Headphones, Send, MessageCircle } from "lucide-react";
 import { submitLead } from "@/lib/leads";
 
-export default function RequestAccessPage() {
+type RequestAccessPageProps = {
+  service?: string;
+  pack?: string;
+};
+
+export default function RequestAccessPage({ service, pack }: RequestAccessPageProps) {
   const schemaData = otherPageSchemas["request-access"];
-  const searchParams = useSearchParams();
-  const isPeptides = searchParams.get("service") === "peptides";
-  const pack = searchParams.get("pack");
+  const isPeptides = service === "peptides";
   const packLabel =
     pack === "starter"
       ? "Starter ($399)"
@@ -32,7 +34,11 @@ export default function RequestAccessPage() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
   const faqs = [
-    { question: "How quickly will I get access?", answer: "Once you submit the request form, our team will review your application and get back to you within 24 hours. Priority onboarding is available for Platinum members (<2 hours)." },
+    {
+      question: "How quickly will I get access?",
+      answer:
+        "Once you submit the request form, our team will review your application and get back to you within 24 hours. Faster onboarding windows may apply for higher-tier plans confirmed during intake.",
+    },
     { question: "What information do I need to provide?", answer: "You'll need to provide your business details including company name, website, monthly ad spend, and the advertising platform you want to use." },
     { question: "Is there a minimum ad spend requirement?", answer: "We work with advertisers of all sizes. Contact us to discuss your specific needs and we'll recommend the best package for your budget." },
   ];
@@ -130,7 +136,7 @@ export default function RequestAccessPage() {
                     </div>
                     <div>
                       <h4 className="text-[18px] font-semibold mb-2">Unlimited Ad Accounts</h4>
-                      <p className="text-white/60 text-[14px]">Create unlimited ad accounts for your businesses.</p>
+                      <p className="text-white/60 text-[14px]">Request additional ad accounts as your operations grow.</p>
                     </div>
                   </div>
 

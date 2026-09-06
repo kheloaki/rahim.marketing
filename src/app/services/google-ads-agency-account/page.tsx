@@ -9,95 +9,85 @@ import PricingPackages from "@/components/sections/pricing-packages";
 import FAQSection from "@/components/sections/faq-section";
 import CTABanner from "@/components/sections/cta-banner";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
+import { RelatedResources } from "@/components/seo/related-resources";
 import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
-import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
-import { metaFromSchema } from "@/lib/page-meta";
+import { Check, ArrowRight, Send, MessageCircle } from "lucide-react";
+import { buildPageMetadata } from "@/lib/seo";
+import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
+
+const path = "/services/google-ads-agency-account";
+const breadcrumbs = getBreadcrumbs(path, "Google Ads Agency Accounts");
 
 function GoogleHeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0612] pt-24 pb-20">
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E44F71] opacity-[0.08] blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#BC2C7B] opacity-[0.06] blur-[120px] rounded-full pointer-events-none" />
-
       <div className="container relative z-10 px-5 lg:px-10 max-w-[1280px] mx-auto">
+        <div className="mb-8">
+          <PageBreadcrumbs items={breadcrumbs} />
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
-              <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#BC2C7B] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#E44F71] border-2 border-[#0a0612]" />
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#E44F71] to-[#BC2C7B] border-2 border-[#0a0612]" />
-              </div>
-              <span className="text-sm font-medium text-white/80">Trusted by <span className="text-white font-bold">1,750+</span> advertisers</span>
+              <span className="text-sm font-medium text-white/80">Eligibility review before onboarding</span>
             </div>
 
             <h1 className="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.05] tracking-[-0.02em] text-white mb-6">
-              Google Agency{' '}
+              Google Agency{" "}
               <span className="bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] bg-clip-text text-transparent">
                 Ad Accounts
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-8 max-w-[540px] mx-auto lg:mx-0">
-              Scale your Google Ads campaigns without limits. Get whitelisted agency accounts with unlimited spend and priority support.
+              Google Ads agency account infrastructure with structured onboarding, continuity
+              support, and eligibility review. Google Ads policies still apply.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 mb-10 max-w-[500px] mx-auto lg:mx-0">
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Unlimited Daily Spend</span>
+                <span className="text-[15px] font-medium text-white">Higher-capacity spend setups</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">No Suspensions</span>
+                <span className="text-[15px] font-medium text-white">Documented access &amp; billing</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-[#E44F71]" />
-                <span className="text-[15px] font-medium text-white">Priority Google Support</span>
+                <span className="text-[15px] font-medium text-white">Operational support paths</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
-              <a 
-                href="https://t.me/rahim_ou"
+              <a
+                href={TELEGRAM_URL}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] text-white font-bold text-base transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(228,79,113,0.4)]"
               >
                 <Send className="w-5 h-5" />
                 Chat with us
               </a>
-              <a 
-                href="https://wa.me/message/WKWQWAZSRAU3N1"
+              <a
+                href={WHATSAPP_URL}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-base transition-all"
               >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
               </a>
-              <a 
+              <a
                 href="#pricing"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base transition-all hover:bg-white/10"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4" />
               </a>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={16} className="fill-[#E44F71] text-[#E44F71]" />
-                  ))}
-                </div>
-                <span className="text-white font-bold text-sm">5.0</span>
-              </div>
-              <div className="h-4 w-px bg-white/20" />
-              <span className="text-sm text-white/50">$50M+ in ad spend managed</span>
             </div>
           </div>
 
@@ -106,7 +96,7 @@ function GoogleHeroSection() {
             <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-                  <svg viewBox="0 0 24 24" className="w-14 h-14">
+                  <svg viewBox="0 0 24 24" className="w-14 h-14" aria-hidden>
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -114,11 +104,11 @@ function GoogleHeroSection() {
                   </svg>
                 </div>
                 <h3 className="text-[28px] font-bold text-white mb-4">Google Agency Accounts</h3>
-                <p className="text-white/60 mb-8">Premium Google Ads Agency Accounts</p>
+                <p className="text-white/60 mb-8">Structured Google Ads agency infrastructure</p>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">No Suspensions</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Unlimited Spend</span>
-                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Priority Support</span>
+                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">MCC-aware setup</span>
+                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Billing clarity</span>
+                  <span className="bg-[#E44F71]/20 text-[#E44F71] px-3 py-1 rounded-full text-xs font-semibold">Support paths</span>
                 </div>
               </div>
             </div>
@@ -129,19 +119,25 @@ function GoogleHeroSection() {
   );
 }
 
-export const metadata = metaFromSchema(servicePageSchemas["google-ads-agency-account"], "/services/google-ads-agency-account");
+export const metadata = buildPageMetadata({
+  title: servicePageSchemas["google-ads-agency-account"].title,
+  description: servicePageSchemas["google-ads-agency-account"].description,
+  path,
+  image: "/images/blog-benchmarks.jpg",
+});
 
 export default function GoogleAdsAgencyAccountPage() {
   const schemaData = servicePageSchemas["google-ads-agency-account"];
-  
+
   return (
     <>
       <ComprehensiveSchema
         pageType="service"
         data={{
           ...schemaData,
-          path: "/services/google-ads-agency-account",
-          breadcrumbs: getBreadcrumbs("/services/google-ads-agency-account", "Google Ads Agency Accounts"),
+          path,
+          breadcrumbs,
+          image: "/images/blog-benchmarks.jpg",
         }}
       />
       <main className="min-h-screen bg-background">
@@ -155,6 +151,32 @@ export default function GoogleAdsAgencyAccountPage() {
           <ComparisonTable />
           <PricingPackages />
           <FAQSection />
+          <RelatedResources
+            title="Google Ads guides"
+            links={[
+              {
+                href: "/resources/google-ads",
+                title: "Google Ads resource hub",
+                description: "Architecture, billing, MCC, and suspensions",
+              },
+              {
+                href: "/resources/google-ads-agency-account-guide",
+                title: "What is a Google Ads agency account?",
+              },
+              {
+                href: "/resources/google-ads-account-suspended",
+                title: "Google Ads account suspended",
+              },
+              {
+                href: "/resources/google-ads-manager-account-vs-agency-account",
+                title: "Manager Account vs agency account",
+              },
+              {
+                href: "/resources/google-ads-billing-account-structure",
+                title: "Google Ads billing structure",
+              },
+            ]}
+          />
           <CTABanner />
         </div>
         <Footer />

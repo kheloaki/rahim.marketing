@@ -52,6 +52,8 @@ const SeoHomeSection = () => {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   unoptimized
+                  sizes="(min-width: 768px) 45vw, 90vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080B1E] to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">

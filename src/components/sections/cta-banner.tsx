@@ -9,23 +9,23 @@ const CTABanner = () => {
           {/* Content Layer */}
           <div className="relative z-10 flex flex-col items-center max-w-[900px]">
             <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold leading-[1.1] tracking-[-0.02em] text-white mb-6">
-              Tired of watching your competitors scale while you&apos;re getting banned right & left?
+              Ready for advertising infrastructure built for continuity?
             </h2>
             
             <p className="text-[1.125rem] text-white opacity-90 font-medium mb-10 max-w-[700px]">
-              This is your infrastructure upgrade. Your whitelist. Your rep access.
+              Request access for an eligibility review. We will confirm fit, permissions, and next steps before onboarding.
             </p>
 
             <div className="flex flex-col items-center gap-6">
               <a
-                href="#request-access"
+                href="/request-access"
                 className="inline-flex items-center justify-center px-10 py-4 rounded-lg bg-white text-[#02040a] font-bold text-base transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
               >
                 Request Access
               </a>
               
               <div className="text-[0.875rem] text-white/60 font-semibold tracking-wide">
-                Limited access. No BS. Just results.
+                Onboarding capacity is limited to maintain support quality.
               </div>
             </div>
           </div>

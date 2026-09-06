@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Info, Star } from 'lucide-react';
+import { Check, Info } from 'lucide-react';
 import { BingIcon, GoogleIcon, MetaIcon, TikTokIcon } from '@/components/brand/platform-icons';
 
 const PricingPackages = () => {
@@ -12,12 +12,12 @@ const PricingPackages = () => {
       period: "/month",
       description: "Ideal for individual advertisers scaling to 5-figures.",
       features: [
-        "Unlimited Ad Spend Potential",
-        "Instant Replacements",
-        "24/7 Dedicated Support",
-        "Multiple Verticals Supported",
-        "Instant Top-ups (24/7)",
-        "Meta Rep Feedback Access",
+        "Higher-capacity spend infrastructure",
+        "Replacement support when included",
+        "Dedicated operational support",
+        "Eligibility review before onboarding",
+        "Top-up support",
+        "Platform feedback where available",
       ],
       cta: "Get Started",
       badge: null,
@@ -30,11 +30,11 @@ const PricingPackages = () => {
       description: "For agencies and high-volume media buyers scaling past $100k/mo.",
       features: [
         "Everything in Gold Plan",
-        "Up to 1% Cashback on Spend",
+        "Cashback on eligible spend",
         "Dedicated Account Manager",
-        "Priority Onboarding (<2h)",
-        "Custom Account Structures",
-        "Beta Feature Access",
+        "Priority onboarding",
+        "Custom account structures",
+        "Early access to new workflows",
       ],
       cta: "Get Started",
       badge: "MOST POPULAR",
@@ -67,26 +67,15 @@ const PricingPackages = () => {
       <div className="container mx-auto px-5 lg:px-10 max-w-[1280px] relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            LIMITED AVAILABILITY
+            Onboarding
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
-            Get Your Agency Account Today!
+            Agency account plans
           </h2>
           <p className="text-lg text-white/70 mb-2">
-            <span className="text-red-500 font-bold">Only 9/20 Spots left</span> | We only open access a few times per year to limited amount of clients to maintain the highest quality accounts & provide hands-on support.
+            Onboarding capacity is limited to maintain support quality. Request access for an
+            eligibility review before we assign infrastructure.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} size={18} className="fill-[#E44F71] text-[#E44F71]" />
-              ))}
-            </div>
-            <span className="text-sm font-medium text-white">Excellent 4.9/5</span>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
@@ -157,7 +146,7 @@ const PricingPackages = () => {
         <div className="mt-16 text-center">
           <p className="text-sm text-white/40 flex items-center justify-center gap-2">
             <Info size={14} />
-            All packages come with a 7-day money-back guarantee if accounts aren&apos;t delivered within 48h.
+            Delivery timelines and refund terms are confirmed during onboarding after approval.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6 text-white/40">
              <MetaIcon size={24} />

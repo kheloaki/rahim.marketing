@@ -13,40 +13,46 @@ const PlatformGrid = () => {
   const platforms = [
     {
       title: "Meta Agency Accounts",
-      description: "Unlock the full potential of your brand with premium Meta Advertising, reaching billions across Facebook, Instagram, Messenger, and WhatsApp. Benefit from whitelisted accounts for higher trust and faster scaling.",
+      description:
+        "Meta advertising infrastructure across Facebook and Instagram with structured Business Manager access, eligibility review, and continuity support.",
       Icon: MetaIcon,
       link: "/services/facebook-agency-ad-account",
     },
     {
       title: "Google Agency Accounts",
-      description: "Tap into the power of Google's vast network with whitelisted Google ad accounts that deliver higher approval rates, wider reach, and better conversions across Search, YouTube, Display, and Shopping campaigns.",
+      description:
+        "Google Ads agency infrastructure for Search, YouTube, Display, and Shopping with clear onboarding and operational support.",
       Icon: GoogleIcon,
       link: "/services/google-ads-agency-account",
     },
     {
       title: "TikTok Agency Accounts",
-      description: "Engage the fastest-growing audience with TikTok's high-impact ad formats through our TikTok agency ad accounts. Our whitelisted accounts help you run compliant, scalable campaigns with higher reach and engagement from day one.",
+      description:
+        "TikTok agency advertising access with structured onboarding and support for compliance-aware campaign operations.",
       Icon: TikTokIcon,
       link: "/services/tiktok-agency-account",
     },
     {
       title: "Bing Agency Ad Accounts",
-      description: "Capture high-intent demand on Microsoft Advertising across Bing, Microsoft Start, Outlook, and the Microsoft Audience Network. Our whitelisted agency accounts enable faster approvals, higher spend limits.",
+      description:
+        "Microsoft Advertising agency accounts for Search and audience network campaigns with structured access and support.",
       Icon: BingIcon,
       link: "/services/bing-agency-accounts",
     },
     {
       title: "Taboola Agency Ad Accounts",
-      description: "Capture high-intent demand on Taboola across premium publisher widgets on top news sites. Our whitelisted agency accounts enable faster approvals, higher spend limits, and scale through Taboola's network.",
+      description:
+        "Taboola native advertising infrastructure for publisher-network campaigns with agency onboarding support.",
       Icon: TaboolaIcon,
       link: "/services/taboola-agency-ad-accounts",
     },
     {
       title: "Outbrain Agency Ad Accounts",
-      description: "Capture high-intent demand on Outbrain across premium publisher placements on top news sites. Our whitelisted agency accounts enable faster approvals, higher spend limits, and efficient global scale, now.",
+      description:
+        "Outbrain content-discovery advertising access with structured onboarding for publisher placements.",
       Icon: OutbrainIcon,
       link: "/services/outbrain-agency-ad-accounts",
-    }
+    },
   ];
 
   return (
@@ -56,7 +62,7 @@ const PlatformGrid = () => {
           {/* Header Section */}
           <div className="text-center mb-[64px] lg:mb-[80px]">
             <h2 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.1] text-white tracking-[-0.02em] mb-6">
-              Limitless Scaling with Agency Ad Accounts Across All Platforms
+              Agency Ad Accounts Across Platforms
             </h2>
             <p className="text-[16px] md:text-[18px] text-white/70 leading-[1.6] max-w-[800px] mx-auto">
               We work with all major social media platforms to provide enterprise-tier solutions for businesses of all sizes. Forget about advertising limitations, restrictions and unsustainable campaigns.

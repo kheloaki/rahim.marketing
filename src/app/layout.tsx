@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { baseOrganization } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,36 +28,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.rahimagency.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
-    template: "%s | Rahim Marketing"
+    default: `Agency Ad Accounts for Meta, Google & TikTok | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: "Rahim Marketing is the leading provider of premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide. Scale without limits with whitelisted accounts, unlimited spend, instant replacements, and dedicated rep access.",
+  description:
+    "Advertising infrastructure for Meta, Google, TikTok and other platforms. Agency ad accounts, account continuity support, tracking protection, and structured onboarding from Rahim Marketing.",
   keywords: [
     "agency ad accounts",
     "Meta agency accounts",
     "Facebook agency accounts",
     "Google Ads agency accounts",
     "TikTok agency accounts",
-    "whitelisted ad accounts",
-    "premium ad accounts",
-    "ad account management",
-    "Facebook advertising",
-    "Google advertising",
-    "TikTok advertising",
-    "scale advertising",
-    "unlimited ad spend",
-    "ad account replacement",
-    "Facebook ad account ban",
-    "advertising solutions",
-    "performance marketing",
-    "media buying",
-    "Rahim Marketing"
+    "advertising infrastructure",
+    "account continuity",
+    "Meta advertising",
+    "Rahim Marketing",
   ],
-  authors: [{ name: "Rahim Marketing" }],
-  creator: "Rahim Marketing",
-  publisher: "Rahim Marketing",
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   formatDetection: {
     email: false,
     address: false,
@@ -65,22 +58,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Rahim Marketing",
-  title: "Rahim Marketing - Premium Agency Ad Accounts for Meta, Google & TikTok",
-    description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+    siteName: SITE_NAME,
+    title: `Agency Ad Accounts for Meta, Google & TikTok | ${SITE_NAME}`,
+    description:
+      "Advertising infrastructure for Meta, Google, TikTok and other platforms — agency accounts, continuity support, and structured onboarding.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Rahim Marketing - Premium Agency Ad Accounts",
+        alt: `${SITE_NAME} — Advertising Infrastructure`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahim Marketing - Premium Agency Ad Accounts",
-    description: "Scale your advertising without limits. Premium whitelisted agency ad accounts for Meta, Google, and TikTok.",
+    title: `Agency Ad Accounts for Meta, Google & TikTok | ${SITE_NAME}`,
+    description:
+      "Advertising infrastructure for Meta, Google, TikTok and other platforms.",
     images: ["/og-image.jpg"],
     creator: "@rahim_ou",
   },
@@ -144,17 +139,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Rahim Marketing",
-              url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.rahimagency.com",
-              logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.rahimagency.com"}/logo.png`,
-              description: "Premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "Customer Service",
-                availableLanguage: ["English"],
-              },
-              sameAs: ["https://t.me/rahim_ou"],
+              ...baseOrganization,
             }),
           }}
         />

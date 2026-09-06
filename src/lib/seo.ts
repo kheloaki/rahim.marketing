@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { EDITORIAL_TEAM, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
 const siteName = SITE_NAME;
@@ -41,6 +41,7 @@ export interface SchemaBlogPost {
   image?: string;
   datePublished: string;
   dateModified?: string;
+  author?: string;
 }
 
 export interface PageSchemaData {
@@ -63,6 +64,7 @@ export interface PageSchemaData {
   datePublished?: string;
   dateModified?: string;
   offers?: Record<string, unknown>;
+  includeOrganization?: boolean;
 }
 
 export type JsonLd = Record<string, unknown>;
@@ -73,8 +75,7 @@ const defaultKeywords = [
   "Facebook agency accounts",
   "Google Ads agency accounts",
   "TikTok agency accounts",
-  "whitelisted ad accounts",
-  "premium ad accounts",
+  "advertising infrastructure",
   "Rahim Marketing",
 ];
 
@@ -91,7 +92,9 @@ export function buildPageMetadata({
   absoluteTitle = false,
 }: SEOProps): Metadata {
   const canonicalPath = path === "/" ? "/" : path;
-  const url = canonicalPath ? `${siteUrl}${canonicalPath === "/" ? "/" : canonicalPath}` : siteUrl;
+  const url = canonicalPath
+    ? `${siteUrl}${canonicalPath === "/" ? "/" : canonicalPath}`
+    : siteUrl;
   const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
   const pageTitle = absoluteTitle ? { absolute: title } : title;
 
@@ -128,7 +131,11 @@ export function buildPageMetadata({
     robots: noIndex
       ? {
           index: false,
-          follow: false,
+          follow: true,
+          googleBot: {
+            index: false,
+            follow: true,
+          },
         }
       : {
           index: true,
@@ -144,18 +151,17 @@ export function buildPageMetadata({
   };
 }
 
-const baseOrganization: JsonLd = {
+export const baseOrganization: JsonLd = {
   "@type": "Organization",
   name: siteName,
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description:
-    "Premium agency ad accounts for Meta, Google, and TikTok. Trusted by 1750+ advertisers worldwide.",
+    "Advertising infrastructure for Meta, Google, TikTok and other platforms — agency ad accounts, account continuity support, and structured onboarding.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
     availableLanguage: ["English"],
-    contactOption: "TollFree",
   },
   sameAs: ["https://t.me/rahim_ou"],
 };
@@ -174,7 +180,11 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
         "@type": "WebSite",
         name: siteName,
         url: siteUrl,
-        publisher: baseOrganization,
+        publisher: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl,
+        },
       };
 
     case "Service":
@@ -183,7 +193,11 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
         "@type": "Service",
         name: data.name,
         serviceType: data.serviceType || "Advertising Services",
-        provider: baseOrganization,
+        provider: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl,
+        },
         areaServed: {
           "@type": "Place",
           name: "Worldwide",
@@ -202,8 +216,10 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
         "@type": "Product",
         name: data.name,
         description: data.description,
-        brand: baseOrganization,
-        manufacturer: baseOrganization,
+        brand: {
+          "@type": "Organization",
+          name: siteName,
+        },
         offers: {
           "@type": "Offer",
           availability: "https://schema.org/InStock",
@@ -211,7 +227,10 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
           price: data.price,
           priceValidUntil: data.priceValidUntil,
           url: data.url || `${siteUrl}${data.path || ""}`,
-          seller: baseOrganization,
+          seller: {
+            "@type": "Organization",
+            name: siteName,
+          },
         },
       };
 
@@ -223,28 +242,24 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
         description: data.description,
         url: `${siteUrl}${data.path || ""}`,
         inLanguage: "en-US",
+        ...(data.image
+          ? {
+              primaryImageOfPage: {
+                "@type": "ImageObject",
+                url: data.image.startsWith("http") ? data.image : `${siteUrl}${data.image}`,
+              },
+            }
+          : {}),
         isPartOf: {
           "@type": "WebSite",
           name: siteName,
           url: siteUrl,
         },
-        about: baseOrganization,
-        publisher: baseOrganization,
-      };
-
-    case "FAQPage":
-      return {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity:
-          data.faqs?.map((faq) => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: faq.answer,
-            },
-          })) || [],
+        publisher: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl,
+        },
       };
 
     case "BreadcrumbList":
@@ -256,7 +271,7 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
             "@type": "ListItem",
             position: index + 1,
             name: item.name,
-            item: `${siteUrl}${item.url}`,
+            item: item.url.startsWith("http") ? item.url : `${siteUrl}${item.url}`,
           })) || [],
       };
 
@@ -290,9 +305,17 @@ export function generateStructuredData(type: string, data: PageSchemaData = {}):
         dateModified: data.dateModified || data.datePublished,
         author: {
           "@type": "Organization",
-          name: siteName,
+          name: data.blogPost?.author || EDITORIAL_TEAM,
         },
-        publisher: baseOrganization,
+        publisher: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl,
+          logo: {
+            "@type": "ImageObject",
+            url: `${siteUrl}/logo.png`,
+          },
+        },
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": `${siteUrl}${data.path || ""}`,
@@ -328,7 +351,11 @@ export function generateAllSchemas(
   const path = data.path || "";
   const url = `${siteUrl}${path}`;
 
-  schemas.push(generateStructuredData("Organization"));
+  // Organization is emitted once in root layout — avoid duplicates on every page
+  if (data.includeOrganization) {
+    schemas.push(generateStructuredData("Organization"));
+  }
+
   schemas.push(
     generateStructuredData("WebPage", {
       name: data.title || siteName,
@@ -352,7 +379,8 @@ export function generateAllSchemas(
         schemas.push(
           generateStructuredData("ItemList", {
             name: "Agency Ad Account Services",
-            description: "Premium agency ad accounts for Meta, Google, and TikTok",
+            description:
+              "Advertising infrastructure for Meta, Google, TikTok and other platforms",
             services: data.services,
           }),
         );
@@ -373,9 +401,6 @@ export function generateAllSchemas(
           },
         }),
       );
-      if (data.faqs && data.faqs.length > 0) {
-        schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
-      }
       break;
 
     case "product":
@@ -415,11 +440,9 @@ export function generateAllSchemas(
             datePublished: data.blogPost.datePublished,
             dateModified: data.blogPost.dateModified,
             path,
+            blogPost: data.blogPost,
           }),
         );
-      }
-      if (data.faqs && data.faqs.length > 0) {
-        schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
       }
       break;
 
@@ -438,9 +461,6 @@ export function generateAllSchemas(
             })),
           }),
         );
-      }
-      if (data.faqs && data.faqs.length > 0) {
-        schemas.push(generateStructuredData("FAQPage", { faqs: data.faqs }));
       }
       break;
   }

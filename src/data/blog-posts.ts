@@ -8,9 +8,11 @@ export interface BlogPost {
   title: string;
   description: string;
   category: string;
+  author: string;
   image: string;
   datePublished: string;
   dateModified?: string;
+  related?: Array<{ href: string; title: string; description?: string }>;
   content: Array<{ type: "h2" | "h3" | "paragraph" | "list"; content: string; items?: string[] }>;
   faqs?: BlogPostFAQ[];
 }
@@ -20,10 +22,26 @@ export const blogPosts: BlogPost[] = [
     slug: "cost-per-result-formula",
     title: "Cost Per Result Formula: How to Calculate, Analyze, and Lower Your CPR",
     description: "Master the Cost Per Result formula! Calculate, analyze, and apply optimization tips to efficiently lower your CPR and maximize ad campaign profits.",
-    category: "ADS",
+    category: "Measurement & Performance",
+    author: "Rahim Editorial Team",
     image: "/images/blog-cpr.jpg",
     datePublished: "2026-01-15",
     dateModified: "2026-02-01",
+    related: [
+      {
+        href: "/services/facebook-agency-ad-account",
+        title: "Facebook Agency Ad Accounts",
+        description: "Meta advertising infrastructure for higher-spend operations",
+      },
+      {
+        href: "/services/google-ads-agency-account",
+        title: "Google Ads Agency Accounts",
+      },
+      {
+        href: "/blog/google-ads-benchmarks-2026",
+        title: "Google Ads benchmarks",
+      },
+    ],
     content: [
       { type: "paragraph", content: "Cost Per Result (CPR) is one of the most important metrics in performance marketing." },
       { type: "paragraph", content: "Whether you're running Facebook, Google, or TikTok ads, knowing how to calculate, analyze, and lower your CPR directly impacts profitability." },
@@ -50,7 +68,7 @@ export const blogPosts: BlogPost[] = [
         "Use smart bidding (e.g. cost cap, value optimization) so the platform aims for your target CPR.",
         "Scale winners and pause underperformers so overall blend CPR goes down.",
       ] },
-      { type: "paragraph", content: "Mastering the Cost Per Result formula and applying these optimizations will help you run more efficient campaigns and maximize ad profits." },
+      { type: "paragraph", content: "Mastering the Cost Per Result formula and applying these optimizations will help you run more efficient campaigns. If Meta spend capacity or account continuity is the bottleneck — not just creative — see our Facebook agency ad account infrastructure and Google Ads agency accounts. For auction context, read our Google Ads benchmarks guide." },
     ],
     faqs: [
       { question: "What is a good Cost Per Result (CPR)?", answer: "A good CPR depends on your margin and customer lifetime value. Your CPR should be below your allowable cost per acquisition (CPA). Compare your CPR to industry benchmarks and to your own historical performance to see if you're improving." },
@@ -62,10 +80,21 @@ export const blogPosts: BlogPost[] = [
     slug: "spy-on-competitors-ads",
     title: "How to Spy on Competitors' Ads: Tools, Strategies, Insider Insights",
     description: "Learn how to spy on competitors' ads ethically using tools, strategies, insider insights to build better, cheap campaigns. Beat your competitors in ads war!",
-    category: "ADS",
+    category: "Meta Advertising",
+    author: "Rahim Editorial Team",
     image: "/images/blog-competitors.jpg",
     datePublished: "2026-01-22",
     dateModified: "2026-02-01",
+    related: [
+      {
+        href: "/services/facebook-agency-ad-account",
+        title: "Facebook Agency Ad Accounts",
+      },
+      {
+        href: "/resources/meta-agency-ad-account-guide",
+        title: "What Is a Meta Agency Ad Account?",
+      },
+    ],
     content: [
       { type: "paragraph", content: "Knowing what your competitors are doing in paid ads gives you a real edge." },
       { type: "paragraph", content: "You can see their creatives, angles, landing pages, and sometimes even estimated spend." },
@@ -105,9 +134,28 @@ export const blogPosts: BlogPost[] = [
     slug: "google-ads-benchmarks-2026",
     title: "Google Ads Benchmarks (2026): CPC, CTR, CPA & Conversion Standards by Industry",
     description: "Get the definitive 2026 Google Ads benchmarks. Dive into current average CPC, CTR, CVR, and CPA for your industry to measure and improve campaign ROI.",
-    category: "ADS",
+    category: "Google Advertising",
+    author: "Rahim Editorial Team",
     image: "/images/blog-benchmarks.jpg",
     datePublished: "2026-02-01",
+    related: [
+      {
+        href: "/services/google-ads-agency-account",
+        title: "Google Ads Agency Accounts",
+      },
+      {
+        href: "/resources/google-ads",
+        title: "Google Ads resource hub",
+      },
+      {
+        href: "/resources/google-ads-agency-account-guide",
+        title: "Google Ads agency account guide",
+      },
+      {
+        href: "/blog/cost-per-result-formula",
+        title: "Cost Per Result formula",
+      },
+    ],
     content: [
       { type: "paragraph", content: "Benchmarks help you answer: \"Am I doing well or not?\"" },
       { type: "paragraph", content: "For Google Ads in 2026, knowing typical CPC, CTR, conversion rate (CVR), and CPA by industry lets you set realistic targets and spot underperforming campaigns." },

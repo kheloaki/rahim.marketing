@@ -16,7 +16,7 @@ const HowItWorks = () => {
             Get your Agency Ad Accounts in 3 Simple Steps
           </h2>
           <p className="max-w-[720px] mx-auto text-[1.125rem] text-[rgba(255,255,255,0.6)] leading-relaxed">
-            Getting started is fast, simple, and designed to keep your campaigns running smoothly—no stress, no bans.
+            Structured onboarding with eligibility review, clear access, and continuity support.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ const HowItWorks = () => {
                   Step 1: Submit Your Business Info
                 </h3>
                 <p className="text-[1.125rem] text-[rgba(255,255,255,0.6)] leading-relaxed">
-                  Tell us about your website and business so we can assess if you&apos;re the right fit for our premium ad accounts.
+                  Tell us about your website and offer so we can review eligibility before assigning infrastructure.
                 </p>
               </div>
               {/* Connector Line */}
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                   Step 3: Launch Ads with Confidence
                 </h3>
                 <p className="text-[1.125rem] text-[rgba(255,255,255,0.6)] leading-relaxed">
-                  Start running ads immediately—with stable accounts designed for scale and full ban protection.
+                  Start campaigns with documented permissions, tracking continuity guidance, and restriction support where included.
                 </p>
               </div>
             </div>
@@ -115,7 +115,7 @@ const HowItWorks = () => {
                   <div className="absolute -bottom-4 -right-4 glass-panel px-6 py-4 rounded-xl border border-[rgba(0,204,102,0.3)] bg-[rgba(0,204,102,0.1)] shadow-xl animate-bounce duration-[3s]">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-[#10b981] rounded-full shadow-[0_0_10px_#10b981]" />
-                      <span className="text-white font-semibold text-sm">Whitelisted Level 1</span>
+                      <span className="text-white font-semibold text-sm">Agency infrastructure</span>
                     </div>
                   </div>
                 </div>

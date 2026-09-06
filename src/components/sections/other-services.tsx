@@ -12,8 +12,8 @@ const OtherServices = () => {
       link: "/services/peptides-meta-ads"
     },
     {
-      title: "Facebook Unban Services",
-      description: "Comprehensive solutions tailored for managing local digital campaigns and reaching targeted communities effectively.",
+      title: "Restriction Review & Recovery Support",
+      description: "Professional review of Meta ad account restrictions — escalation where appropriate, continuity planning when restoration is not guaranteed.",
       image: "/images/service-unban.jpg",
       link: "/facebook-unban-services"
     },
@@ -74,6 +74,8 @@ const OtherServices = () => {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   unoptimized
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 45vw, 90vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080B1E] to-transparent opacity-40"></div>
               </div>

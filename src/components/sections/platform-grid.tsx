@@ -65,7 +65,7 @@ const PlatformGrid = () => {
               Agency Ad Accounts Across Platforms
             </h2>
             <p className="text-[16px] md:text-[18px] text-white/70 leading-[1.6] max-w-[800px] mx-auto">
-              We work with all major social media platforms to provide enterprise-tier solutions for businesses of all sizes. Forget about advertising limitations, restrictions and unsustainable campaigns.
+              We work with all major social media platforms to provide enterprise-tier solutions for businesses of all sizes. Build advertising infrastructure designed for higher-spend operations, clearer support, and better continuity.
             </p>
           </div>
 

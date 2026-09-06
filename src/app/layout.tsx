@@ -110,10 +110,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://t.me" />
         <link rel="dns-prefetch" href="https://wa.me" />
-        
-        <link rel="icon" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-        
+
+        {/* Favicons: also provided via app/favicon.ico, app/icon.png, app/apple-icon.png */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+
         {/* Preload Critical Resources */}
         <link rel="preload" as="image" href="/og-image.jpg" />
         

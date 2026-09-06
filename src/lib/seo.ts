@@ -96,7 +96,13 @@ export function buildPageMetadata({
     ? `${siteUrl}${canonicalPath === "/" ? "/" : canonicalPath}`
     : siteUrl;
   const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
-  const pageTitle = absoluteTitle ? { absolute: title } : title;
+
+  // Root layout uses `template: "%s | Rahim Marketing"`. Strip any manual brand
+  // suffix so document titles never become "... | Rahim Marketing | Rahim Marketing".
+  const brandSuffix = new RegExp(`\\s*\\|\\s*${siteName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`, "i");
+  const titleWithoutBrand = title.replace(brandSuffix, "").trim();
+  const titleWithBrand = `${titleWithoutBrand} | ${siteName}`;
+  const pageTitle = absoluteTitle ? { absolute: titleWithBrand } : titleWithoutBrand;
 
   return {
     title: pageTitle,
@@ -109,14 +115,14 @@ export function buildPageMetadata({
       type,
       url,
       siteName,
-      title,
+      title: titleWithBrand,
       description,
       images: [
         {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: titleWithBrand,
         },
       ],
       ...(publishedTime && { publishedTime }),
@@ -124,7 +130,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: titleWithBrand,
       description,
       images: [imageUrl],
     },

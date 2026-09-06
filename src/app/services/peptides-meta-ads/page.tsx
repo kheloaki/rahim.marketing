@@ -224,6 +224,14 @@ export default function PeptidesMetaAdsPage() {
           path,
           breadcrumbs,
           faqs: schema.faqs,
+          image: "/images/peptides/peptides-hero.jpg",
+          pricedOffers: packs.map((pack) => ({
+            name: pack.name,
+            description: pack.blurb,
+            price: pack.price.replace(/[^0-9.]/g, ""),
+            priceCurrency: "USD",
+          })),
+          offerCatalogName: "Peptide Meta ads infrastructure packs",
         }}
       />
       <main className="min-h-screen bg-background">

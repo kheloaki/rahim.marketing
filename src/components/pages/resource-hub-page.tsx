@@ -58,15 +58,21 @@ export function ResourceHubPage({
   return (
     <>
       <ComprehensiveSchema
-        pageType="page"
+        pageType="collection"
         data={{
           title: metaTitle,
           description,
           path,
           breadcrumbs,
           image,
+          pageEntityType: "CollectionPage",
           services: [
-            { name: moneyPage.title, url: moneyPage.href, description: moneyPage.description, itemType: "Service" },
+            {
+              name: moneyPage.title,
+              url: moneyPage.href,
+              description: moneyPage.description,
+              itemType: "Service",
+            },
             ...guides.map((g) => ({
               name: g.title,
               url: g.href,

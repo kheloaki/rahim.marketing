@@ -22,12 +22,14 @@ export function ResourceGuidePage({ guide }: { guide: ResourceGuide }) {
   return (
     <>
       <ComprehensiveSchema
-        pageType="page"
+        pageType="article"
         data={{
           title: guide.metaTitle,
+          headline: guide.h1,
           description: guide.description,
           path,
           breadcrumbs,
+          articleType: "Article",
         }}
       />
       <main className="min-h-screen bg-background">

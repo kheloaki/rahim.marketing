@@ -52,11 +52,12 @@ export default function ResourcesPage() {
   return (
     <>
       <ComprehensiveSchema
-        pageType="page"
+        pageType="collection"
         data={{
           ...schemaData,
           path: "/resources",
           breadcrumbs,
+          pageEntityType: "CollectionPage",
           services: [
             ...hubSections.flatMap((c) =>
               c.links.map((l) => ({

@@ -3,7 +3,7 @@ export const SITE_URL =
 
 export const SITE_NAME = "Rahim Marketing";
 
-export const EDITORIAL_TEAM = "Rahim Editorial Team";
+export const EDITORIAL_TEAM = "Rahim Team";
 
 export const TELEGRAM_URL = "https://t.me/rahim_ou";
 export const WHATSAPP_URL = "https://wa.me/message/WKWQWAZSRAU3N1";

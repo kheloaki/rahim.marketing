@@ -262,7 +262,7 @@ export const otherPageSchemas = {
   blog: {
     title: "Blog | Advertising Insights & Guides",
     description:
-      "Practical guides on Meta and Google advertising, measurement, and account operations from the Rahim Editorial Team.",
+      "Practical guides on Meta and Google advertising, measurement, and account operations from the Rahim Team.",
   },
   resources: {
     title: "Resources | Meta, Agency Accounts & Peptide Advertising Guides",

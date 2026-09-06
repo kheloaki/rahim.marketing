@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { EDITORIAL_TEAM, SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const siteUrl = SITE_URL;
 const siteName = SITE_NAME;
@@ -65,6 +65,18 @@ export interface PageSchemaData {
   dateModified?: string;
   offers?: Record<string, unknown>;
   includeOrganization?: boolean;
+  includeAgencyPlanOffers?: boolean;
+  pricedOffers?: Array<{
+    name: string;
+    description?: string;
+    price?: string;
+    priceCurrency?: string;
+    url?: string;
+    billingDuration?: string;
+  }>;
+  offerCatalogName?: string;
+  pageEntityType?: "WebPage" | "CollectionPage" | "AboutPage" | "ContactPage";
+  articleType?: "Article" | "BlogPosting";
 }
 
 export type JsonLd = Record<string, unknown>;
@@ -157,319 +169,17 @@ export function buildPageMetadata({
   };
 }
 
-export const baseOrganization: JsonLd = {
-  "@type": "Organization",
-  name: siteName,
-  url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
-  description:
-    "Advertising infrastructure for Meta, Google, TikTok and other platforms — agency ad accounts, account continuity support, and structured onboarding.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "Customer Service",
-    availableLanguage: ["English"],
-  },
-  sameAs: ["https://t.me/rahim_ou"],
-};
+export {
+  generateAllSchemas,
+  buildPageSchemaGraph,
+  type SchemaPageType,
+} from "@/lib/schema/graph";
 
-export function generateStructuredData(type: string, data: PageSchemaData = {}): JsonLd {
-  switch (type) {
-    case "Organization":
-      return {
-        "@context": "https://schema.org",
-        ...baseOrganization,
-      };
+export {
+  buildSiteWideGraph,
+  serializeJsonLd,
+  buildOrganizationNode,
+} from "@/lib/schema/organization";
 
-    case "WebSite":
-      return {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: siteName,
-        url: siteUrl,
-        publisher: {
-          "@type": "Organization",
-          name: siteName,
-          url: siteUrl,
-        },
-      };
-
-    case "Service":
-      return {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: data.name,
-        serviceType: data.serviceType || "Advertising Services",
-        provider: {
-          "@type": "Organization",
-          name: siteName,
-          url: siteUrl,
-        },
-        areaServed: {
-          "@type": "Place",
-          name: "Worldwide",
-        },
-        description: data.description,
-        offers: data.offers || {
-          "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: "USD",
-        },
-      };
-
-    case "Product":
-      return {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: data.name,
-        description: data.description,
-        brand: {
-          "@type": "Organization",
-          name: siteName,
-        },
-        offers: {
-          "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: data.priceCurrency || "USD",
-          price: data.price,
-          priceValidUntil: data.priceValidUntil,
-          url: data.url || `${siteUrl}${data.path || ""}`,
-          seller: {
-            "@type": "Organization",
-            name: siteName,
-          },
-        },
-      };
-
-    case "WebPage":
-      return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: data.name,
-        description: data.description,
-        url: `${siteUrl}${data.path || ""}`,
-        inLanguage: "en-US",
-        ...(data.image
-          ? {
-              primaryImageOfPage: {
-                "@type": "ImageObject",
-                url: data.image.startsWith("http") ? data.image : `${siteUrl}${data.image}`,
-              },
-            }
-          : {}),
-        isPartOf: {
-          "@type": "WebSite",
-          name: siteName,
-          url: siteUrl,
-        },
-        publisher: {
-          "@type": "Organization",
-          name: siteName,
-          url: siteUrl,
-        },
-      };
-
-    case "BreadcrumbList":
-      return {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement:
-          data.breadcrumbs?.map((item, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            name: item.name,
-            item: item.url.startsWith("http") ? item.url : `${siteUrl}${item.url}`,
-          })) || [],
-      };
-
-    case "ItemList":
-      return {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        name: data.name,
-        description: data.description,
-        itemListElement:
-          data.services?.map((item, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            item: {
-              "@type": item.itemType || "Service",
-              name: item.name,
-              url: `${siteUrl}${item.url}`,
-              description: item.description,
-            },
-          })) || [],
-      };
-
-    case "BlogPosting":
-      return {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        headline: data.headline,
-        description: data.description,
-        image: data.image,
-        datePublished: data.datePublished,
-        dateModified: data.dateModified || data.datePublished,
-        author: {
-          "@type": "Organization",
-          name: data.blogPost?.author || EDITORIAL_TEAM,
-        },
-        publisher: {
-          "@type": "Organization",
-          name: siteName,
-          url: siteUrl,
-          logo: {
-            "@type": "ImageObject",
-            url: `${siteUrl}/logo.png`,
-          },
-        },
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `${siteUrl}${data.path || ""}`,
-        },
-      };
-
-    case "CollectionPage":
-      return {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: data.name,
-        description: data.description,
-        url: `${siteUrl}${data.path || ""}`,
-        mainEntity: {
-          "@type": "ItemList",
-          itemListElement: data.items || [],
-        },
-      };
-
-    default:
-      return {
-        "@context": "https://schema.org",
-        ...baseOrganization,
-      };
-  }
-}
-
-export function generateAllSchemas(
-  pageType: "home" | "service" | "product" | "blog" | "page",
-  data: PageSchemaData = {},
-): JsonLd[] {
-  const schemas: JsonLd[] = [];
-  const path = data.path || "";
-  const url = `${siteUrl}${path}`;
-
-  // Organization is emitted once in root layout — avoid duplicates on every page
-  if (data.includeOrganization) {
-    schemas.push(generateStructuredData("Organization"));
-  }
-
-  schemas.push(
-    generateStructuredData("WebPage", {
-      name: data.title || siteName,
-      description: data.description,
-      path,
-    }),
-  );
-
-  if (data.breadcrumbs && data.breadcrumbs.length > 0) {
-    schemas.push(
-      generateStructuredData("BreadcrumbList", {
-        breadcrumbs: data.breadcrumbs,
-      }),
-    );
-  }
-
-  switch (pageType) {
-    case "home":
-      schemas.push(generateStructuredData("WebSite"));
-      if (data.services) {
-        schemas.push(
-          generateStructuredData("ItemList", {
-            name: "Agency Ad Account Services",
-            description:
-              "Advertising infrastructure for Meta, Google, TikTok and other platforms",
-            services: data.services,
-          }),
-        );
-      }
-      break;
-
-    case "service":
-      schemas.push(
-        generateStructuredData("Service", {
-          name: data.title,
-          description: data.description,
-          serviceType: data.serviceType || "Advertising Services",
-          offers: {
-            "@type": "Offer",
-            availability: "https://schema.org/InStock",
-            priceCurrency: "USD",
-            url,
-          },
-        }),
-      );
-      break;
-
-    case "product":
-      schemas.push(
-        generateStructuredData("Product", {
-          name: data.title,
-          description: data.description,
-          price: data.price,
-          priceCurrency: data.priceCurrency || "USD",
-          path,
-          url,
-        }),
-      );
-      break;
-
-    case "blog":
-      if (data.services && data.services.length > 0) {
-        schemas.push(
-          generateStructuredData("CollectionPage", {
-            name: data.title || "Blog",
-            description: data.description,
-            path,
-            items: data.services.map((item) => ({
-              "@type": "BlogPosting",
-              name: item.name,
-              url: `${siteUrl}${item.url}`,
-              description: item.description,
-            })),
-          }),
-        );
-      } else if (data.blogPost) {
-        schemas.push(
-          generateStructuredData("BlogPosting", {
-            headline: data.blogPost.title,
-            description: data.blogPost.description,
-            image: data.blogPost.image,
-            datePublished: data.blogPost.datePublished,
-            dateModified: data.blogPost.dateModified,
-            path,
-            blogPost: data.blogPost,
-          }),
-        );
-      }
-      break;
-
-    case "page":
-      if (data.services && data.services.length > 0) {
-        schemas.push(
-          generateStructuredData("CollectionPage", {
-            name: data.title,
-            description: data.description,
-            path,
-            items: data.services.map((item) => ({
-              "@type": item.itemType || "Thing",
-              name: item.name,
-              url: `${siteUrl}${item.url}`,
-              description: item.description,
-            })),
-          }),
-        );
-      }
-      break;
-  }
-
-  return schemas;
-}
+/** @deprecated Prefer buildSiteWideGraph — layout previously spread this object. */
+export { buildOrganizationNode as baseOrganization } from "@/lib/schema/organization";

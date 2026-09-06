@@ -67,6 +67,7 @@ export default function ServiceLanding({
           path,
           breadcrumbs,
           faqs,
+          image,
         }}
       />
       <main className="min-h-screen bg-background">

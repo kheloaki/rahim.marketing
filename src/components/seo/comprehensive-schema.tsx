@@ -1,7 +1,12 @@
-import { generateAllSchemas, type PageSchemaData } from "@/lib/seo";
+import {
+  generateAllSchemas,
+  serializeJsonLd,
+  type SchemaPageType,
+} from "@/lib/schema/graph";
+import type { PageSchemaData } from "@/lib/seo";
 
 interface ComprehensiveSchemaProps {
-  pageType: "home" | "service" | "product" | "blog" | "page";
+  pageType: SchemaPageType;
   data: PageSchemaData;
 }
 
@@ -14,7 +19,7 @@ export function ComprehensiveSchema({ pageType, data }: ComprehensiveSchemaProps
         <script
           key={`${pageType}-${index}`}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
         />
       ))}
     </>

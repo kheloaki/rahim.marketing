@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import { baseOrganization } from "@/lib/seo";
+import { buildSiteWideGraph, serializeJsonLd } from "@/lib/schema/organization";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -139,10 +139,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              ...baseOrganization,
-            }),
+            __html: serializeJsonLd(buildSiteWideGraph()),
           }}
         />
       </head>

@@ -4,12 +4,13 @@ import LatestBlogs from "@/components/sections/latest-blogs";
 import { ComprehensiveSchema } from "@/components/seo/comprehensive-schema";
 import { otherPageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { metaFromSchema } from "@/lib/page-meta";
+import { blogPosts } from "@/data/blog-posts";
 
 export const metadata = metaFromSchema(otherPageSchemas["blog"], "/blog");
 
 export default function BlogPage() {
   const schemaData = otherPageSchemas["blog"];
-  
+
   return (
     <>
       <ComprehensiveSchema
@@ -18,6 +19,13 @@ export default function BlogPage() {
           ...schemaData,
           path: "/blog",
           breadcrumbs: getBreadcrumbs("/blog", "Blog"),
+          pageEntityType: "CollectionPage",
+          services: blogPosts.map((post) => ({
+            name: post.title,
+            url: `/blog/${post.slug}`,
+            description: post.description,
+            itemType: "BlogPosting",
+          })),
         }}
       />
     <main className="min-h-screen bg-background">

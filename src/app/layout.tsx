@@ -111,7 +111,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://t.me" />
         <link rel="dns-prefetch" href="https://wa.me" />
 
-        {/* Favicons: also provided via app/favicon.ico, app/icon.png, app/apple-icon.png */}
+        {/* Favicons: public/favicon.ico (Rahim R), public/icon.png, public/apple-icon.png */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
         <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />

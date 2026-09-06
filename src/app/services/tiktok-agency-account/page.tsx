@@ -15,6 +15,7 @@ import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle } from "lucide-react";
 import { buildPageMetadata } from "@/lib/seo";
 import { TELEGRAM_URL, WHATSAPP_URL } from "@/lib/site";
+import { TikTokIcon } from "@/components/brand/platform-icons";
 
 const path = "/services/tiktok-agency-account";
 const breadcrumbs = getBreadcrumbs(path, "TikTok Agency Ad Accounts");
@@ -96,9 +97,7 @@ function TikTokHeroSection() {
             <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-black rounded-2xl flex items-center justify-center shadow-2xl">
-                  <svg viewBox="0 0 24 24" className="w-14 h-14" fill="white" aria-hidden>
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
-                  </svg>
+                  <TikTokIcon size={56} className="text-white" />
                 </div>
                 <h3 className="text-[28px] font-bold text-white mb-4">TikTok Agency Accounts</h3>
                 <p className="text-white/60 mb-8">Structured TikTok Ads agency infrastructure</p>

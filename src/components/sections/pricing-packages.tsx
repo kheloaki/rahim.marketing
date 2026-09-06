@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check, Info } from 'lucide-react';
-import { BingIcon, GoogleIcon, MetaIcon, TikTokIcon } from '@/components/brand/platform-icons';
+import { GoogleAdsIcon, MetaIcon, MicrosoftAdvertisingIcon, TikTokIcon } from '@/components/brand/platform-icons';
 
 const PricingPackages = () => {
   const plans = [
@@ -148,11 +148,11 @@ const PricingPackages = () => {
             <Info size={14} />
             Delivery timelines and refund terms are confirmed during onboarding after approval.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6 text-white/40">
+          <div className="mt-12 flex flex-wrap justify-center gap-x-12 gap-y-6 text-white/50">
              <MetaIcon size={24} />
-             <GoogleIcon size={24} />
+             <GoogleAdsIcon size={24} />
              <TikTokIcon size={24} />
-             <BingIcon size={24} />
+             <MicrosoftAdvertisingIcon size={24} />
           </div>
         </div>
       </div>

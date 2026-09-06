@@ -7,20 +7,22 @@ import Image from "next/image";
 import { ChevronDown, ArrowRight, Menu, X, Send } from "lucide-react";
 import { TELEGRAM_URL } from "@/lib/site";
 import {
-  BingIcon,
-  GoogleIcon,
+  FacebookIcon,
+  GoogleAdsIcon,
   MetaIcon,
+  MicrosoftAdvertisingIcon,
   OutbrainIcon,
   TaboolaIcon,
   TikTokIcon,
+  type PlatformIconComponent,
 } from "@/components/brand/platform-icons";
 
 const agencyLinks = [
   { href: "/services/agency-ad-accounts", title: "Agency Ad Accounts Overview", desc: "How agency advertising accounts work", Icon: MetaIcon },
-  { href: "/services/facebook-agency-ad-account", title: "Facebook Agency Ad Accounts", desc: "Get a Meta Agency Ad Account", Icon: MetaIcon },
-  { href: "/services/google-ads-agency-account", title: "Google Agency Ad Accounts", desc: "Get a Google Agency Ad Account", Icon: GoogleIcon },
+  { href: "/services/facebook-agency-ad-account", title: "Facebook Agency Ad Accounts", desc: "Get a Meta Agency Ad Account", Icon: FacebookIcon },
+  { href: "/services/google-ads-agency-account", title: "Google Agency Ad Accounts", desc: "Get a Google Agency Ad Account", Icon: GoogleAdsIcon },
   { href: "/services/tiktok-agency-account", title: "TikTok Agency Ad Accounts", desc: "Get a TikTok Agency Ad Account", Icon: TikTokIcon },
-  { href: "/services/bing-agency-accounts", title: "Bing Agency Ad Accounts", desc: "Get a Bing Agency Ad Account", Icon: BingIcon },
+  { href: "/services/bing-agency-accounts", title: "Bing Agency Ad Accounts", desc: "Get a Bing Agency Ad Account", Icon: MicrosoftAdvertisingIcon },
   { href: "/services/taboola-agency-ad-accounts", title: "Taboola Agency Accounts", desc: "Get a Taboola Agency Account", Icon: TaboolaIcon },
   { href: "/services/outbrain-agency-ad-accounts", title: "Outbrain Agency Accounts", desc: "Get an Outbrain Agency Account", Icon: OutbrainIcon },
 ];
@@ -208,12 +210,12 @@ function DropdownLink({
   href: string;
   title: string;
   desc: string;
-  Icon: typeof MetaIcon;
+  Icon: PlatformIconComponent;
 }) {
   return (
     <Link href={href} className="group flex items-start gap-4 rounded-xl p-3 transition-colors hover:bg-white/5">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 p-2 text-white transition-colors group-hover:bg-white/10">
-        <Icon size={22} />
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 text-white transition-colors group-hover:bg-white/10">
+        <Icon size={22} className="max-h-6 max-w-6" />
       </div>
       <div className="flex flex-col">
         <span className="text-sm font-semibold text-white group-hover:text-[#E44F71] transition-colors">{title}</span>

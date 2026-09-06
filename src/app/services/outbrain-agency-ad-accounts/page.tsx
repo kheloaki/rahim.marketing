@@ -106,8 +106,8 @@ function OutbrainHeroSection() {
             <div className="absolute -inset-1 bg-gradient-to-r from-[#BC2C7B] via-[#E44F71] to-[#E44F71] rounded-[1.5rem] opacity-20 blur-xl" />
             <div className="relative rounded-[1.25rem] overflow-hidden border border-white/10 bg-[#150d1f] shadow-2xl p-8 lg:p-12">
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 bg-[#FF6600] rounded-2xl flex items-center justify-center shadow-2xl p-4">
-                  <OutbrainIcon size={56} className="text-white" />
+                <div className="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-2xl flex items-center justify-center shadow-2xl text-white">
+                  <OutbrainIcon size={56} />
                 </div>
                 <h3 className="text-[28px] font-bold text-white mb-4">Outbrain Agency Accounts</h3>
                 <p className="text-white/60 mb-8">Premium Native Advertising Accounts</p>

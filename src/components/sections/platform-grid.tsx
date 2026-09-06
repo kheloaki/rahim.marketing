@@ -1,57 +1,56 @@
 import React from 'react';
 import Link from 'next/link';
-import {
-  BingIcon,
-  GoogleIcon,
-  MetaIcon,
-  OutbrainIcon,
-  TaboolaIcon,
-  TikTokIcon,
-} from '@/components/brand/platform-icons';
+import { PlatformLogo } from '@/components/brand/platform-icons';
+import type { PlatformId } from '@/data/platforms';
 
 const PlatformGrid = () => {
-  const platforms = [
+  const platforms: Array<{
+    title: string;
+    description: string;
+    link: string;
+    platformId: PlatformId;
+  }> = [
     {
       title: "Meta Agency Accounts",
       description:
         "Meta advertising infrastructure across Facebook and Instagram with structured Business Manager access, eligibility review, and continuity support.",
-      Icon: MetaIcon,
       link: "/services/facebook-agency-ad-account",
+      platformId: "meta",
     },
     {
       title: "Google Agency Accounts",
       description:
         "Google Ads agency infrastructure for Search, YouTube, Display, and Shopping with clear onboarding and operational support.",
-      Icon: GoogleIcon,
       link: "/services/google-ads-agency-account",
+      platformId: "google-ads",
     },
     {
       title: "TikTok Agency Accounts",
       description:
         "TikTok agency advertising access with structured onboarding and support for compliance-aware campaign operations.",
-      Icon: TikTokIcon,
       link: "/services/tiktok-agency-account",
+      platformId: "tiktok",
     },
     {
       title: "Bing Agency Ad Accounts",
       description:
         "Microsoft Advertising agency accounts for Search and audience network campaigns with structured access and support.",
-      Icon: BingIcon,
       link: "/services/bing-agency-accounts",
+      platformId: "microsoft-advertising",
     },
     {
       title: "Taboola Agency Ad Accounts",
       description:
         "Taboola native advertising infrastructure for publisher-network campaigns with agency onboarding support.",
-      Icon: TaboolaIcon,
       link: "/services/taboola-agency-ad-accounts",
+      platformId: "taboola",
     },
     {
       title: "Outbrain Agency Ad Accounts",
       description:
         "Outbrain content-discovery advertising access with structured onboarding for publisher placements.",
-      Icon: OutbrainIcon,
       link: "/services/outbrain-agency-ad-accounts",
+      platformId: "outbrain",
     },
   ];
 
@@ -77,8 +76,8 @@ const PlatformGrid = () => {
                 href={platform.link}
                 className="group flex flex-col bg-[#150d1f] border border-white/10 rounded-[16px] p-8 transition-all duration-300 hover:translate-y-[-5px] hover:border-white/20 hover:shadow-[0_0_40px_0_rgba(43,89,255,0.1)]"
               >
-                <div className="mb-8 w-[48px] h-[48px] flex items-center justify-center relative text-white">
-                  <platform.Icon size={40} />
+                <div className="mb-8 text-white">
+                  <PlatformLogo platform={platform.platformId} containerSize={48} iconSize={32} />
                 </div>
                 <h3 className="text-[20px] md:text-[24px] font-semibold text-white mb-4">
                   {platform.title}

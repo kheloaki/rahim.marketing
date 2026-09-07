@@ -97,10 +97,10 @@ export const metadata: Metadata = {
   category: "Advertising Services",
   icons: {
     icon: [
-      { url: "/favicon.ico?v=3", sizes: "any" },
-      { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=4", sizes: "any" },
+      { url: "/icon.png?v=4", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-icon.png?v=3", sizes: "180x180" }],
+    apple: [{ url: "/apple-icon.png?v=4", sizes: "180x180" }],
   },
 };
 
@@ -118,10 +118,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://t.me" />
         <link rel="dns-prefetch" href="https://wa.me" />
 
-        {/* Favicons rebuilt from Rahim R mark (?v= busts aggressive browser caches) */}
-        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
-        <link rel="icon" href="/icon.png?v=3" type="image/png" sizes="512x512" />
-        <link rel="apple-touch-icon" href="/apple-icon.png?v=3" sizes="180x180" />
+        {/* Favicons: transparent Rahim R (?v= busts aggressive browser caches) */}
+        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
+        <link rel="icon" href="/icon.png?v=4" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=4" sizes="180x180" />
 
         {/* Preload Critical Resources */}
         <link rel="preload" as="image" href="/og-image.jpg" />

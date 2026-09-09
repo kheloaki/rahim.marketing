@@ -13,6 +13,7 @@ import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 import { metaFromSchema } from "@/lib/page-meta";
 import { MicrosoftAdvertisingIcon } from "@/components/brand/platform-icons";
+import { RelatedResources } from "@/components/seo/related-resources";
 
 function BingHeroSection() {
   return (
@@ -151,6 +152,16 @@ export default function BingAgencyAccountsPage() {
           <ComparisonTable />
           <PricingPackages />
           <FAQSection />
+          <RelatedResources
+            title="Related reading"
+            links={[
+              {
+                href: "/services/agency-ad-accounts",
+                title: "Agency Ad Accounts overview",
+                description: "Cross-platform agency account model",
+              },
+            ]}
+          />
           <CTABanner />
         </div>
         <Footer />

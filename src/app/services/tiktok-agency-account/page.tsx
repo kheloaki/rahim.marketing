@@ -151,6 +151,11 @@ export default function TikTokAgencyAccountPage() {
             title="TikTok Ads guides"
             links={[
               {
+                href: "/services/agency-ad-accounts",
+                title: "Agency Ad Accounts overview",
+                description: "Cross-platform agency account model",
+              },
+              {
                 href: "/resources/tiktok-ads",
                 title: "TikTok Ads resource hub",
                 description: "Business Center, access, and suspensions",

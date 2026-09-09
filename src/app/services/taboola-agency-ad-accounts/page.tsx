@@ -13,6 +13,7 @@ import { servicePageSchemas, getBreadcrumbs } from "@/lib/page-schemas";
 import { Check, ArrowRight, Send, MessageCircle, Star } from "lucide-react";
 import { TaboolaIcon } from "@/components/brand/platform-icons";
 import { metaFromSchema } from "@/lib/page-meta";
+import { RelatedResources } from "@/components/seo/related-resources";
 
 function TaboolaHeroSection() {
   return (
@@ -151,6 +152,16 @@ export default function TaboolaAgencyAccountsPage() {
           <ComparisonTable />
           <PricingPackages />
           <FAQSection />
+          <RelatedResources
+            title="Related reading"
+            links={[
+              {
+                href: "/services/agency-ad-accounts",
+                title: "Agency Ad Accounts overview",
+                description: "Cross-platform agency account model",
+              },
+            ]}
+          />
           <CTABanner />
         </div>
         <Footer />

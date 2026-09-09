@@ -151,6 +151,11 @@ export default function GoogleAdsAgencyAccountPage() {
             title="Google Ads guides"
             links={[
               {
+                href: "/services/agency-ad-accounts",
+                title: "Agency Ad Accounts overview",
+                description: "Cross-platform agency account model",
+              },
+              {
                 href: "/resources/google-ads",
                 title: "Google Ads resource hub",
                 description: "Architecture, billing, MCC, and suspensions",
